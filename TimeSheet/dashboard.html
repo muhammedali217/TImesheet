@@ -1,0 +1,674 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        <link href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css " rel="stylesheet " />
+<link href="https://cdn.datatables.net/responsive/2.0.2/css/responsive.dataTables.min.css" rel ="stylesheet" />
+
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #tblholiday {
+            /*background-image: url("http://www.powerpointhintergrund.com/uploads/business-statistics-background-powerpoint-14.jpg");*/
+        }
+        .dataTables_wrapper .dataTables_paginate {
+    float: right;
+    text-align: right;
+    padding-top: 0.25em;
+    cursor: pointer !important;
+    text-transform: uppercase;
+    color:green;
+
+}
+        .dataTables_filter input {
+    margin-left: 0.5em;
+    text-align: center;
+}
+        .paginate_disabled_next {
+            text-align:center;
+            border: 1px solid #ddd;
+            position: relative;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #0275d8;
+    background-color: #fff;
+    border: 1px solid #ddd;
+        }
+         .paginate_disabled_previous {
+            text-align:center;
+            border: 1px solid #ddd;
+            position: relative;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #0275d8;
+    background-color: #fff;
+    border: 1px solid #ddd;
+        }
+        .highcharts-credits {
+            font-size:0px !important;
+        }
+        #mortgage
+        {
+                color: #0275d8;
+    text-transform: uppercase;
+
+    cursor:pointer;
+        }
+         #investment
+        {
+                color: #0275d8;
+    text-transform: uppercase;
+
+    cursor:pointer;
+        }
+
+        #loadmortgage {
+            text-transform: uppercase;
+            color: blueviolet;
+            cursor: pointer;
+        }
+        #loadinvestment {
+            text-transform: uppercase;
+            color: blueviolet;
+            cursor: pointer;
+        }
+        #loadRetail {
+            text-transform: uppercase;
+            color: blueviolet;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+ <script src="admin/js/jquery.js"></script>
+    
+    <script src="admin/plugins/DataTables-1.10.4/media/jquery.dataTables.min.js"></script>
+     <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script> 
+     <div id="tblLink">
+         <a id="loadmortgage">Mortgage Clients</a>
+         <a id="loadinvestment">&nbsp;&nbsp;&nbsp;Investment Bankers</a>
+         <a id="loadRetail">&nbsp;&nbsp;&nbsp;Retail</a>
+     </div>
+    <div id="tblholiday"></div>
+    <a style="text-align:center !important;color:blue;cursor:pointer;" id="showmortagegraph">MORTAGE CLIENTS GRAPH</a><a style="text-align:center !important;color:blue;cursor:pointer;" id="showinvestmentgraph">&nbsp;&nbsp;INVESTMENT BANKERS GRAPH</a>
+    <a style="text-align:center !important;color:blue;cursor:pointer;" id="showretailgraph">&nbsp;&nbsp;RETAIL CLIENTS GRAPH</a>
+    <div id="total" style="border:1px solid black;"><b><label style="padding-left:650px;">Total Send:</label></b>&nbsp;&nbsp;<span id="send"></span></div>  <br />  
+     <div style="text-align: center;">
+    <div id="mortagegraph" style="width: 500px; margin: 0 auto;"></div>
+         </div>
+
+    <div id="invstmntgraph" style="width: 500px; margin: 0 auto;"></div>
+    <div id="retailgraph" style="width: 500px; margin: 0 auto;"></div>
+        
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $('#showretailgraph').hide();
+        $('#invstmntgraph').hide();
+        $('#showmortagegraph').hide();
+        $('#showinvestmentgraph').hide();
+        $('#total').hide();
+        $('#tblholiday').hide();
+        //Loadvalues();
+        $('#mortagegraph').hide();
+        
+        $('#total').hide();
+        $('#loadmortgage').click(function () {
+            //$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+            
+
+            $('#showmortagegraph').show();
+            $('#showinvestmentgraph').hide();
+            $('#tblholiday').show();
+            $('#retailgraph').hide();
+            $('#showretailgraph').hide();
+            LoadMortgagevalues();
+        });
+
+
+
+        $('#loadinvestment').click(function () {
+            //$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+            $('#showmortagegraph').hide();
+            $('#mortagegraph').hide();
+            $('#tblholiday').show();
+            $('#showinvestmentgraph').show();
+            $('#retailgraph').hide();
+            $('#showretailgraph').hide();
+            LoadInvestorvalues();
+        });
+
+
+
+        $('#loadRetail').click(function () {
+            //$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+            $('#showmortagegraph').hide();
+            $('#mortagegraph').hide();
+            $('#tblholiday').show();
+            $('#showinvestmentgraph').hide();
+            $('#invstmntgraph').hide();
+            $('#showretailgraph').show();
+            LoadRetailvalues();
+        });
+        
+
+
+
+        $('#showmortagegraph').click(function () {
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+            LoadMortageGraph();
+        });
+
+
+        $('#showinvestmentgraph').click(function () {
+            
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+            LoadInvstmentGraph();
+        });
+
+        $('#showretailgraph').click(function () {
+
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+            LoadRetailGraph();
+        });
+
+
+
+        
+
+
+
+        
+        $('#tblholiday').html('<table cellpadding="0" class="table table-striped table-bordered"  cellspacing="0" border="0" id="tableHolidayCalender" style="width:800px;"></table>');
+
+
+
+
+        var oTable = $('#tableHolidayCalender').dataTable({
+            "aaData": [
+            /* Reduced data set */
+            ],
+
+            "aoColumns": [{
+                "sTitle": "Sl No",
+                'sWidth': '10%'
+            },
+            {
+                "sTitle": "Name",
+                'sWidth': '10%'
+            },
+            {
+                "sTitle": "Company",
+                'sWidth': '10%'
+            },
+            {
+                "sTitle": "Designation",
+                'sWidth': '10%'
+            }, {
+                "sTitle": "Mail",
+                'sWidth': '10%'
+            },
+            {
+                "sTitle": "Date",
+                'sWidth': '10%',
+                'sClass': 'center'
+            },
+            {
+                "sTitle": "Time",
+                'sWidth': '10%'
+            },
+
+            {
+                "sTitle": "Response Received",
+                'sWidth': '10%'
+            }, {
+                "sTitle": "Received Time",
+                'sWidth': '10%'
+            },
+
+            {
+                "sTitle": "Received Date",
+                'sWidth': '10%'
+            },
+            {
+                "sTitle": "Resend Status",
+                'sWidth': '10%'
+            }
+
+
+
+
+
+
+            ],
+
+            "aLengthMenu": [
+                        [5, 10, 15, -1],
+                        [5, 10, 15, "All"] // change per page values here
+            ],
+           
+            "iDisplayLength":10,
+            "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+            "bFilter": true,
+            "bInfo": false,
+            "scrollX": true,
+            "bDeferRender": true,
+            "bProcessing": true,
+            "oLanguage": {
+                "sLengthMenu": "",
+                "sEmptyTable": "No data found",
+                "oPaginate": {
+                    "sPrevious": "Prev",
+                    "sNext": "              next"
+                }
+            },
+        });
+        jQuery('.paginate_disabled_previous').removeClass("paginate_disabled_previous")
+        jQuery('.paginate_disabled_previous').addClass("label label-default");
+        jQuery('#tableHolidayCalender_wrapper .dataTables_filter input').addClass("m-wrap medium"); // modify table search input
+        jQuery('#tableHolidayCalender_wrapper .dataTables_length select').addClass("m-wrap small"); // modify table per page dropdown
+
+
+        var nEditing = null;
+
+        // *****************************END DATATTABLE DENITION--(CLIENT SIDE SCRIPT)**********************************************   
+
+
+
+
+        function LoadMortgagevalues() {
+
+
+
+            var SpParams = {};
+            SpParams.strProc = "Final3Detail";
+
+
+
+
+            // "<a class='active' href='#'><span class='fa fa-check-circle text-success'><i> Active</i></span></a>"
+            // "<a href='#' class='inactive'><span class='fa fa-times-circle text-danger'><i> Inactive</i></span></a>"
+
+            $.ajax({
+                url: "/api/FIXZIService/GetHTTPResponseDataWeb",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(SpParams),
+                success: function (response) {
+                    if (response.details != null) {
+                        $("#tableHolidayCalender").dataTable().fnClearTable();
+                        for (var j = 0; j < response.details.length; j++) {
+
+
+                            jQuery("#tableHolidayCalender").dataTable().fnAddData([j + 1, (response.details[j].Name).toString(), (response.details[j].Company).toString(), (response.details[j].Designation).toString(), (response.details[j].Send_Mail).toString(), (response.details[j].Send_Date).toString().toLocaleUpperCase(), (response.details[j].Send_Time).toString().toLocaleUpperCase(), (response.details[j].Received_Mail_Status).toString().toLocaleUpperCase(), (response.details[j].Received_Date).toString().toLocaleUpperCase(), (response.details[j].Received_Time).toString().toLocaleUpperCase(), (response.details[j].Resend_status).toString().toLocaleUpperCase()]);
+
+
+                        }
+                    }
+                    //   alert(response.details);
+
+                }
+            });
+        }
+
+
+
+
+        function LoadInvestorvalues() {
+
+
+
+            var SpParams = {};
+            SpParams.strProc = "InvestmentBankingfinal3Detail";
+
+
+
+
+            // "<a class='active' href='#'><span class='fa fa-check-circle text-success'><i> Active</i></span></a>"
+            // "<a href='#' class='inactive'><span class='fa fa-times-circle text-danger'><i> Inactive</i></span></a>"
+
+            $.ajax({
+                url: "/api/FIXZIService/GetHTTPResponseDataWeb",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(SpParams),
+                success: function (response) {
+                    if (response.details != null) {
+                        $("#tableHolidayCalender").dataTable().fnClearTable();
+                        for (var j = 0; j < response.details.length; j++) {
+
+
+                            jQuery("#tableHolidayCalender").dataTable().fnAddData([j + 1, (response.details[j].Name).toString(), (response.details[j].Company).toString(), (response.details[j].Designation).toString(), (response.details[j].Send_Mail).toString(), (response.details[j].Send_Date).toString().toLocaleUpperCase(), (response.details[j].Send_Time).toString().toLocaleUpperCase(), (response.details[j].Received_Mail_Status).toString().toLocaleUpperCase(), (response.details[j].Received_Date).toString().toLocaleUpperCase(), (response.details[j].Received_Time).toString().toLocaleUpperCase(), (response.details[j].Resend_status).toString().toLocaleUpperCase()]);
+
+
+                        }
+                    }
+                    //   alert(response.details);
+
+                }
+            });
+        }
+
+
+        function LoadRetailvalues() {
+
+
+
+            var SpParams = {};
+            SpParams.strProc = "Retailfinal3Details";
+
+
+
+
+            // "<a class='active' href='#'><span class='fa fa-check-circle text-success'><i> Active</i></span></a>"
+            // "<a href='#' class='inactive'><span class='fa fa-times-circle text-danger'><i> Inactive</i></span></a>"
+
+            $.ajax({
+                url: "/api/FIXZIService/GetHTTPResponseDataWeb",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(SpParams),
+                success: function (response) {
+                    if (response.details != null) {
+                        $("#tableHolidayCalender").dataTable().fnClearTable();
+                        for (var j = 0; j < response.details.length; j++) {
+
+
+                            jQuery("#tableHolidayCalender").dataTable().fnAddData([j + 1, (response.details[j].Name).toString(), (response.details[j].Company).toString(), (response.details[j].Designation).toString(), (response.details[j].Send_Mail).toString(), (response.details[j].Send_Date).toString().toLocaleUpperCase(), (response.details[j].Send_Time).toString().toLocaleUpperCase(), (response.details[j].Received_Mail_Status).toString().toLocaleUpperCase(), (response.details[j].Received_Date).toString().toLocaleUpperCase(), (response.details[j].Received_Time).toString().toLocaleUpperCase(), (response.details[j].Resend_status).toString().toLocaleUpperCase()]);
+
+
+                        }
+                    }
+                    //   alert(response.details);
+
+                }
+            });
+        }
+
+
+
+
+
+
+        function LoadMortageGraph() {
+            
+            var SpParams = {};
+            SpParams.strProc = "ReceivedMail_Status";
+
+            $.ajax({
+                url: "/api/FIXZIService/GetHTTPResponseDataWeb",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(SpParams),
+                success: function (response) {
+                    if (response.details != null) {
+                        
+                        console.log(response.details.length);
+                        varnot = response.details[0].Status_Count;
+
+                        varreceived = response.details[1].Status_Count;
+                        $('#mortagegraph').show();
+                        generateMortagechart(varreceived, varnot);
+                       
+                        
+                    }
+
+
+                }
+            });
+
+        }
+
+        function generateMortagechart(a, b) {
+            
+            console.log(a);
+            Highcharts.chart('mortagegraph', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Mail Send Status'
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                yAxis: {
+                    title: {
+                        text: 'Count(in nos)'
+                    }
+
+                },
+                legend: {
+                    enabled: false
+                },
+                plotOptions: {
+                    series: {
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.y:1f}'
+                        }
+                    }
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:1f}</b> of total<br/>'
+                },
+
+                series: [{
+                    name: 'Status',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'Received',
+                        y: a
+                    }, {
+                        name: 'Not Received',
+                        y: b
+                    }]
+                }]
+            });
+        }
+
+
+
+
+
+
+        function LoadInvstmentGraph() {
+
+            var SpParams = {};
+            SpParams.strProc = "InvestmentReceivedMail_Status";
+
+            $.ajax({
+                url: "/api/FIXZIService/GetHTTPResponseDataWeb",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(SpParams),
+                success: function (response) {
+                    if (response.details != null) {
+
+                        console.log(response.details.length);
+
+                        if (response.details.length == 1) {
+                            varreceived = 0;
+                            varnot = response.details[0].Status_Count;
+                        }
+                        else {
+                            varnot = response.details[0].Status_Count;
+                            varreceived = response.details[1].Status_Count;
+                           
+                        }
+                       
+                      
+                        $('#invstmntgraph').show();
+                        generateInvstmentchart(varreceived, varnot);
+
+
+                    }
+
+
+                }
+            });
+
+        }
+
+        function generateInvstmentchart(a, b) {
+
+           
+            Highcharts.chart('invstmntgraph', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Mail Send Status'
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                yAxis: {
+                    title: {
+                        text: 'Count(in nos)'
+                    }
+
+                },
+                legend: {
+                    enabled: false
+                },
+                plotOptions: {
+                    series: {
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.y:1f}'
+                        }
+                    }
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:1f}</b> of total<br/>'
+                },
+
+                series: [{
+                    name: 'Status',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'Received',
+                        y: a
+                    }, {
+                        name: 'Not Received',
+                        y: b
+                    }]
+                }]
+            });
+        }
+
+
+
+
+
+
+
+
+        function LoadRetailGraph() {
+
+            var SpParams = {};
+            SpParams.strProc = "RetailReceivedMail_Status";
+
+            $.ajax({
+                url: "/api/FIXZIService/GetHTTPResponseDataWeb",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(SpParams),
+                success: function (response) {
+                    if (response.details != null) {
+
+                        console.log(response.details);
+                        if (response.details.length == 1) {
+                            varreceived = 0;
+                            varnot = response.details[0].Status_Count;
+                        }
+                        else {
+                            varnot = response.details[0].Status_Count;
+                            varreceived = response.details[1].Status_Count;
+
+                        }
+
+                        $('#retailgraph').show();
+                        generateRetailchart(varreceived, varnot);
+
+
+                    }
+
+
+                }
+            });
+
+        }
+
+        function generateRetailchart(a, b) {
+
+            console.log(a);
+            Highcharts.chart('retailgraph', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Mail Send Status'
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                yAxis: {
+                    title: {
+                        text: 'Count(in nos)'
+                    }
+
+                },
+                legend: {
+                    enabled: false
+                },
+                plotOptions: {
+                    series: {
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.y:1f}'
+                        }
+                    }
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:1f}</b> of total<br/>'
+                },
+
+                series: [{
+                    name: 'Status',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'Received',
+                        y: a
+                    }, {
+                        name: 'Not Received',
+                        y: b
+                    }]
+                }]
+            });
+        }
+
+
+    });
+
+</script>

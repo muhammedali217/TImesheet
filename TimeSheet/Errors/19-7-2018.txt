@@ -1,0 +1,95 @@
+Time of Error: 7/19/2018 11:20 AM
+Index #0
+Message: Invalid column name 'Employee_EmerCntctName'.
+LineNumber: 94
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+
+Time of Error: 7/19/2018 11:20 AM
+Index #0
+Message: Invalid column name 'Employee_EmerCntctName'.
+LineNumber: 94
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+
+Time of Error: 7/19/2018 11:20 AM
+Index #0
+Message: Invalid column name 'Employee_EmerCntctName'.
+LineNumber: 94
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+
+Time of Error: 7/19/2018 11:23 AM
+Index #0
+Message: Invalid column name 'Employee_EmerCntctName'.
+LineNumber: 94
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+
+Time of Error: 7/19/2018 11:23 AM
+Index #0
+Message: Invalid column name 'Employee_EmerCntctName'.
+LineNumber: 94
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+
+Time of Error: 7/19/2018 11:23 AM
+Index #0
+Message: Invalid column name 'Employee_EmerCntctName'.
+LineNumber: 94
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+
+Time of Error: 7/19/2018 11:25 AM
+Index #0
+Message: Invalid column name 'Employee_EmerCntctName'.
+LineNumber: 94
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+
+Time of Error: 7/19/2018 11:25 AM
+Index #0
+Message: Invalid column name 'Employee_EmerCntctName'.
+LineNumber: 94
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+
+Time of Error: 7/19/2018 11:26 AM
+Index #0
+Message: Invalid column name 'Employee_EmerCntctName'.
+LineNumber: 94
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+
+Time of Error: 7/19/2018 11:29 AM
+Index #0
+Message: Invalid length parameter passed to the LEFT or SUBSTRING function.
+LineNumber: 46
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+Index #1
+Message: Cannot insert the value NULL into column 'Employee_FirstName', table 'dbTimeSheetTesting.dbo.Employee'; column does not allow nulls. INSERT fails.
+LineNumber: 54
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+Index #2
+Message: The statement has been terminated.
+LineNumber: 54
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+
+Time of Error: 7/19/2018 5:59 PM
+Index #0
+Message: Procedure or function 'Employee_Disable' expects parameter '@DOR', which was not supplied.
+LineNumber: 0
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Disable
+
+Time of Error: 7/19/2018 6:00 PM
+Index #0
+Message: Procedure or function 'Employee_Disable' expects parameter '@DOR', which was not supplied.
+LineNumber: 0
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Disable
+
+Cannot find table 0.Cannot find table 0.Cannot find table 0.Cannot find table 0.Cannot find table 1.

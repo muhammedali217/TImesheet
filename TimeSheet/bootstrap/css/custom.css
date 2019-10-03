@@ -1,0 +1,26 @@
+
+.mb-20{
+    margin-bottom:20px;
+}
+
+#emp h1
+{
+    background-color: #0094ff;
+    color: #fff;
+    padding:20px;
+    font-size:28px;
+    margin-bottom:40px;
+}
+.form-control
+{
+    border-radius: 0;
+}
+section
+{
+    margin-bottom: 15px;
+}
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn)
+{
+   width: 100% !important;
+
+}

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <appSettings>
+    <add key="SQLServer" value="192.168.137.1" />
+    <add key="SQLUserId" value="sa" />
+    <add key="SQLPassword" value="password#123" />
+    <add key="Database" value="dbUtilitys" />
+    <add key="Authentic" value="true" />	    
+    <add key="ParseUrl" value="https://api.parse.com/1/push" />
+	<add key="ApiUrl" value="http://www.fixzi.com/" />
+	<add key="ApiUrl1" value="http://localhost:1733/" />
+	<add key="PlivoApiKey" value="MAMDK2ZTA0MTUWMZKXMD" />
+	<add key="PlivoApiSecret" value="MDMwZTQyMDQ2ODcwYzY5ZjdjMzJkMzM4NmJjN2My" />
+    <add key="MsgInterval" value="10000" />	
+  </appSettings>
+</configuration>

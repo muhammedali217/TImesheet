@@ -1,0 +1,1370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5B6E2BC6-25B9-4FE4-AA16-4AB280727CB5}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TimeSheet</RootNamespace>
+    <AssemblyName>Fixzi</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.9\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.7.0.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AddIn" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addprojecttask.aspx.cs">
+      <DependentUpon>addprojecttask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addprojecttask.aspx.designer.cs">
+      <DependentUpon>addprojecttask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminChangePassword.aspx.cs">
+      <DependentUpon>AdminChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminChangePassword.aspx.designer.cs">
+      <DependentUpon>AdminChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_LeaveMgt.aspx.cs">
+      <DependentUpon>Admin_LeaveMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_LeaveMgt.aspx.designer.cs">
+      <DependentUpon>Admin_LeaveMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyLeave.aspx.cs">
+      <DependentUpon>ApplyLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplyLeave.aspx.designer.cs">
+      <DependentUpon>ApplyLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AssignProject.aspx.cs">
+      <DependentUpon>AssignProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssignProject.aspx.designer.cs">
+      <DependentUpon>AssignProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssignSubTasks.aspx.cs">
+      <DependentUpon>AssignSubTasks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssignSubTasks.aspx.designer.cs">
+      <DependentUpon>AssignSubTasks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="billadd.aspx.cs">
+      <DependentUpon>billadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="billadd.aspx.designer.cs">
+      <DependentUpon>billadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="billreports.aspx.cs">
+      <DependentUpon>billreports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="billreports.aspx.designer.cs">
+      <DependentUpon>billreports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="commonrequest.aspx.cs">
+      <DependentUpon>commonrequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonrequest.aspx.designer.cs">
+      <DependentUpon>commonrequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ApplicationLog.cs" />
+    <Compile Include="Common\ConfigurationPaypal.cs" />
+    <Compile Include="Common\CTripleDES.cs" />
+    <Compile Include="Common\DataTableSuccess.cs" />
+    <Compile Include="Common\DBHelper.cs" />
+    <Compile Include="Common\EncryptedArgs.cs" />
+    <Compile Include="Common\DropDown.cs" />
+    <Compile Include="Common\DropDownData.cs" />
+    <Compile Include="Common\DTExceMessage.cs" />
+    <Compile Include="Common\GridData.cs" />
+    <Compile Include="Common\GridRow.cs" />
+    <Compile Include="Common\MultipartMediaTypeFormatter.cs" />
+    <Compile Include="Common\ThreadingHelper.cs" />
+    <Compile Include="Controllers\ImageUploadController.cs" />
+    <Compile Include="Controllers\PunchDetailsController.cs" />
+    <Compile Include="Controllers\TimeTrackController.cs" />
+    <Compile Include="CopyViewEmployee.aspx.cs">
+      <DependentUpon>CopyViewEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CopyViewEmployee.aspx.designer.cs">
+      <DependentUpon>CopyViewEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Delete_Employee.aspx.cs">
+      <DependentUpon>Delete_Employee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Delete_Employee.aspx.designer.cs">
+      <DependentUpon>Delete_Employee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dresscodepolicy.aspx.cs">
+      <DependentUpon>dresscodepolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dresscodepolicy.aspx.designer.cs">
+      <DependentUpon>dresscodepolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editbills.aspx.cs">
+      <DependentUpon>editbills.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editbills.aspx.designer.cs">
+      <DependentUpon>editbills.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpAdd.aspx.cs">
+      <DependentUpon>EmpAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpAdd.aspx.designer.cs">
+      <DependentUpon>EmpAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpAdd1.aspx.cs">
+      <DependentUpon>EmpAdd1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpAdd1.aspx.designer.cs">
+      <DependentUpon>EmpAdd1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="empjobdesc.aspx.cs">
+      <DependentUpon>empjobdesc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="empjobdesc.aspx.designer.cs">
+      <DependentUpon>empjobdesc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="employeeleavehistory.aspx.cs">
+      <DependentUpon>employeeleavehistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="employeeleavehistory.aspx.designer.cs">
+      <DependentUpon>employeeleavehistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="employeerequeststatus.aspx.cs">
+      <DependentUpon>employeerequeststatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="employeerequeststatus.aspx.designer.cs">
+      <DependentUpon>employeerequeststatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="employeetimesheet.aspx.cs">
+      <DependentUpon>employeetimesheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="employeetimesheet.aspx.designer.cs">
+      <DependentUpon>employeetimesheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="employmentcert.aspx.cs">
+      <DependentUpon>employmentcert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="employmentcert.aspx.designer.cs">
+      <DependentUpon>employmentcert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnterTimeSheet.aspx.cs">
+      <DependentUpon>EnterTimeSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnterTimeSheet.aspx.designer.cs">
+      <DependentUpon>EnterTimeSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="enterweeklytimesheet.aspx.cs">
+      <DependentUpon>enterweeklytimesheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="enterweeklytimesheet.aspx.designer.cs">
+      <DependentUpon>enterweeklytimesheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="expensevoucher.aspx.cs">
+      <DependentUpon>expensevoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="expensevoucher.aspx.designer.cs">
+      <DependentUpon>expensevoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="holidaycalender.aspx.cs">
+      <DependentUpon>holidaycalender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="holidaycalender.aspx.designer.cs">
+      <DependentUpon>holidaycalender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="holidaycalenderemployee.aspx.cs">
+      <DependentUpon>holidaycalenderemployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="holidaycalenderemployee.aspx.designer.cs">
+      <DependentUpon>holidaycalenderemployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="idcardrequest.aspx.cs">
+      <DependentUpon>idcardrequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="idcardrequest.aspx.designer.cs">
+      <DependentUpon>idcardrequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImportExcel_To_DB.aspx.cs">
+      <DependentUpon>ImportExcel_To_DB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportExcel_To_DB.aspx.designer.cs">
+      <DependentUpon>ImportExcel_To_DB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="knwldgecenter.aspx.cs">
+      <DependentUpon>knwldgecenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="knwldgecenter.aspx.designer.cs">
+      <DependentUpon>knwldgecenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="leavedashboard.aspx.cs">
+      <DependentUpon>leavedashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="leavedashboard.aspx.designer.cs">
+      <DependentUpon>leavedashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="leavepolicy.aspx.cs">
+      <DependentUpon>leavepolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="leavepolicy.aspx.designer.cs">
+      <DependentUpon>leavepolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="leaveupdate.aspx.cs">
+      <DependentUpon>leaveupdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="leaveupdate.aspx.designer.cs">
+      <DependentUpon>leaveupdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lopdetails.aspx.cs">
+      <DependentUpon>lopdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lopdetails.aspx.designer.cs">
+      <DependentUpon>lopdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="meetingroom.aspx.cs">
+      <DependentUpon>meetingroom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="meetingroom.aspx.designer.cs">
+      <DependentUpon>meetingroom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BillReport.cs" />
+    <Compile Include="Models\Certificate.cs" />
+    <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Leave.cs" />
+    <Compile Include="Models\MeetingRoom.cs" />
+    <Compile Include="Models\PaypalRepository.cs" />
+    <Compile Include="Models\ProcParams.cs" />
+    <Compile Include="Common\SmsMailHelper.cs" />
+    <Compile Include="Common\SQLHelper.cs" />
+    <Compile Include="Controllers\FIXZIServiceController.cs" />
+    <Compile Include="Controllers\PushContentController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Paypal.cs" />
+    <Compile Include="Models\PunchDetails.cs" />
+    <Compile Include="Models\PunchDetailsRepository.cs" />
+    <Compile Include="Models\PushNotification.cs" />
+    <Compile Include="Models\PushNotificationRepository.cs" />
+    <Compile Include="Models\Request.cs" />
+    <Compile Include="Models\ServiceParams.cs" />
+    <Compile Include="Models\ticket.cs" />
+    <Compile Include="Models\TimeSheet.cs" />
+    <Compile Include="Models\TimeSheetRepository.cs" />
+    <Compile Include="Models\UploadFileParams.cs" />
+    <Compile Include="New.aspx.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="New.aspx.designer.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewTask2Project.aspx.cs">
+      <DependentUpon>NewTask2Project.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewTask2Project.aspx.designer.cs">
+      <DependentUpon>NewTask2Project.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectAdd.aspx.cs">
+      <DependentUpon>ProjectAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectAdd.aspx.designer.cs">
+      <DependentUpon>ProjectAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="raiseticket.aspx.cs">
+      <DependentUpon>raiseticket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="raiseticket.aspx.designer.cs">
+      <DependentUpon>raiseticket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reimbursement.aspx.cs">
+      <DependentUpon>reimbursement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reimbursement.aspx.designer.cs">
+      <DependentUpon>reimbursement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reimbursementpolicy.aspx.cs">
+      <DependentUpon>reimbursementpolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reimbursementpolicy.aspx.designer.cs">
+      <DependentUpon>reimbursementpolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="replytoticket.aspx.cs">
+      <DependentUpon>replytoticket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="replytoticket.aspx.designer.cs">
+      <DependentUpon>replytoticket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sample.aspx.cs">
+      <DependentUpon>Sample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sample.aspx.designer.cs">
+      <DependentUpon>Sample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sample1.aspx.cs">
+      <DependentUpon>Sample1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sample1.aspx.designer.cs">
+      <DependentUpon>Sample1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="singlebilldetail.aspx.cs">
+      <DependentUpon>singlebilldetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="singlebilldetail.aspx.designer.cs">
+      <DependentUpon>singlebilldetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="thisweektimesheet.aspx.cs">
+      <DependentUpon>thisweektimesheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thisweektimesheet.aspx.designer.cs">
+      <DependentUpon>thisweektimesheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="travelrequest.aspx.cs">
+      <DependentUpon>travelrequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="travelrequest.aspx.designer.cs">
+      <DependentUpon>travelrequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uploadjobdesc.aspx.cs">
+      <DependentUpon>uploadjobdesc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uploadjobdesc.aspx.designer.cs">
+      <DependentUpon>uploadjobdesc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uploadknwldgedoc.aspx.cs">
+      <DependentUpon>uploadknwldgedoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uploadknwldgedoc.aspx.designer.cs">
+      <DependentUpon>uploadknwldgedoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewallbills.aspx.cs">
+      <DependentUpon>viewallbills.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewallbills.aspx.designer.cs">
+      <DependentUpon>viewallbills.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAllEmployee.aspx.cs">
+      <DependentUpon>ViewAllEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAllEmployee.aspx.designer.cs">
+      <DependentUpon>ViewAllEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewallproject.aspx.cs">
+      <DependentUpon>viewallproject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewallproject.aspx.designer.cs">
+      <DependentUpon>viewallproject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewapprovedleaves.aspx.cs">
+      <DependentUpon>viewapprovedleaves.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewapprovedleaves.aspx.designer.cs">
+      <DependentUpon>viewapprovedleaves.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewattendance.aspx.cs">
+      <DependentUpon>viewattendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewattendance.aspx.designer.cs">
+      <DependentUpon>viewattendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewprojectemployee.aspx.cs">
+      <DependentUpon>viewprojectemployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewprojectemployee.aspx.designer.cs">
+      <DependentUpon>viewprojectemployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewprojecttasks.aspx.cs">
+      <DependentUpon>viewprojecttasks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewprojecttasks.aspx.designer.cs">
+      <DependentUpon>viewprojecttasks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewraisedtickets.aspx.cs">
+      <DependentUpon>viewraisedtickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewraisedtickets.aspx.designer.cs">
+      <DependentUpon>viewraisedtickets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewrequests.aspx.cs">
+      <DependentUpon>viewrequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewrequests.aspx.designer.cs">
+      <DependentUpon>viewrequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewsubscription.aspx.cs">
+      <DependentUpon>viewsubscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewsubscription.aspx.designer.cs">
+      <DependentUpon>viewsubscription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewtechvasset.aspx.cs">
+      <DependentUpon>viewtechvasset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewtechvasset.aspx.designer.cs">
+      <DependentUpon>viewtechvasset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewtechvcommonassets.aspx.cs">
+      <DependentUpon>viewtechvcommonassets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewtechvcommonassets.aspx.designer.cs">
+      <DependentUpon>viewtechvcommonassets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTimeSheet.aspx.cs">
+      <DependentUpon>ViewTimeSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTimeSheet.aspx.designer.cs">
+      <DependentUpon>ViewTimeSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visarequest.aspx.cs">
+      <DependentUpon>visarequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visarequest.aspx.designer.cs">
+      <DependentUpon>visarequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="workfromhome.aspx.cs">
+      <DependentUpon>workfromhome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="workfromhome.aspx.designer.cs">
+      <DependentUpon>workfromhome.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aboutus.html" />
+    <Content Include="addprojecttask.aspx" />
+    <Content Include="AdminChangePassword.aspx" />
+    <Content Include="admin\css\ajax-loader.gif" />
+    <Content Include="admin\css\custom.css" />
+    <Content Include="admin\css\fonts\slick.svg" />
+    <Content Include="admin\css\module-chat.min.css" />
+    <Content Include="admin\css\module-colors-alerts.css" />
+    <Content Include="admin\css\module-colors-alerts.min.css" />
+    <Content Include="admin\css\module-colors-background.css" />
+    <Content Include="admin\css\module-colors-background.min.css" />
+    <Content Include="admin\css\module-colors-buttons.css" />
+    <Content Include="admin\css\module-colors-buttons.min.css" />
+    <Content Include="admin\css\module-colors-calendar.css" />
+    <Content Include="admin\css\module-colors-calendar.min.css" />
+    <Content Include="admin\css\module-colors-progress-bars.css" />
+    <Content Include="admin\css\module-colors-progress-bars.min.css" />
+    <Content Include="admin\css\module-colors-text.css" />
+    <Content Include="admin\css\module-colors-text.min.css" />
+    <Content Include="admin\css\module-cover.css" />
+    <Content Include="admin\css\module-cover.min.css" />
+    <Content Include="admin\css\module-essentials.css" />
+    <Content Include="admin\css\module-essentials.min.css" />
+    <Content Include="admin\css\module-layout.css" />
+    <Content Include="admin\css\module-layout.min.css" />
+    <Content Include="admin\css\module-maps.min.css" />
+    <Content Include="admin\css\module-media.css" />
+    <Content Include="admin\css\module-media.min.css" />
+    <Content Include="admin\css\module-navbar.css" />
+    <Content Include="admin\css\module-navbar.min.css" />
+    <Content Include="admin\css\module-sidebar-skins.css" />
+    <Content Include="admin\css\module-sidebar-skins.min.css" />
+    <Content Include="admin\css\module-sidebar.css" />
+    <Content Include="admin\css\module-sidebar.min.css" />
+    <Content Include="admin\css\module-timeline.css" />
+    <Content Include="admin\css\module-timeline.min.css" />
+    <Content Include="admin\css\select2-spinner.gif" />
+    <Content Include="admin\css\select2.png" />
+    <Content Include="admin\css\select2x2.png" />
+    <Content Include="admin\css\theme-bundle.css" />
+    <Content Include="admin\css\theme-bundle.min.css" />
+    <Content Include="admin\css\theme-core.css" />
+    <Content Include="admin\css\theme-core.min.css" />
+    <Content Include="admin\css\vendor.css" />
+    <Content Include="admin\css\vendor.min.css" />
+    <Content Include="admin\fonts\fontawesome-webfont.svg" />
+    <Content Include="admin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="admin\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="admin\fonts\picto-foundry-arrows.svg" />
+    <Content Include="admin\fonts\picto-foundry-clothing.svg" />
+    <Content Include="admin\fonts\picto-foundry-emotions.svg" />
+    <Content Include="admin\fonts\picto-foundry-food.svg" />
+    <Content Include="admin\fonts\picto-foundry-general.svg" />
+    <Content Include="admin\fonts\picto-foundry-household.svg" />
+    <Content Include="admin\fonts\picto-foundry-medical-science.svg" />
+    <Content Include="admin\fonts\picto-foundry-multimedia.svg" />
+    <Content Include="admin\fonts\picto-foundry-nature.svg" />
+    <Content Include="admin\fonts\picto-foundry-shopping-finance.svg" />
+    <Content Include="admin\fonts\picto-foundry-sports.svg" />
+    <Content Include="admin\fonts\picto-foundry-vehicle-navigation.svg" />
+    <Content Include="admin\fonts\picto-foundry-weather.svg" />
+    <Content Include="admin\images\active.png" />
+    <Content Include="admin\images\administrator.png" />
+    <Content Include="admin\images\administrator3.png" />
+    <Content Include="admin\images\administrator2.png" />
+    <Content Include="admin\images\administrator1.png" />
+    <Content Include="admin\images\desk.png" />
+    <Content Include="admin\images\firefox_logo-only_RGB.png" />
+    <Content Include="admin\images\flags\Flag_of_France.svg" />
+    <Content Include="admin\images\flags\Flag_of_Germany.svg" />
+    <Content Include="admin\images\flags\Flag_of_Poland.svg" />
+    <Content Include="admin\images\flags\Flag_of_Romania.svg" />
+    <Content Include="admin\images\flags\Flag_of_the_United_States.svg" />
+    <Content Include="admin\images\inactive.png" />
+    <Content Include="admin\images\inactive1.png" />
+    <Content Include="admin\images\lap.png" />
+    <Content Include="admin\images\meeting.png" />
+    <Content Include="admin\images\tech_v-Logo3.png" />
+    <Content Include="admin\images\tech_v-Logo_colo5r.png" />
+    <Content Include="admin\js\jquery.js" />
+    <Content Include="admin\js\module-bundle-all.js" />
+    <Content Include="admin\js\module-bundle-all.min.js" />
+    <Content Include="admin\js\module-bundle-main.js" />
+    <Content Include="admin\js\module-bundle-main.min.js" />
+    <Content Include="admin\js\module-charts-all.min.js" />
+    <Content Include="admin\js\module-charts-easy-pie.min.js" />
+    <Content Include="admin\js\module-charts-flot.min.js" />
+    <Content Include="admin\js\module-charts-morris.min.js" />
+    <Content Include="admin\js\module-charts-sparkline.min.js" />
+    <Content Include="admin\js\module-chat.js" />
+    <Content Include="admin\js\module-chat.min.js" />
+    <Content Include="admin\js\module-essentials.js" />
+    <Content Include="admin\js\module-essentials.min.js" />
+    <Content Include="admin\js\module-layout.js" />
+    <Content Include="admin\js\module-layout.min.js" />
+    <Content Include="admin\js\module-maps.min.js" />
+    <Content Include="admin\js\module-media.min.js" />
+    <Content Include="admin\js\module-player.min.js" />
+    <Content Include="admin\js\module-sidebar.min.js" />
+    <Content Include="admin\js\module-timeline.min.js" />
+    <Content Include="admin\js\plugins\bowser-min.js" />
+    <Content Include="admin\js\plugins\maps_google\jquery-ui-map\addons\infobox.js" />
+    <Content Include="admin\js\plugins\maps_google\jquery-ui-map\addons\infobox_packed.js" />
+    <Content Include="admin\js\plugins\maps_google\jquery-ui-map\addons\markerclusterer.min.js" />
+    <Content Include="admin\js\plugins\maps_google\jquery-ui-map\ui\jquery.ui.map.extensions.js" />
+    <Content Include="admin\js\plugins\maps_google\jquery-ui-map\ui\jquery.ui.map.js" />
+    <Content Include="admin\js\plugins\maps_google\jquery-ui-map\ui\jquery.ui.map.microdata.js" />
+    <Content Include="admin\js\plugins\maps_google\jquery-ui-map\ui\jquery.ui.map.microformat.js" />
+    <Content Include="admin\js\plugins\maps_google\jquery-ui-map\ui\jquery.ui.map.overlays.js" />
+    <Content Include="admin\js\plugins\maps_google\jquery-ui-map\ui\jquery.ui.map.rdfa.js" />
+    <Content Include="admin\js\plugins\maps_google\jquery-ui-map\ui\jquery.ui.map.services.js" />
+    <Content Include="admin\js\vendor-bundle-all.min.js" />
+    <Content Include="admin\js\vendor-charts-all.min.js" />
+    <Content Include="admin\js\vendor-charts-easy-pie.min.js" />
+    <Content Include="admin\js\vendor-charts-flot.min.js" />
+    <Content Include="admin\js\vendor-charts-morris.min.js" />
+    <Content Include="admin\js\vendor-charts-sparkline.min.js" />
+    <Content Include="admin\js\vendor-core.min.js" />
+    <Content Include="admin\js\vendor-forms.min.js" />
+    <Content Include="admin\js\vendor-maps.min.js" />
+    <Content Include="admin\js\vendor-media.min.js" />
+    <Content Include="admin\js\vendor-nestable.min.js" />
+    <Content Include="admin\js\vendor-player.min.js" />
+    <Content Include="admin\js\vendor-tables.min.js" />
+    <Content Include="admin\js\vendor-tree.min.js" />
+    <Content Include="admin\plugins\bootstrap-notify-master\.gitignore" />
+    <Content Include="admin\plugins\bootstrap-notify-master\bootstrap-notify.js" />
+    <Content Include="admin\plugins\bootstrap-notify-master\bootstrap-notify.min.js" />
+    <Content Include="admin\plugins\bootstrap-notify-master\Gruntfile.js" />
+    <Content Include="admin\plugins\bootstrap-notify-master\package.js" />
+    <Content Include="admin\plugins\bootstrap-notify-master\test_meteor.js" />
+    <Content Include="admin\plugins\bootstrap-notify-master\typings\bootstrap-notify\notify.d.ts" />
+    <Content Include="admin\plugins\DataTables-1.10.4\Jquery.js" />
+    <Content Include="admin\plugins\DataTables-1.10.4\license.txt" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\css\jquery.dataTables.css" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\css\jquery.dataTables.min.css" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\css\jquery.dataTables_themeroller.css" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\DT_bootstrap.css" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\DT_bootstrap.js" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\images\back_disabled.png" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\images\back_enabled.png" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\images\back_enabled_hover.png" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\images\favicon.ico" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\images\forward_disabled.png" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\images\forward_enabled.png" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\images\forward_enabled_hover.png" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\images\sort_asc.png" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\images\sort_asc_disabled.png" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\images\sort_both.png" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\images\sort_desc.png" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\images\sort_desc_disabled.png" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\jquery.dataTables.min.js" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\js\jquery.dataTables.js" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\js\jquery.dataTables.min.js" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\js\jquery.js" />
+    <Content Include="Admin_LeaveMgt.aspx" />
+    <Content Include="alert\css\alert.min.css" />
+    <Content Include="alert\css\PIE.htc" />
+    <Content Include="alert\js\alert.min.js" />
+    <Content Include="alert\themes\default\img\close.png" />
+    <Content Include="alert\themes\default\img\confirm.png" />
+    <Content Include="alert\themes\default\img\error.png" />
+    <Content Include="alert\themes\default\img\info.png" />
+    <Content Include="alert\themes\default\img\prompt.png" />
+    <Content Include="alert\themes\default\img\warning.png" />
+    <Content Include="alert\themes\default\theme.min.css" />
+    <Content Include="alert\themes\default\x2\close.png" />
+    <Content Include="alert\themes\default\x2\confirm.png" />
+    <Content Include="alert\themes\default\x2\error.png" />
+    <Content Include="alert\themes\default\x2\info.png" />
+    <Content Include="alert\themes\default\x2\prompt.png" />
+    <Content Include="alert\themes\default\x2\warning.png" />
+    <Content Include="ApplyLeave.aspx" />
+    <Content Include="AssignProject.aspx" />
+    <Content Include="AssignSubTasks.aspx" />
+    <Content Include="billadd.aspx" />
+    <Content Include="billreports.aspx" />
+    <Content Include="bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="bootstrap-datetimepicker\css\datetimepicker.css" />
+    <Content Include="bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="bootstrap-datetimepicker\screenshot\standard_day.png" />
+    <Content Include="bootstrap-datetimepicker\screenshot\standard_day_meridian.png" />
+    <Content Include="bootstrap-datetimepicker\screenshot\standard_decade.png" />
+    <Content Include="bootstrap-datetimepicker\screenshot\standard_full.png" />
+    <Content Include="bootstrap-datetimepicker\screenshot\standard_hour.png" />
+    <Content Include="bootstrap-datetimepicker\screenshot\standard_hour_meridian.png" />
+    <Content Include="bootstrap-datetimepicker\screenshot\standard_month.png" />
+    <Content Include="bootstrap-datetimepicker\screenshot\standard_year.png" />
+    <Content Include="bootstrap\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="bootstrap\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="bootstrap\css\bootstrap-select.css" />
+    <Content Include="bootstrap\css\bootstrap-select.min.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\css\custom.css" />
+    <Content Include="bootstrap\css\responsivemin.css" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap\js\bootstrap-select.js" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="bootstrap\js\datepicker.js" />
+    <Content Include="bootstrap\js\npm.js" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="commonrequest.aspx" />
+    <Content Include="CopyViewEmployee.aspx" />
+    <Content Include="data.html" />
+    <Content Include="Delete_Employee.aspx" />
+    <Content Include="dresscodepolicy.aspx" />
+    <Content Include="editbills.aspx" />
+    <Content Include="EmpAdd.aspx" />
+    <Content Include="EmpAdd1.aspx" />
+    <Content Include="empjobdesc.aspx" />
+    <Content Include="employeeleavehistory.aspx" />
+    <Content Include="employeerequeststatus.aspx" />
+    <Content Include="employeetimesheet.aspx" />
+    <Content Include="employmentcert.aspx" />
+    <Content Include="EnterTimeSheet.aspx" />
+    <Content Include="enterweeklytimesheet.aspx" />
+    <Content Include="expensevoucher.aspx" />
+    <Content Include="holidaycalender.aspx" />
+    <Content Include="holidaycalenderemployee.aspx" />
+    <Content Include="idcardrequest.aspx" />
+    <Content Include="ImportExcel_To_DB.aspx" />
+    <Content Include="knwldgecenter.aspx" />
+    <Content Include="leavedashboard.aspx" />
+    <Content Include="leavepolicy.aspx" />
+    <Content Include="leaveupdate.aspx" />
+    <Content Include="login.html" />
+    <Content Include="admin\plugins\Jquery_Validation\css\cmxform.css" />
+    <Content Include="admin\plugins\Jquery_Validation\css\cmxformTemplate.css" />
+    <Content Include="admin\plugins\Jquery_Validation\css\core.css" />
+    <Content Include="admin\plugins\Jquery_Validation\css\reset.css" />
+    <Content Include="admin\plugins\Jquery_Validation\css\screen.css" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\additional-methods.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\additional-methods.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\jquery.validate.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\jquery.validate.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ar.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ar.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_bg.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_bg.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ca.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ca.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_cs.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_cs.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_da.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_da.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_de.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_de.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_el.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_el.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_es.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_es.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_es_AR.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_es_AR.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_et.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_et.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_eu.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_eu.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_fa.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_fa.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_fi.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_fi.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_fr.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_fr.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_gl.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_gl.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_he.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_he.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_hr.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_hr.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_hu.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_hu.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_id.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_id.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_is.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_is.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_it.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_it.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ja.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ja.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ka.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ka.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_kk.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_kk.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ko.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ko.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_lt.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_lt.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_lv.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_lv.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_my.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_my.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_nl.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_nl.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_no.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_no.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_pl.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_pl.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_pt_BR.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_pt_BR.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_pt_PT.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_pt_PT.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ro.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ro.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ru.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_ru.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_si.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_si.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_sk.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_sk.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_sl.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_sl.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_sr.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_sr.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_sr_lat.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_sr_lat.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_sv.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_sv.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_th.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_th.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_tj.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_tj.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_tr.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_tr.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_uk.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_uk.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_vi.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_vi.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_zh.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_zh.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_zh_TW.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\messages_zh_TW.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\methods_de.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\methods_de.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\methods_es_CL.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\methods_es_CL.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\methods_fi.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\methods_fi.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\methods_nl.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\methods_nl.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\methods_pt.js" />
+    <Content Include="admin\plugins\Jquery_Validation\dist\localization\methods_pt.min.js" />
+    <Content Include="admin\plugins\Jquery_Validation\Gruntfile.js" />
+    <Content Include="admin\plugins\Jquery_Validation\lib\jquery-1.11.1.js" />
+    <Content Include="admin\plugins\Jquery_Validation\lib\jquery-1.6.4.js" />
+    <Content Include="admin\plugins\Jquery_Validation\lib\jquery-1.7.2.js" />
+    <Content Include="admin\plugins\Jquery_Validation\lib\jquery-1.8.3.js" />
+    <Content Include="admin\plugins\Jquery_Validation\lib\jquery-1.9.1.js" />
+    <Content Include="admin\plugins\Jquery_Validation\lib\jquery.form.js" />
+    <Content Include="admin\plugins\Jquery_Validation\lib\jquery.js" />
+    <Content Include="admin\plugins\Jquery_Validation\lib\jquery.mockjax.js" />
+    <Content Include="admin\plugins\Jquery_Validation\lib\jquery.simulate.js" />
+    <Content Include="admin\plugins\Jquery_Validation\lib\require.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\accept.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\additional.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\alphanumeric.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\bankaccountNL.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\bankorgiroaccountNL.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\bic.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\cifES.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\creditcardtypes.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\currency.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\dateFA.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\dateITA.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\dateNL.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\extension.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\giroaccountNL.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\iban.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\integer.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\ipv4.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\ipv6.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\lettersonly.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\letterswithbasicpunc.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\mobileNL.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\mobileUK.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\nieES.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\nifES.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\nowhitespace.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\pattern.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\phoneNL.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\phonesUK.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\phoneUK.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\phoneUS.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\postalcodeBR.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\postalCodeCA.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\postalcodeIT.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\postalcodeNL.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\postcodeUK.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\require_from_group.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\skip_or_fill_minimum.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\statesUS.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\strippedminlength.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\time.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\time12h.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\url2.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\vinUS.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\zipcodeUS.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\additional\ziprange.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\ajax.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\core.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\delegate.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_ar.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_bg.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_ca.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_cs.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_da.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_de.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_el.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_es.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_es_AR.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_et.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_eu.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_fa.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_fi.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_fr.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_gl.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_he.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_hr.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_hu.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_id.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_is.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_it.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_ja.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_ka.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_kk.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_ko.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_lt.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_lv.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_my.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_nl.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_no.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_pl.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_pt_BR.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_pt_PT.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_ro.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_ru.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_si.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_sk.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_sl.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_sr.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_sr_lat.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_sv.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_th.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_tj.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_tr.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_uk.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_vi.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_zh.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\messages_zh_TW.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\methods_de.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\methods_es_CL.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\methods_fi.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\methods_nl.js" />
+    <Content Include="admin\plugins\Jquery_Validation\src\localization\methods_pt.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="lopdetails.aspx" />
+    <Content Include="meetingroom.aspx" />
+    <Content Include="New.aspx" />
+    <Content Include="NewTask2Project.aspx" />
+    <Content Include="pagescripts\addprojecttask.js" />
+    <Content Include="pagescripts\AdminChangePassword.js" />
+    <Content Include="pagescripts\Admin_LeaveMgt.js" />
+    <Content Include="pagescripts\ApplyLeave.js" />
+    <Content Include="pagescripts\AssignProject.js" />
+    <Content Include="pagescripts\AssignSubTasks.js" />
+    <Content Include="pagescripts\billadd.js" />
+    <Content Include="pagescripts\billreports.js" />
+    <Content Include="pagescripts\ChangePassword.js" />
+    <Content Include="pagescripts\commonrequest.js" />
+    <Content Include="pagescripts\Delete_Employee.js" />
+    <Content Include="pagescripts\editbills.js" />
+    <Content Include="pagescripts\EmpAdd.js" />
+    <Content Include="pagescripts\EmpAdd1.js" />
+    <Content Include="pagescripts\empjobdesc.js" />
+    <Content Include="pagescripts\employeeleavehistory.js" />
+    <Content Include="pagescripts\employeerequeststatus.js" />
+    <Content Include="pagescripts\employeetimesheet.js" />
+    <Content Include="pagescripts\employmentcert.js" />
+    <Content Include="pagescripts\EnterTimeSheet.js" />
+    <Content Include="pagescripts\enterweeklytimesheet.js" />
+    <Content Include="pagescripts\expensevoucher.js" />
+    <Content Include="pagescripts\Fresh.js" />
+    <Content Include="pagescripts\holidaycalender.js" />
+    <Content Include="pagescripts\idcardrequest.js" />
+    <Content Include="pagescripts\knwldgecenter.js" />
+    <Content Include="pagescripts\leavedashboard.js" />
+    <Content Include="pagescripts\leaveupdate.js" />
+    <Content Include="pagescripts\login.js" />
+    <Content Include="pagescripts\lopdetails.js" />
+    <Content Include="pagescripts\meetingroom.js" />
+    <Content Include="pagescripts\new.js" />
+    <Content Include="pagescripts\NewTask2Project.js" />
+    <Content Include="pagescripts\ProjectAdd.js" />
+    <Content Include="pagescripts\raiseticket.js" />
+    <Content Include="pagescripts\reimbursement.js" />
+    <Content Include="pagescripts\replytoticket.js" />
+    <Content Include="pagescripts\Sample.js" />
+    <Content Include="pagescripts\sample1.js" />
+    <Content Include="pagescripts\singlebilldetail.js" />
+    <Content Include="pagescripts\thisweektimesheet.js" />
+    <Content Include="pagescripts\travelrequest.js" />
+    <Content Include="pagescripts\uploadjobsdesc.js" />
+    <Content Include="pagescripts\uploadknwldgedoc.js" />
+    <Content Include="pagescripts\viewallbills.js" />
+    <Content Include="pagescripts\ViewAllEmployee.js" />
+    <Content Include="pagescripts\viewallproject.js" />
+    <Content Include="pagescripts\viewapprovedleaves.js" />
+    <Content Include="pagescripts\viewattendance.js" />
+    <Content Include="pagescripts\viewprojectemployee.js" />
+    <Content Include="pagescripts\viewprojecttasks.js" />
+    <Content Include="pagescripts\viewraisedtickets.js" />
+    <Content Include="pagescripts\viewrequests.js" />
+    <Content Include="pagescripts\viewsubscription.js" />
+    <Content Include="pagescripts\viewtechvasset.js" />
+    <Content Include="pagescripts\viewtechvcommonassets.js" />
+    <Content Include="pagescripts\ViewTimeSheet.js" />
+    <Content Include="pagescripts\visarequest.js" />
+    <Content Include="pagescripts\workfromhome.js" />
+    <Content Include="ProjectAdd.aspx" />
+    <Content Include="raiseticket.aspx" />
+    <Content Include="reimbursement.aspx" />
+    <Content Include="reimbursementpolicy.aspx" />
+    <Content Include="replytoticket.aspx" />
+    <Content Include="Sample.aspx" />
+    <Content Include="Sample1.aspx" />
+    <Content Include="Scripts\form\css\EmpTest.css" />
+    <Content Include="Scripts\googlemap.js" />
+    <Content Include="Scripts\pagescript\signup.js" />
+    <Content Include="Scripts\steve.html" />
+    <Content Include="Scripts\form\captcha\button.png" />
+    <Content Include="Scripts\form\css\demo.css" />
+    <Content Include="Scripts\form\css\font-awesome.css" />
+    <Content Include="Scripts\form\css\sky-forms-black.css" />
+    <Content Include="Scripts\form\css\sky-forms-blue.css" />
+    <Content Include="Scripts\form\css\sky-forms-green.css" />
+    <Content Include="Scripts\form\css\sky-forms-ie8.css" />
+    <Content Include="Scripts\form\css\sky-forms-orange.css" />
+    <Content Include="Scripts\form\css\sky-forms-pink.css" />
+    <Content Include="Scripts\form\css\sky-forms-purple.css" />
+    <Content Include="Scripts\form\css\sky-forms-red.css" />
+    <Content Include="Scripts\form\css\sky-forms-yellow.css" />
+    <Content Include="Scripts\form\css\sky-forms.css" />
+    <Content Include="Scripts\form\icons\fontawesome-webfont.svg" />
+    <Content Include="Scripts\form\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\form\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Scripts\form\jquery-ui.min.js" />
+    <Content Include="Scripts\form\jquery.form.min.js" />
+    <Content Include="Scripts\form\jquery.maskedinput.min.js" />
+    <Content Include="Scripts\form\jquery.min.js" />
+    <Content Include="Scripts\form\jquery.modal.js" />
+    <Content Include="Scripts\form\jquery.placeholder.min.js" />
+    <Content Include="Scripts\form\jquery.validate.min.js" />
+    <Content Include="Scripts\form\sky-forms-ie8.js" />
+    <Content Include="Scripts\form\sky-forms-old.css" />
+    <Content Include="Scripts\form\validate.js" />
+    <Content Include="Scripts\pagescript\Contractor_Signup.js" />
+    <Content Include="Scripts\form\captcha\font\anorexia.ttf" />
+    <Content Include="Scripts\form\captcha\image.php" />
+    <Content Include="Scripts\form\captcha\process.php" />
+    <Content Include="Scripts\form\icons\fontawesome-webfont.eot" />
+    <Content Include="Scripts\form\icons\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\form\icons\fontawesome-webfont.woff" />
+    <Content Include="Scripts\form\icons\FontAwesome.otf" />
+    <Content Include="select2\select2-spinner.gif" />
+    <Content Include="select2\select2.css" />
+    <Content Include="select2\select2.min.js" />
+    <Content Include="select2\select2.png" />
+    <Content Include="select2\select2x2.png" />
+    <Content Include="select2\select2_metro.css" />
+    <Content Include="admin\css\fonts\slick.eot" />
+    <Content Include="admin\css\fonts\slick.ttf" />
+    <Content Include="admin\css\fonts\slick.woff" />
+    <Content Include="admin\fonts\fontawesome-webfont.eot" />
+    <Content Include="admin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="admin\fonts\fontawesome-webfont.woff" />
+    <Content Include="admin\fonts\fontawesome-webfont.woff2" />
+    <Content Include="admin\fonts\FontAwesome.otf" />
+    <Content Include="admin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="admin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="admin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="admin\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="admin\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="admin\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="admin\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="admin\fonts\picto-foundry-arrows.eot" />
+    <Content Include="admin\fonts\picto-foundry-arrows.ttf" />
+    <Content Include="admin\fonts\picto-foundry-arrows.woff" />
+    <Content Include="admin\fonts\picto-foundry-clothing.eot" />
+    <Content Include="admin\fonts\picto-foundry-clothing.ttf" />
+    <Content Include="admin\fonts\picto-foundry-clothing.woff" />
+    <Content Include="admin\fonts\picto-foundry-emotions.eot" />
+    <Content Include="admin\fonts\picto-foundry-emotions.ttf" />
+    <Content Include="admin\fonts\picto-foundry-emotions.woff" />
+    <Content Include="admin\fonts\picto-foundry-food.eot" />
+    <Content Include="admin\fonts\picto-foundry-food.ttf" />
+    <Content Include="admin\fonts\picto-foundry-food.woff" />
+    <Content Include="admin\fonts\picto-foundry-general.eot" />
+    <Content Include="admin\fonts\picto-foundry-general.ttf" />
+    <Content Include="admin\fonts\picto-foundry-general.woff" />
+    <Content Include="admin\fonts\picto-foundry-household.eot" />
+    <Content Include="admin\fonts\picto-foundry-household.ttf" />
+    <Content Include="admin\fonts\picto-foundry-household.woff" />
+    <Content Include="admin\fonts\picto-foundry-medical-science.eot" />
+    <Content Include="admin\fonts\picto-foundry-medical-science.ttf" />
+    <Content Include="admin\fonts\picto-foundry-medical-science.woff" />
+    <Content Include="admin\fonts\picto-foundry-multimedia.eot" />
+    <Content Include="admin\fonts\picto-foundry-multimedia.ttf" />
+    <Content Include="admin\fonts\picto-foundry-multimedia.woff" />
+    <Content Include="admin\fonts\picto-foundry-nature.eot" />
+    <Content Include="admin\fonts\picto-foundry-nature.ttf" />
+    <Content Include="admin\fonts\picto-foundry-nature.woff" />
+    <Content Include="admin\fonts\picto-foundry-shopping-finance.eot" />
+    <Content Include="admin\fonts\picto-foundry-shopping-finance.ttf" />
+    <Content Include="admin\fonts\picto-foundry-shopping-finance.woff" />
+    <Content Include="admin\fonts\picto-foundry-sports.eot" />
+    <Content Include="admin\fonts\picto-foundry-sports.ttf" />
+    <Content Include="admin\fonts\picto-foundry-sports.woff" />
+    <Content Include="admin\fonts\picto-foundry-vehicle-navigation.eot" />
+    <Content Include="admin\fonts\picto-foundry-vehicle-navigation.ttf" />
+    <Content Include="admin\fonts\picto-foundry-vehicle-navigation.woff" />
+    <Content Include="admin\fonts\picto-foundry-weather.eot" />
+    <Content Include="admin\fonts\picto-foundry-weather.ttf" />
+    <Content Include="admin\fonts\picto-foundry-weather.woff" />
+    <Content Include="admin\js\data\google_maps\demo.json" />
+    <Content Include="admin\js\data\google_maps\markers-edit.json" />
+    <Content Include="admin\js\data\google_maps\markers.json" />
+    <Content Include="admin\js\data\vector_maps\france-elections.json" />
+    <Content Include="admin\js\data\vector_maps\us-unemployment.json" />
+    <Content Include="admin\plugins\Jquery_Validation\package.json" />
+    <Content Include="admin\plugins\Jquery_Validation\README.md" />
+    <Content Include="admin\plugins\bootstrap-notify-master\bower.json" />
+    <Content Include="admin\plugins\bootstrap-notify-master\composer.json" />
+    <Content Include="admin\plugins\bootstrap-notify-master\jshintrc.json" />
+    <Content Include="admin\plugins\bootstrap-notify-master\LICENSE" />
+    <Content Include="admin\plugins\bootstrap-notify-master\package.json" />
+    <Content Include="admin\plugins\bootstrap-notify-master\README.md" />
+    <Content Include="admin\plugins\DataTables-1.10.4\bower.json" />
+    <Content Include="admin\plugins\DataTables-1.10.4\composer.json" />
+    <Content Include="admin\plugins\DataTables-1.10.4\Contributing.md" />
+    <Content Include="admin\plugins\DataTables-1.10.4\dataTables.jquery.json" />
+    <Content Include="admin\plugins\DataTables-1.10.4\media\images\Sorting icons.psd" />
+    <Content Include="admin\plugins\DataTables-1.10.4\package.json" />
+    <Content Include="admin\plugins\DataTables-1.10.4\Readme.md" />
+    <Content Include="singlebilldetail.aspx" />
+    <Content Include="Subscribe.svc" />
+    <Content Include="thisweektimesheet.aspx" />
+    <Content Include="timePicker\jquery.timepicker.css" />
+    <Content Include="timePicker\jquery.timepicker.js" />
+    <Content Include="timePicker\jquery.timepicker.min.css" />
+    <Content Include="timePicker\jquery.timepicker.min.js" />
+    <Content Include="travelrequest.aspx" />
+    <Content Include="uploadjobdesc.aspx" />
+    <Content Include="uploadknwldgedoc.aspx" />
+    <Content Include="viewallbills.aspx" />
+    <Content Include="ViewAllEmployee.aspx" />
+    <Content Include="viewallproject.aspx" />
+    <Content Include="viewapprovedleaves.aspx" />
+    <Content Include="viewattendance.aspx" />
+    <Content Include="viewprojectemployee.aspx" />
+    <Content Include="viewprojecttasks.aspx" />
+    <Content Include="viewraisedtickets.aspx" />
+    <Content Include="viewrequests.aspx" />
+    <Content Include="viewsubscription.aspx" />
+    <Content Include="viewtechvasset.aspx" />
+    <Content Include="viewtechvcommonassets.aspx" />
+    <Content Include="ViewTimeSheet.aspx" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="bootstrap\bootstrap-datepicker\build\build.less" />
+    <Content Include="bootstrap\bootstrap-datepicker\build\build_standalone.less" />
+    <Content Include="bootstrap\bootstrap-datepicker\component.json" />
+    <Content Include="bootstrap\bootstrap-datepicker\less\datepicker.less" />
+    <Content Include="bootstrap-datetimepicker\build\build.less" />
+    <Content Include="bootstrap-datetimepicker\build\build_standalone.less" />
+    <Content Include="bootstrap-datetimepicker\less\datetimepicker.less" />
+    <Content Include="workfromhome.aspx" />
+    <Content Include="bootstrap-datepicker\build\build.less" />
+    <Content Include="bootstrap-datepicker\build\build_standalone.less" />
+    <Content Include="bootstrap-datepicker\component.json" />
+    <Content Include="bootstrap-datepicker\less\datepicker.less" />
+    <None Include="Properties\PublishProfiles\test.pubxml" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="sound.wav" />
+    <Content Include="visarequest.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_references.js" />
+    <Content Include="select2\component.json" />
+    <Content Include="select2\select2.jquery.json" />
+    <Content Include="select2\select2_locale_en.js.template" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="admin\js\plugins\maps_google\jquery-ui-map\ui\min\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Certification\" />
+    <Folder Include="KnowledgeCenter\" />
+    <Folder Include="UploadFile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>15794</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

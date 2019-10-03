@@ -1,0 +1,35 @@
+Time of Error: 7/11/2018 5:54 PM
+Index #0
+Message: Conversion failed when converting the varchar value '4.00' to data type int.
+LineNumber: 23
+Source: .Net SqlClient Data Provider
+Procedure: TimeSheet_EmpTimeSheetView
+
+Time of Error: 7/11/2018 6:18 PM
+Index #0
+Message: Conversion failed when converting the varchar value '4.00' to data type int.
+LineNumber: 23
+Source: .Net SqlClient Data Provider
+Procedure: TimeSheet_EmpTimeSheetView
+
+Time of Error: 7/11/2018 6:18 PM
+Index #0
+Message: Conversion failed when converting the varchar value '4.00' to data type int.
+LineNumber: 23
+Source: .Net SqlClient Data Provider
+Procedure: TimeSheet_EmpTimeSheetView
+
+Time of Error: 7/11/2018 6:18 PM
+Index #0
+Message: Conversion failed when converting the varchar value '0.50' to data type int.
+LineNumber: 23
+Source: .Net SqlClient Data Provider
+Procedure: TimeSheet_EmpTimeSheetView
+
+Time of Error: 7/11/2018 6:18 PM
+Index #0
+Message: Conversion failed when converting the varchar value '4.00' to data type int.
+LineNumber: 23
+Source: .Net SqlClient Data Provider
+Procedure: TimeSheet_EmpTimeSheetView
+

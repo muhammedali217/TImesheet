@@ -1,0 +1,9 @@
+
+INSERT [dbo].[Parse] ( [Parse_API], [Parse_SecreteKey], [Parse_UserType], [Parse_DeviceType]) VALUES ( N'lIJysjOKkDpWL9ewm7arCuFvJ1yznq51yNOfYi7Z', N'RfFG7CVNfrHuG90DarwUmaW2HOgiDQdAHvQ6Eufi', N'Customer', N'ANDROID')
+GO
+INSERT [dbo].[Parse] ( [Parse_API], [Parse_SecreteKey], [Parse_UserType], [Parse_DeviceType]) VALUES ( N'ZhHcv7J76JMOFfvV7fsn4jT5ldUt9R2j7Eyn6P2b', N'ERim2UQrG9ViXF92kuiNhT6pSLRMeXxmOK7VtQSo', N'Agent', N'ANDROID')
+GO
+INSERT [dbo].[Parse] ( [Parse_API], [Parse_SecreteKey], [Parse_UserType], [Parse_DeviceType]) VALUES ( N'2szKxNWEnxvq8UMQOcyXEx0tMn9c0j725WQBEAzN', N'0VKsBAhHj2KTekdDLLj3rkP7UANbBRZLmIAJZ7hC', N'Customer', N'IOS')
+GO
+INSERT [dbo].[Parse] ( [Parse_API], [Parse_SecreteKey], [Parse_UserType], [Parse_DeviceType]) VALUES ( N'60A3ZBe2NIioaRhTzyo3FSXM62ZhgTNhsdtrEaKs', N'vf0A6q4Z5NXmqItboFaY9yF7urcAjkiRNexKQ1c9', N'Agent', N'IOS')
+GO

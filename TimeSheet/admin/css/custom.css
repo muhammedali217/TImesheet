@@ -1,0 +1,218 @@
+﻿html, body
+{
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+
+
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100% !important;
+}
+/*#viewEmployee section
+{
+    margin-bottom: 20px;
+
+}*/
+    #viewEmployee section input
+    {
+        border-radius: 0;
+    }
+html.st-layout, html.st-layout .st-content, html.st-layout .st-pusher, html.st-layout body
+{
+    left: 0;
+}
+#viewEmployee label
+{
+    font-weight: 300;
+    margin-top:15px;
+    color: #65696B;
+}
+
+.select2-search
+{
+    padding:0;
+}
+#tblLeaveInfo table
+{
+    width: 80% !important;
+    margin: 0 auto;
+}
+    #tblLeaveInfo table tr
+    {
+        border:1px solid #e0e7e8;
+        background-color:#f3f3f3;
+     
+    }
+    #tblLeaveInfo table th
+    {
+         text-align: center;
+         background-color:#fff;
+    }
+        #tblLeaveInfo table tr td
+        {
+            text-align: center;
+        }
+
+label.danger
+{
+    color: white !important;
+    background-color: red;
+    padding:5px 10px;
+    font-weight:400 !important;
+    letter-spacing: 0.06rem;
+    width:80px;
+    text-align:center;
+}
+
+label.success
+{
+    color: white !important;
+    background-color: green;
+    padding:5px 8px;
+    font-weight:400 !important;
+    letter-spacing: 0.06rem;
+      width:80px;
+      text-align:center;
+}
+
+label.warning
+{
+    color: white !important;
+    background-color: orange;
+    padding:5px 10px;
+    font-weight:400 !important;
+    letter-spacing: 0.06rem;
+      width:80px;
+      text-align:center;
+}
+.form-control
+{
+    cursor: pointer;
+}
+.sidebar-menu > li > a
+{
+    font-size: 12px !important;
+}
+.sidebar.sidebar-skin-blue .sidebar-menu.sm-icons-block li > a i
+{
+    background-color: transparent !important;
+    color:#fff !important;
+}
+/*sidebar.sidebar-skin-blue .sidebar-menu li.active > a, .sidebar.sidebar-skin-blue .sidebar-menu li.active > a i,*/
+sidebar.sidebar-skin-blue .sidebar-menu li.active > a, .sidebar.sidebar-skin-blue .sidebar-menu li.active > a
+{
+    color: #B2D3EF !important;
+    font-weight: 400 !important;
+}
+
+
+.sidebar:not([class*=sidebar-mini]) .sidebar-menu.sm-icons-right li > a i, .sidebar[class*=sidebar-mini-reveal] .sidebar-menu.sm-icons-right li > a i
+{
+    position: static;
+        margin-right: 7.5px !important;
+}
+
+span#count
+{
+    height: 30px;
+    width: 30px;
+    background-color:#C78585;
+    margin:0 15px;
+    border-radius: 50px;
+    padding: 10px;
+    display:block;
+
+}  
+.sidebar-menu li ul li a
+    {
+        line-height: 35px !important;
+        font-size: 12px !important;
+        color: #B2D3EF !important;
+        font-weight: 100 !important;
+    }
+
+.collapse.in
+{
+    display: block!important;
+    visibility: visible!important;
+    background-color: #1F2E3A!important;
+}
+
+.sidebar-menu li a:hover {
+    _font-size: 13px ;
+    background-color: rgb(75, 100, 119) !important;
+}
+
+span#count {
+   height: 30px;
+    width: 30px;
+    background-color: #f0ad4e;
+    /* margin: 0 15px; */
+    border-radius: 50px;
+    padding: 10px;
+    display: block;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    position: relative;
+     left: 25px;
+     top: -10px;
+     
+}
+
+.dataTables_wrapper table thead tr th {
+    color: #22323f;
+    font-size:15px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6
+{ 
+    color: #26a69a;
+    
+
+}
+
+h2
+{
+    font-size: 20px;
+    padding-top: 20px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform:uppercase;
+}
+.panel-heading
+{
+    padding: 0;
+}
+.bill-report
+{
+    padding: 10px !important;
+}
+.week-time
+{
+    padding: 10px;
+    
+}
+#lblName
+{
+    color:black;
+    font-family:Verdana;
+    letter-spacing:0.2px;
+    margin-right: 5px;
+}
+table.dataTable {
+    
+    letter-spacing: 0.3px;
+    font-size:12px;
+}
+
+    table.dataTable.nowrap th, table.dataTable.nowrap td
+    {
+        white-space: normal !important;
+    }
+    .sidebar-menu > li > a {
+    line-height: 40px !important;
+    padding-left: 15px;
+}
