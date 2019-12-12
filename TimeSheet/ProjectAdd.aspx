@@ -60,7 +60,6 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a href="#sidebar-menu" data-toggle="sidebar-menu" data-effect="st-effect-3" class="toggle pull-left visible-xs"><i class="fa fa-bars"></i></a>
-
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
@@ -69,31 +68,11 @@
                     </button>
                     <a href="ProjectAdd.aspx" class="navbar-brand hidden-xs navbar-brand-primary">
                         <img src="admin/images/tech_v-Logo_colo5r.png" alt="techvLogo"/>
-
                     </a>
                 </div>
                 <div class="navbar-collapse collapse" id="collapse">
                    
                     <ul class="nav navbar-nav navbar-right">
-                        <%--<!-- notifications -->
-                        <li class="dropdown notifications updates hidden-xs hidden-sm">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-bell-o"></i>
-                                <!--     <span class="badge badge-primary"></span>-->
-                            </a>
-
-                        </li>
-                        <!-- // END notifications -->
-                        <!-- messages -->
-                        <li class="dropdown notifications hidden-xs hidden-sm">
-                            <a href="#showImageModal" data-toggle="modal" data-toggle="dropdown">
-                                <i class="fa fa-envelope-o"></i>
-                                <!--      <span class="badge floating badge-danger">12</span>-->
-                            </a>
-
-                        </li>
-                        <!-- // END messages -->
-                        <!-- user -->--%>
                         <li class="dropdown user">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="admin/images/administrator1.png" class="img-circle" />
@@ -105,14 +84,10 @@
                                 </li>
                             </ul>
                         </li>
-
                     </ul>
                 </div>
             </div>
         </div>
-
-
-
         <div class="st-pusher">
             <!-- Sidebar component with st-effect-3 (set on the toggle button within the navbar) -->
             <div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-blue sidebar-visible-desktop" id="sidebar-menu" data-type="collapse">
@@ -149,16 +124,7 @@
                                                     </li>
                                                 </ul>
                                             </li>
-
-                                           
                                         </ul>
-
-                                                 
-
-                                        
-                                
-
-
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
                                             <li class="active">
@@ -175,14 +141,11 @@
                                                     </li>
                                                     <li>
                                                         <a href="viewallproject.aspx">
-                                                            
                                                             <span>View Project</span>
                                                         </a>
                                                     </li>
-
                                                     <li>
                                                         <a href="viewprojecttasks.aspx">
-                                                            
                                                             <span>View Project Tasks</span>
                                                         </a>
                                                     </li>
@@ -200,13 +163,7 @@
                                                     </li>
                                                 </ul>
                                             </li>
-
-                                           
                                         </ul>
-
-
-
-
 
                                            <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
@@ -237,8 +194,6 @@
                                                    
                                                 </ul>
                                             </li>
-
-                                           
                                         </ul>
 
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
@@ -276,15 +231,11 @@
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="holidaycalender.aspx"><i class="fa fa-calendar"></i><span>Holiday Calender</span></a>
-                                            </li>
-                                           
-                                            
+                                            </li> 
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="viewattendance.aspx"><i class="fa-bar-chart"></i><span>Attendance</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="AdminChangePassword.aspx"><i class="fa fa-lock"></i><span>Change Password</span></a>
@@ -338,8 +289,6 @@
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="uploadknwldgedoc.aspx"><i class="fa fa-file"></i><span>Upload Knowledge Doc</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block" id="leavesidebar">
@@ -352,20 +301,16 @@
                                                 <ul id="nav-Leave" class="collapse" aria-expanded="true" style="">
                                                     <li>
                                                         <a href="viewapprovedleaves.aspx">
-
                                                             <span>Leave Reports</span>
                                                         </a>
                                                     </li>
-
                                                     <li>
                                                         <a href="lopdetails.aspx">
-
                                                             <span>LOP Details</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="leavedashboard.aspx">
-
                                                             <span>Employee Leave Details</span>
                                                         </a>
                                                     </li>
@@ -376,20 +321,11 @@
                                        
                                     </div>
                                 </div>
-                                <!-- // END .tab-pane -->
-
                             </div>
-                            <!-- // END .tab-content -->
                         </div>
-                        <!-- // END .split-vertical-cell -->
                     </div>
-                    <!-- // END .split-vertical-body -->
-
                 </div>
             </div>
-            <!-- sidebar effects INSIDE of st-pusher: -->
-            <!-- st-effect-3, st-effect-6, st-effect-7, st-effect-8, st-effect-14 -->
-            <!-- this is the wrapper for the content -->
            <div class="st-content" id="content">
                 <!-- extra div for emulating position:fixed of the menu -->
                 <div class="st-content-inner">
@@ -401,19 +337,16 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h2 align="center">ADD PROJECT</h2>
-                                       
                                     </div>
                                     <hr />
                                     <form>
                                      <div class="col-md-6 col-md-offset-3" >
-
                                          <section class="col-md-6">
                                       <fieldset class="Employee-code">
                                         <label for="exampleInputEmail1">Project Name</label> <font color="red" size="4px"><b> * </b></font>
                                         <input type="text" class="form-control" id="txtProjectName" placeholder="Enter Project Name">
                                       </fieldset>
                                       </section>
-
                                           <section class="col-md-6">
                                       <fieldset class="Employee-code">
                                         <label for="exampleInputEmail1">Short Code</label>
@@ -449,8 +382,6 @@
 
                                       </section>
                                             </div>
-
-                                        
                                          <div class="col-md-6 col-md-offset-3" >
 
                                           <section class="col-md-6">
@@ -469,20 +400,25 @@
                                             </div>
 
                             <div class="col-md-6 col-md-offset-3" >
+                                    <section class="col-md-6">
+                                      <fieldset class="Employee-code">
+                                        <label for="exampleInputEmail1">Profit/Cost Center </label><font color="red" size="4px"><b> * </b></font>
+                                        <select class="form-control input-alt" name="ddlCode" id="ddlCode">
+                                        <option value="">Choose Code</option>
+                                    </select>
+                                      </fieldset>
+                                      </section>
 
-                                          <section class="col-md-12">
+                                          <section class="col-md-6">
                                       <fieldset class="Employee-code">
                                         <label for="exampleInputEmail1">Sponsor</label><br />
                                         <select class="form-control input-alt" name="ddlEmployee" id="ddlEmployee">
                                         <option value="">Choose Sponsor</option>
                                     </select>
-
                                       </fieldset>
                                       </section>
-                        </div>
-
-
-             <div class="col-md-6 col-md-offset-3" >
+                                    </div>
+                        <div class="col-md-6 col-md-offset-3" >
                                           <section class="col-md-6">
                                       <fieldset class="Employee-code">
                                         <label for="exampleInputEmail1">Description</label><font color="red" size="4px"><b> * </b></font>

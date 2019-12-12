@@ -1,5 +1,8 @@
 ﻿$(document).ready(function () {
-    //alert(calcBusinessDays(new Date("August 11, 2010 11:13:00"), new Date("August 16, 2010 11:13:00")));
+    $('#btnLogout').click(function () {
+        localStorage.removeItem('AdminSession');
+        window.location.href = "login.html";
+    });
     var Localvalue = localStorage.getItem('AdminSession');
     if (Localvalue == null) {
         $.alert.open({ type: 'warning', content: 'Session has timed out. Please Login again' });
@@ -8,13 +11,10 @@
     else {
 
         var dateToday = new Date();
-
         $("#txtPrjectFrom").datepicker();
-
         $("#txtPrjectTo").datepicker();
-
-
         EmpDropDown();
+        ProfitCostCode();
 
         $('#txtProjectName').on('change', function () {
 
@@ -27,11 +27,7 @@
             $('#txtShortName').val(res + random);
             //alert(res + random);
         });
-
-
-
         $('#btnSubmit').click(function () {
-
 
             if ($("#txtProjectName").val() == '') {
                 $.alert.open({ type: 'warning', content: 'Please enter Project Name.' });
@@ -49,33 +45,36 @@
             else if ($("#txtPrjectTo").val() == '') {
                 $.alert.open({ type: 'warning', content: 'Please enter project End date.' });
             }
-            else if ($("#txtVersioncontrol").val() == '') {
-                $.alert.open({ type: 'warning', content: 'Please enter Version Control.' });
+            else if ($("#ddlCode").val() == '') {
+                $.alert.open({ type: 'warning', content: 'Please select Code' });
             }
-            else if ($("#txtProgramminglanguages").val() == '') {
-                $.alert.open({ type: 'warning', content: 'Please enter Programming Languages.' });
-            }
-            else if ($("#txtPackagesused").val() == '') {
-                $.alert.open({ type: 'warning', content: 'Please enter Packages Used.' });
-            }
-            else if ($("#txtFramework").val() == '') {
-                $.alert.open({ type: 'warning', content: 'Please enter Frame work.' });
-            }
-            else if ($("#txtHostingserver").val() == '') {
-                $.alert.open({ type: 'warning', content: 'Please enter Hosting server.' });
-            }
-            else if ($("#txtDatabase").val() == '') {
-                $.alert.open({ type: 'warning', content: 'Please enter Database.' });
-            }
-            else if ($("#txtThirdparty").val() == '') {
-                $.alert.open({ type: 'warning', content: 'Please enter Third Party Tools.' });
-            }
-            else if ($("#txtSecurity").val() == '') {
-                $.alert.open({ type: 'warning', content: 'Please enter Security.' });
-            }
-            else if ($("#txtPortsused").val() == '') {
-                $.alert.open({ type: 'warning', content: 'Please enter Ports Used.' });
-            }
+            //else if ($("#txtVersioncontrol").val() == '') {
+            //    $.alert.open({ type: 'warning', content: 'Please enter Version Control.' });
+            //}
+            //else if ($("#txtProgramminglanguages").val() == '') {
+            //    $.alert.open({ type: 'warning', content: 'Please enter Programming Languages.' });
+            //}
+            //else if ($("#txtPackagesused").val() == '') {
+            //    $.alert.open({ type: 'warning', content: 'Please enter Packages Used.' });
+            //}
+            //else if ($("#txtFramework").val() == '') {
+            //    $.alert.open({ type: 'warning', content: 'Please enter Frame work.' });
+            //}
+            //else if ($("#txtHostingserver").val() == '') {
+            //    $.alert.open({ type: 'warning', content: 'Please enter Hosting server.' });
+            //}
+            //else if ($("#txtDatabase").val() == '') {
+            //    $.alert.open({ type: 'warning', content: 'Please enter Database.' });
+            //}
+            //else if ($("#txtThirdparty").val() == '') {
+            //    $.alert.open({ type: 'warning', content: 'Please enter Third Party Tools.' });
+            //}
+            //else if ($("#txtSecurity").val() == '') {
+            //    $.alert.open({ type: 'warning', content: 'Please enter Security.' });
+            //}
+            //else if ($("#txtPortsused").val() == '') {
+            //    $.alert.open({ type: 'warning', content: 'Please enter Ports Used.' });
+            //}
             else {
                 var varProcParams = new Array();
 
@@ -188,6 +187,12 @@
                 varProcParams[17] = varParams;
                 varParams = {};
 
+                var varParams = {};
+                varParams.strKey = "Projects_ProfitCenterCode";
+                varParams.strArgmt = $("#ddlCode").val();
+                varProcParams[18] = varParams;
+                varParams = {};
+
                 
 
                 var SpParams = {};
@@ -237,7 +242,6 @@
             var SpParams = {};
             SpParams.strProc = "Employee_DrpDownIncludesAdmin";
 
-
             $.ajax({
                 url: "/api/FIXZIService/GetHTTPDropDownResponse",
                 type: "POST",
@@ -250,9 +254,31 @@
                     if (response != null) {
                         for (var i = 0; i < response.length; i++) {
                             {
-
                                 $("#ddlEmployee").append(new Option(response[i].DisplayMember, response[i].ValueMember));
+                            }
+                        }//for
+                    }//if
+                }//response
+            });//ajax
+        }
 
+        function ProfitCostCode() {
+            var SpParams = {};
+            SpParams.strProc = "Project_ProfitCostCode";
+
+            $.ajax({
+                url: "/api/FIXZIService/GetHTTPDropDownResponse",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(SpParams),
+                success: function (response) {
+                    $('#ddlCode').empty();
+
+                    if (response != null) {
+                        for (var i = 0; i < response.length; i++) {
+                            {
+                                $("#ddlCode").append(new Option(response[i].DisplayMember, response[i].ValueMember));
                             }
                         }//for
                     }//if

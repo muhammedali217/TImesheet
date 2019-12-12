@@ -134,7 +134,6 @@
                 data: JSON.stringify(SpParams),
                 success: function (response) {
                     if (response.details != null) {
-                        alert(response.details.length);
                         $("#tableContractorDetails").dataTable().fnClearTable();
                         for (var j = 0; j < response.details.length; j++) {
                             jQuery("#tableContractorDetails").dataTable().fnAddData([(response.details[j].Projects_ID).toString(), (response.details[j].Projects_ShortName).toString(), (response.details[j].Projects_Name).toString(), (response.details[j].Projects_BeginDate), (response.details[j].Projects_EndDate).toString(), (response.details[j].Projects_ClientName).toString(), (response.details[j].Projects_Duration).toString(), (response.details[j].Projects_Description).toString(),

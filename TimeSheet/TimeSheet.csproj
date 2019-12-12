@@ -124,6 +124,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddProfitCostCenter.aspx.cs">
+      <DependentUpon>AddProfitCostCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProfitCostCenter.aspx.designer.cs">
+      <DependentUpon>AddProfitCostCenter.aspx</DependentUpon>
+    </Compile>
     <Compile Include="addprojecttask.aspx.cs">
       <DependentUpon>addprojecttask.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -269,6 +276,13 @@
     </Compile>
     <Compile Include="employeeleavehistory.aspx.designer.cs">
       <DependentUpon>employeeleavehistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeProjectReport.aspx.cs">
+      <DependentUpon>EmployeeProjectReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeProjectReport.aspx.designer.cs">
+      <DependentUpon>EmployeeProjectReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="employeerequeststatus.aspx.cs">
       <DependentUpon>employeerequeststatus.aspx</DependentUpon>
@@ -542,6 +556,13 @@
     <Compile Include="viewattendance.aspx.designer.cs">
       <DependentUpon>viewattendance.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ViewProfitCostCenter.aspx.cs">
+      <DependentUpon>ViewProfitCostCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewProfitCostCenter.aspx.designer.cs">
+      <DependentUpon>ViewProfitCostCenter.aspx</DependentUpon>
+    </Compile>
     <Compile Include="viewprojectemployee.aspx.cs">
       <DependentUpon>viewprojectemployee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -615,6 +636,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="aboutus.html" />
+    <Content Include="AddProfitCostCenter.aspx" />
     <Content Include="addprojecttask.aspx" />
     <Content Include="AdminChangePassword.aspx" />
     <Content Include="admin\css\ajax-loader.gif" />
@@ -828,6 +850,7 @@
     <Content Include="EmpAdd1.aspx" />
     <Content Include="empjobdesc.aspx" />
     <Content Include="employeeleavehistory.aspx" />
+    <Content Include="EmployeeProjectReport.aspx" />
     <Content Include="employeerequeststatus.aspx" />
     <Content Include="employeetimesheet.aspx" />
     <Content Include="employmentcert.aspx" />
@@ -1076,6 +1099,7 @@
     <Content Include="meetingroom.aspx" />
     <Content Include="New.aspx" />
     <Content Include="NewTask2Project.aspx" />
+    <Content Include="pagescripts\AddProfitCostCenter.js" />
     <Content Include="pagescripts\addprojecttask.js" />
     <Content Include="pagescripts\AdminChangePassword.js" />
     <Content Include="pagescripts\Admin_LeaveMgt.js" />
@@ -1092,6 +1116,7 @@
     <Content Include="pagescripts\EmpAdd1.js" />
     <Content Include="pagescripts\empjobdesc.js" />
     <Content Include="pagescripts\employeeleavehistory.js" />
+    <Content Include="pagescripts\EmployeeProjectReport.js" />
     <Content Include="pagescripts\employeerequeststatus.js" />
     <Content Include="pagescripts\employeetimesheet.js" />
     <Content Include="pagescripts\employmentcert.js" />
@@ -1125,6 +1150,7 @@
     <Content Include="pagescripts\viewallproject.js" />
     <Content Include="pagescripts\viewapprovedleaves.js" />
     <Content Include="pagescripts\viewattendance.js" />
+    <Content Include="pagescripts\ViewProfitCostCenter.js" />
     <Content Include="pagescripts\viewprojectemployee.js" />
     <Content Include="pagescripts\viewprojecttasks.js" />
     <Content Include="pagescripts\viewraisedtickets.js" />
@@ -1261,7 +1287,6 @@
     <Content Include="admin\plugins\DataTables-1.10.4\package.json" />
     <Content Include="admin\plugins\DataTables-1.10.4\Readme.md" />
     <Content Include="singlebilldetail.aspx" />
-    <Content Include="Subscribe.svc" />
     <Content Include="thisweektimesheet.aspx" />
     <Content Include="timePicker\jquery.timepicker.css" />
     <Content Include="timePicker\jquery.timepicker.js" />
@@ -1275,6 +1300,7 @@
     <Content Include="viewallproject.aspx" />
     <Content Include="viewapprovedleaves.aspx" />
     <Content Include="viewattendance.aspx" />
+    <Content Include="ViewProfitCostCenter.aspx" />
     <Content Include="viewprojectemployee.aspx" />
     <Content Include="viewprojecttasks.aspx" />
     <Content Include="viewraisedtickets.aspx" />
@@ -1299,6 +1325,7 @@
     <Content Include="bootstrap-datepicker\build\build_standalone.less" />
     <Content Include="bootstrap-datepicker\component.json" />
     <Content Include="bootstrap-datepicker\less\datepicker.less" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -1318,7 +1345,6 @@
     <Content Include="select2\component.json" />
     <Content Include="select2\select2.jquery.json" />
     <Content Include="select2\select2_locale_en.js.template" />
-    <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="admin\js\plugins\maps_google\jquery-ui-map\ui\min\" />

@@ -200,25 +200,14 @@ tr.shown td.details-control {
                                                         </a>
                                                     </li>
 													<li>
-                                                        <a href="Delete_Employee.aspx">
-                                                           
+                                                        <a href="Delete_Employee.aspx"> 
                                                             <span>Disable Employee</span>
                                                         </a>
                                                     </li>
                                                 </ul>
                                             </li>
-
-                                           
                                         </ul>
-
-                                                 
-
-                                        
-                                
-
-
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
-
                                             <li class="active">
                                                 <a class="" href="#nav-Project" data-toggle="collapse" aria-expanded="true">
                                                     <i class="fa fa-tasks"></i>
@@ -257,14 +246,7 @@ tr.shown td.details-control {
                                                     </li>
                                                 </ul>
                                             </li>
-
-                                           
                                         </ul>
-
-
-
-
-
                                            <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
                                             <li class="active">
@@ -294,8 +276,6 @@ tr.shown td.details-control {
                                                    
                                                 </ul>
                                             </li>
-
-                                           
                                         </ul>
 
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
@@ -315,52 +295,36 @@ tr.shown td.details-control {
                                                     
                                                     <li>
                                                         <a href="ViewTimeSheet.aspx">
-                                                            
                                                             <span>Time Sheet</span>
                                                         </a>
                                                     </li>
-                                                   
                                                     <li>
                                                          <a href="viewrequests.aspx">
-                                                            
                                                             <span>Others</span>
                                                         </a>
                                                     </li>  
-                                                   
                                                 </ul>
                                             </li>
-
-                                           
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="holidaycalender.aspx"><i class="fa fa-calendar"></i><span>Holiday Calender</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="viewattendance.aspx"><i class="fa-bar-chart"></i><span>Attendance</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="AdminChangePassword.aspx"><i class="fa fa-lock"></i><span>Change Password</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="viewtechvasset.aspx"><i class="fa fa-desktop"></i><span>Assets List</span></a>
-                                            </li>
-                                           
-                                            
+                                            </li>  
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="uploadjobdesc.aspx"><i class="fa fa-book"></i><span>Upload JD</span></a>
-                                            </li>
-                                           
-                                            
+                                            </li>  
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
@@ -376,7 +340,6 @@ tr.shown td.details-control {
                                                             <span>Add Bill Details</span>
                                                         </a>
                                                     </li>
-
                                                     <li>
                                                         <a href="viewallbills.aspx">
 
@@ -396,11 +359,7 @@ tr.shown td.details-control {
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="uploadknwldgedoc.aspx"><i class="fa fa-file"></i><span>Upload Knowledge Doc</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
-                                       
-
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block" id="leavesidebar">
 
                                             <li class="active">
@@ -473,7 +432,6 @@ tr.shown td.details-control {
                                     <div class="panel-heading">
                                         <h2 align="center">EMPLOYEE DATABASE</h2>
                                        
-                                        
                                     </div>
                                      <hr />
                                     <div id="tblContractor" style="margin-top:-65px";>

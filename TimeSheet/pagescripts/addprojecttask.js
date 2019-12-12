@@ -1,4 +1,8 @@
 ﻿$(document).ready(function () {
+    $('#btnLogout').click(function () {
+        localStorage.removeItem('AdminSession');
+        window.location.href = "login.html";
+    });
     
     var Localvalue = localStorage.getItem('AdminSession');
     if (Localvalue == null) {

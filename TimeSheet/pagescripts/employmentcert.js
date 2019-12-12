@@ -1,4 +1,8 @@
 ﻿$(document).ready(function () {
+    $('#btnLogout').click(function () {
+        localStorage.removeItem('EmployeeId');
+        window.location.href = "login.html";
+    });
     var gentlemanWomen;
     var hisher;
     $("#lblWait").hide();

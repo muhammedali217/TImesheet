@@ -97,58 +97,23 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                     </button>
                     <a href="#" class="navbar-brand hidden-xs navbar-brand-primary">
                         <img src="admin/images/tech_v-Logo_colo5r.png" alt="techvLogo" />
-
                     </a>
                 </div>
                 <div class="navbar-collapse collapse" id="collapse">
-                    <%--<form class="navbar-form navbar-left hidden-xs" role="search">
-                        <div class="search-2">
-                            <div class="input-group">
-                                <input type="text" class="form-control form-control-w-150" placeholder="Search ..">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
-                                </span>
-                            </div>
-                        </div>
-                    </form>--%>
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- notifications -->
-                        <%--<li class="dropdown notifications updates hidden-xs hidden-sm">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-bell-o"></i>
-                                <!--     <span class="badge badge-primary"></span>-->
-                            </a>
-
-                        </li>--%>
-                        <!-- // END notifications -->
-                        <!-- messages -->
-                       <%-- <li class="dropdown notifications hidden-xs hidden-sm">
-                            <a href="#showImageModal" data-toggle="modal" data-toggle="dropdown">
-                                <i class="fa fa-envelope-o"></i>
-                                <!--      <span class="badge floating badge-danger">12</span>-->
-                            </a>
-
-                        </li>--%>
-                        <!-- // END messages -->
-                        <!-- user -->
                         <li class="dropdown user">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="admin/images/administrator1.png" class="img-circle" /><span id="lblName"></span><span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-
                                 <li><a href="login.html" id="btnLogout"><i class="fa fa-sign-out"></i>Logout</a>
                                 </li>
                             </ul>
                         </li>
-
                     </ul>
                 </div>
             </div>
         </div>
-
-
-
         <div class="st-pusher">
             <!-- Sidebar component with st-effect-3 (set on the toggle button within the navbar) -->
             <div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-blue sidebar-visible-desktop" id="sidebar-menu" data-type="collapse">
@@ -165,124 +130,81 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <div>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employmentcert.aspx"><i class="fa fa-th-large"></i><span>Employment Certificate</span></a>
-
                                             </li>
-
-
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="knwldgecenter.aspx"><i class="fa fa-book"></i><span>Knowledge Center</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="ApplyLeave.aspx"><i class="fa fa-bed"></i><span>Apply Leave</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employeeleavehistory.aspx"><i class="fa fa-bar-chart"></i><span>Leave History</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
-                                        
-                                        <%--<ul class="sidebar-menu sm-icons-right sm-icons-block">
-                                            <li class="active"><a href="EnterTimeSheet.aspx"><i class="fa fa-tasks"></i><span>Enter TimeSheet</span></a>
-                                            </li>
-                                           
-                                            
-                                        </ul>--%>
-
-
                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li id='listTimeSheet'class="active"><a href="enterweeklytimesheet.aspx"><i class="fa fa-clock-o"></i><span>Weekly TimeSheet</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
-
-
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employeetimesheet.aspx"><i class="fa fa-tasks"></i><span>View TimeSheet</span></a>
-                                            </li>
-                                           
-                                            
+                                            </li> 
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="ChangePassword.aspx"><i class="fa fa-lock"></i><span>Change Password</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="holidaycalenderemployee.aspx"><i class="fa fa-calendar"></i><span>Holiday Calender</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
-
                                             <li class="active">
-                                                <a class="" href="#nav-Employee" data-toggle="collapse" aria-expanded="true">
-                                                    
-
-                                                     <i class="fa fa-pencil-square-o"></i>
+                                                <a class="" href="#nav-Employee" data-toggle="collapse" aria-expanded="true"> <i class="fa fa-pencil-square-o"></i>
                                                     <span>Request</span>
                                                 </a>
                                                 <ul class="collapse" id="nav-Employee" aria-expanded="true" style="">
                                                     <li>
                                                          <a href="travelrequest.aspx">
-                                      
                                                             <span>Travel</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="visarequest.aspx">
-                                                           
                                                             <span>VISA</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                        <a href="idcardrequest.aspx">
-                                                           
                                                             <span>ID Card </span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="expensevoucher.aspx">
-                                                           
                                                             <span>Expense Voucher</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="workfromhome.aspx">
-                                                           
                                                             <span>Work From Home</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="reimbursement.aspx">
-
                                                             <span>Reimbursement</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="commonrequest.aspx">
-
                                                             <span>Others</span>
                                                         </a>
-
                                                     </li>
                                                 </ul>
                                             </li>
-
-                                           
                                         </ul>
                                          <ul class="sidebar-menu sm-icons-right sm-icons-block">
-
                                             <li class="active">
                                                 <a class="" href="#nav-Policies" data-toggle="collapse" aria-expanded="true">
                                                     <i class="fa fa-file-text"></i>
@@ -291,76 +213,49 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                                 <ul class="collapse" id="nav-Policies" aria-expanded="true" style="">
                                                     <li>
                                                          <a href="leavepolicy.aspx">
-                                      
                                                             <span>Leave</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                        <a href="dresscodepolicy.aspx">
-                                      
                                                             <span>Dress Code</span>
                                                         </a>
-                                                   
                                                     </li>
                                                     <li>
                                                          <a href="reimbursementpolicy.aspx">
-                                      
                                                             <span>Reimbursement</span>
                                                         </a>
-                                                   
                                                     </li>
-
                                                     </ul>
                                                 </li>
                                             </ul>
                                          <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="empjobdesc.aspx"><i class="fa fa-graduation-cap"></i><span>Job Description</span></a>
                                             </li>
-
-
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="meetingroom.aspx"><i class="fa fa-users"></i><span>Meeting Room</span></a>
-                                            
                                             </li>
-
-
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employeerequeststatus.aspx"><i class="fa fa-pencil-square-o"></i><span>Request Status</span></a>
-                                            
                                             </li>
-
-
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="raiseticket.aspx"><i class="fa fa-desktop"></i><span>Register Issue</span></a>
-                                            
                                             </li>
-
-
                                         </ul>
                                     </div>
                                 </div>
-                                <!-- // END .tab-pane -->
-
                             </div>
-                            <!-- // END .tab-content -->
                         </div>
-                        <!-- // END .split-vertical-cell -->
                     </div>
-                    <!-- // END .split-vertical-body -->
-
                 </div>
             </div>
-            <!-- sidebar effects INSIDE of st-pusher: -->
-            <!-- st-effect-3, st-effect-6, st-effect-7, st-effect-8, st-effect-14 -->
-            <!-- this is the wrapper for the content -->
             <div class="st-content" id="content">
                 <!-- extra div for emulating position:fixed of the menu -->
                 <div class="st-content-inner">
                     <div class="container-fluid">
-
                         <div class="row" data-toggle="isotope">
                             <div class="item col-md-12 col-sm-12 col-xs-12">
                                  <!-- Leaderboard -->
@@ -368,22 +263,22 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                     <div class="panel-heading">
                                         <h2 align="center">Weekly Time Sheet </h2>
                                     <hr />
-
-
                                   <h4 style="color:red"><label id="lblAlert"></label></h4>
-                                        <label for="exampleInputEmail1" style="width: 20%; margin-left: 95px;" id="labelPrjAssigned">&nbsp;Projects Assigned</label><font color="red" size="4px" id="star"><b id="lblStar">*</b></font>
-                                        <select class="form-control input-alt" name="ddlNewProject" id="ddlNewProject" style="width: 20%;margin-left: 95px;">
+                                        <div>
+                                            <label for="exampleInputEmail1" style="width: 20%; margin-left: 95px;display:inline" id="labelPrjAssigned">&nbsp;Projects Assigned</label>
+                                            <font color="red" size="4px" id="star"><b id="lblStar">*</b></font>
+                                            <label for="exampleInputEmail1" style="width: 20%; margin-left: 156px;display:inline" id="lblProfitCostType">&nbsp;</label>
+                                        </div>
+                                        <select class="form-control input-alt" name="ddlNewProject" id="ddlNewProject" style="width: 20%;margin-left: 95px;display:inline">
                                             <option value="">Select Project</option>
                                         </select>
-                                        <button type="button" class="btn btn-primary bt.n-lg" style="margin-top: -36px; margin-bottom:30px;margin-left:446px;font-size:10px;background-color:#26a69a;border-color:#26a69a;" id="btnthisWeek">CLICK TO VIEW THIS WEEK TIMESHEET</button>
-
+                                        <input type="text" id="txtprofitcostcode" style="display:inline;margin-left:6%;background-color: #ecf0f1;background-image: none;border: 1px solid #ecf0f1;border-radius: 4px;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;line-height: 2;width: 25%;align-items: center;text-align: center!important;color:black;" readonly="readonly">
+                                        <button type="button" class="btn btn-primary bt.n-lg" style="margin-top: -159px;margin-bottom:30px;margin-left: 888px;font-size:10px;background-color:#26a69a;border-color:#26a69a;" id="btnthisWeek">CLICK TO VIEW THIS WEEK TIMESHEET</button>
                                     </div>
-
                                     <br />
                                     <br />
                                     
                                     <table id="example" class="display" cellspacing="11px" cellpadding="50px" width="80%" border="2" align="center">
-                                       
                                         <thead style="height: 50px; width: 5px; padding: 50px">
                                             <tr>
                                                 <th style="text-align:center; color: black;">Task<br />
@@ -404,105 +299,61 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                                 <th style="text-align:center; color: black;">&nbsp;&nbsp;Remarks<br />
                                                     <label id="lblRemarks"></label>
                                                 </th>
-                                                
                                             </tr>
                                         </thead>
-                                        
-                                           
                                         <tbody style="height: 10px; width: 10px; padding-left: 10px;">
-
-                                           
                                             <tr id='tdTasks' style="height: 140px;">
                                                 <td id="td1" class="">
-                                                  
                                                     <hr style="margin-top:-5px; margin-bottom:10px;" />
                                                      <br />
                                                     <div id="divNewTasks" style="width:130px;"></div><label id="Label2"></label>
                                                 </td>
-
                                                 <td id="td2" class="tdMonday">
-                                                   
                                                      <br />
                                                     <div id="div1"></div><label id="MDay"></label>
                                                 </td>
-
                                                 <td id="td3">
-                                                    
                                                      <br />
                                                     <div id="div2"></div><label id="TDay"></label>
                                                 </td>
                                                 <td id="td4">
-                                                    
                                                      <br />
                                                     <div id="div3"></div><label id="WDay"></label>
                                                 </td>
                                                 <td id="td5">
-                                                    
                                                      <br />
                                                     <div id="div4"></div><label id="ThDay"></label>
                                                 </td>
                                                 <td id="td6">
-                                                    
                                                      <br />
                                                     <div id="div5"></div><label id="FDay"></label>
                                                 </td>
                                                 <td id="td7">
-                                                    
                                                      <br />
                                                     <div id="div6"></div>
                                                 </td>
-                                                
                                             </tr>
-                                            
-                                            
-
-
                                         </tbody>
                                     </table>
                                     <label id="lblMessage" style="margin-left:485px;margin-top:20px;"></label><br />
-                                    
                                     <span class="clearfix"></span>
-                                       
                                         <div style="padding: 15px;padding-top:-1px !important;" class="col-md-6 col-md-offset-3  text-center">
                                             <section class="btn-group">
-
-                                               <%--<button type="button" class="btn btn-warning bt.n-lg" id="btnAdd" >ADD TASK</button>--%>
-                                    <button type="button" class="btn btn-danger bt.n-lg" id="btnCancel" >CANCEL</button>
-                                    <button type="button" class="btn btn-default bt.n-lg" id="btnSubmit" >SUBMIT</button>
-                                                
-
-
-
+                                                <button type="button" class="btn btn-danger bt.n-lg" id="btnCancel" >CANCEL</button>
+                                                <button type="button" class="btn btn-default bt.n-lg" id="btnSubmit" >SUBMIT</button>
                                             </section>
                                         </div>
                                         <span class="clearfix"></span>
-                                    
                                 </div>
-
-
-                                <!-- // Leaderboard -->
                             </div>
-
-
-
                         </div>
-
                     </div>
                 </div>
-                <!-- /st-content-inner -->
             </div>
-            <!-- /st-content -->
         </div>
-        <!-- /st-pusher -->
-        <!-- Footer -->
         <footer class="footer">
         </footer>
-        <!-- // Footer -->
     </div>
-    <!-- /st-container -->
-    <!-- Modal -->
-
-    <!-- Inline Script for colors and config objects; used by various external scripts; -->
     <script>
         var colors = {
             "danger-color": "#e74c3c",
@@ -530,35 +381,11 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     <script src="admin/js/vendor-core.min.js"></script>
     <script src="admin/js/vendor-tables.min.js"></script>
     <script src="admin/js/vendor-forms.min.js"></script>
-
-    <!-- <script src="admin/js/vendor-charts-flot.min.js"></script> -->
-    <!-- <script src="admin/js/vendor-charts-easy-pie.min.js"></script> -->
-    <!-- <script src="admin/js/vendor-charts-morris.min.js"></script> -->
-    <!-- <script src="admin/js/vendor-charts-sparkline.min.js"></script> -->
-
-    <!-- <script src="admin/js/vendor-angular.min.js"></script> -->
-    <!-- Compressed Vendor Scripts Bundle
-    Includes all of the 3rd party JavaScript libraries above.
-    The bundle was generated using modern frontend development tools that are provided with the package
-    To learn more about the development process, please refer to the documentation.
-    Do not use it simultaneously with the separate bundles above. -->
-    <!-- <script src="admin/js/vendor-bundle-all.min.js"></script> -->
-    <!-- Compressed App Scripts Bundle
-    Includes Custom Application JavaScript used for the current theme/module;
-    Do not use it simultaneously with the standalone modules below. -->
-    <!-- <script src="admin/js/module-bundle-main.min.js"></script> -->
-    <!-- Standalone Modules
-    As a convenience, we provide the entire UI framework broke down in separate modules
-    Some of the standalone modules may have not been used with the current theme/module
-    but ALL the modules are 100% compatible -->
     <script src="admin/js/jquery.js"></script>
     <script src="pagescripts/enterweeklytimesheet.js"></script>
     <script src="alert/js/alert.min.js"></script>
     <script src="admin/plugins/DataTables-1.10.4/media/jquery.dataTables.min.js"></script>
     <script src="bootstrap/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-
-
-    <%--    <script src="admin/plugins/DataTables-1.10.4/media/DT_bootstrap.js"></script>--%>
     <script type="text/javascript">
         {
             var date = new Date();

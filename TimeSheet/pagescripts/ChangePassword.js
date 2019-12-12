@@ -1,5 +1,9 @@
 ﻿$(document).ready(function () {
     //alert("hi");
+    $('#btnLogout').click(function () {
+        localStorage.removeItem('EmployeeId');
+        window.location.href = "login.html";
+    });
     var Localvaluee = localStorage.getItem('EmployeeId');
     if (Localvaluee == null) {
         $.alert.open({ type: 'warning', content: 'Session has timed out. Please Login again' });

@@ -1,5 +1,9 @@
 ﻿$(document).ready(function () {
     //$("#txtEmpCode").prop('disabled', true);
+    $('#btnLogout').click(function () {
+        localStorage.removeItem('AdminSession');
+        window.location.href = "login.html";
+    });
     var Localvalue = localStorage.getItem('AdminSession');
     if (Localvalue == null) {
         $.alert.open({ type: 'warning', content: 'Session has timed out. Please Login again' });

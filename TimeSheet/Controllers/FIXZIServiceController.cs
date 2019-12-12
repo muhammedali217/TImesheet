@@ -138,6 +138,9 @@ namespace TimeSheet.Controllers
         [AcceptVerbs("GET", "POST")]
         public HttpResponseMessage GetHTTPResponseDataWeb(ServiceParams oServiceParams)
         {
+            TimeZoneInfo INDIAN_ZONE = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
+            DateTime dtIndianTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, INDIAN_ZONE);
+            int day = dtIndianTime.Day, month = dtIndianTime.Month, year = dtIndianTime.Year;
             try
             {
                 DataTable dtResult = new DataTable();
@@ -176,6 +179,71 @@ namespace TimeSheet.Controllers
 
                 oDataTableWStatus.status = dsResult.Tables[0].Rows[0][0].ToString();
                 oDataTableWStatus.message = dsResult.Tables[1].Rows[0][0].ToString();
+                oDataTableWStatus.details = dsResult.Tables[2];
+
+                var response = oDataTableWStatus;
+                return Request.CreateResponse(HttpStatusCode.OK, response, Configuration.Formatters.JsonFormatter);
+            }
+            catch (SqlException exMe)
+            {
+                ApplicationLog.LogError(exMe);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, exMe.Message, Configuration.Formatters.JsonFormatter);
+            }
+            catch (Exception exMe)
+            {
+                ApplicationLog.LogError(exMe.Message, "Error in accessing service from Web");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, exMe.Message, Configuration.Formatters.JsonFormatter);
+            }
+        }
+
+        //Common service for Web
+        [AcceptVerbs("GET", "POST")]
+        public HttpResponseMessage GetHTTPResponseLogin(ServiceParams oServiceParams)
+        {
+            TimeZoneInfo INDIAN_ZONE = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
+            DateTime dtIndianTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, INDIAN_ZONE);
+            int dayOfWeek = (int)dtIndianTime.DayOfWeek;
+            int hours = dtIndianTime.Hour;
+            try
+            {
+                DataTable dtResult = new DataTable();
+                LoginDataTableSuccess oDataTableWStatus = new LoginDataTableSuccess();
+
+                int nArgCnt = 0, nArgIncre = 0;
+                if (oServiceParams.oProcParams != null)
+                    nArgCnt = oServiceParams.oProcParams.Count;
+                if (oServiceParams.oEncryptedArgs != null)
+                    nArgCnt = nArgCnt + oServiceParams.oEncryptedArgs.Count;
+
+                SqlParameter[] arlParams = new SqlParameter[nArgCnt];
+                if (oServiceParams.oProcParams != null)
+                {
+                    for (int j = 0; j < oServiceParams.oProcParams.Count; j++)
+                    {
+                        arlParams[nArgIncre] = new SqlParameter(("@" + oServiceParams.oProcParams[j].strKey), oServiceParams.oProcParams[j].strArgmt);
+                        nArgIncre = nArgIncre + 1;
+                    }
+                }
+
+                if (oServiceParams.oEncryptedArgs != null)
+                {
+                    for (int j = 0; j < oServiceParams.oEncryptedArgs.Count; j++)
+                    {
+                        arlParams[nArgIncre] = new SqlParameter(("@" + oServiceParams.oEncryptedArgs[j].strKey), oServiceParams.oEncryptedArgs[j].strArgmt);
+                        nArgIncre = nArgIncre + 1;
+                    }
+                }
+
+                DataSet dsResult = new DataSet();
+                if (nArgCnt != 0)
+                    dsResult = SQLHelper.ExecuteDataset(oServiceParams.strProc, arlParams);
+                else
+                    dsResult = SQLHelper.ExecuteDataset(oServiceParams.strProc);
+
+                oDataTableWStatus.status = dsResult.Tables[0].Rows[0][0].ToString();
+                oDataTableWStatus.message = dsResult.Tables[1].Rows[0][0].ToString();
+                oDataTableWStatus.day = dayOfWeek;
+                oDataTableWStatus.hour = hours;
                 oDataTableWStatus.details = dsResult.Tables[2];
 
                 var response = oDataTableWStatus;

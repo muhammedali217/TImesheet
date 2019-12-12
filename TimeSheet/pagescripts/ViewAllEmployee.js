@@ -6,30 +6,16 @@
     }
     else {
         var Localvalue = localStorage.getItem('AdminSession');
-
         if (Localvalue == "Start") {
             Loadvalues();
-
             $('#tblContractor').html('<table cellpadding="0" class="display responsive nowrap"  cellspacing="0" border="0"  id="tableContractorDetails" style="width:800px;"></table>');
-
-
-
             var oTable = $('#tableContractorDetails').dataTable({
                 "aaData": [
                 /* Reduced data set */
                 ],
-
                 "aoColumns": [
-                    //{
-                    //    "className": 'details-control',
-                    //    "orderable": false,
-                    //    "data": null,
-                    //    "defaultContent": '',
-                    //    'sWidth': '5%'
-                    //},
                  {
                      "sTitle": "",
-
                  },
                 {
                     "sTitle": "ID",
@@ -56,100 +42,71 @@
                     "sTitle": "Address",
                     'sWidth': '0%',
                     'sClass': 'center'
-
-                    //,
-                    //'bVisible': false
                 }, {
                     "sTitle": "DOB",
                     'sWidth': '0%',
                     'sClass': 'center'
-
-
                 },
                 {
                     "sTitle": "Joining Date",
                     'sWidth': '0%',
                     'sClass': 'center'
-
-
                 },
 
                 {
                     "sTitle": "Email",
                     'sWidth': '0%',
                     'sClass': 'center'
-
-
                 },
                 {
                     "sTitle": "Previous Company",
                     'sWidth': '0%',
                     'sClass': 'center'
-
-
                 },
                 {
                     "sTitle": "Account",
                     'sWidth': '0%',
                     'sClass': 'center'
-
-
                 },
                 {
                     "sTitle": "Releiving",
                     'sWidth': '0%',
                     'sClass': 'center'
-
-
                 },
                 {
                     "sTitle": "Employment Status",
                     'sWidth': '',
                     'sClass': 'center'
-
-
                 },
                 {
                     "sTitle": "Marital Status",
                     'sWidth': '',
                     'sClass': 'center'
-
-
                 },
                 {
                     "sTitle": "Qualification",
                     'sWidth': '',
                     'sClass': 'center'
-
-
                 },
                  {
                      "sTitle": "Designation",
                      'sWidth': '',
                      'sClass': 'center'
-
-
                  },
                  {
                      "sTitle": "Department",
                      'sWidth': '',
                      'sClass': 'center'
-
-
                  },
                  {
                      "sTitle": "Father Name",
                      'sWidth': '',
                      'sClass': 'center'
-
-
                  },
                   {
                       "sTitle": "Emergency Contact Person",
                       'sWidth': '',
                       'sClass': 'center'
-
-
                   },
                   {
                       "sTitle": "Emergency Contact Number",
