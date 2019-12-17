@@ -81,7 +81,7 @@
     margin-top: -30px;
 }
     .styled-select {
-  background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+  /*background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;*/
   height: 29px;
   overflow: hidden;
   width: 240px;

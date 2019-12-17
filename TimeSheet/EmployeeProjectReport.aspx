@@ -78,7 +78,7 @@ tr.shown td.details-control {
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="ViewAllEmployee.aspx" class="navbar-brand hidden-xs navbar-brand-primary">
+                    <a href="#" class="navbar-brand hidden-xs navbar-brand-primary">
                         <img src="admin/images/tech_v-Logo_colo5r.png" alt="techvLogo"/>
 
                     </a>
@@ -113,13 +113,13 @@ tr.shown td.details-control {
                                 <div class="tab-pane active" id="sidebar-tabs-menu">
                                     <div>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
-                                            <li class=""><a href="AddProfitCostCenter.aspx"><i class="fa fa-calendar"></i><span>Add Profit/Cost Center</span></a>
+                                            <li class=""><a href="AddProfitCostCenter.aspx"><i class="fa fa-plus-square"></i><span>Add Profit/Cost Center</span></a>
                                             </li>
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block" id="leavesidebar">
                                             <li class="">
                                                 <a  href="ViewProfitCostCenter.aspx">
-                                                    <i class="fa fa-bed"></i>
+                                                    <i class="fa fa-eye"></i>
                                                     <span>View Profit/Cost Center</span>
                                                 </a>
                                             </li>
@@ -127,7 +127,7 @@ tr.shown td.details-control {
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block" id="leavesidebar">
                                             <li class="active" id="liActive">
                                                 <a class="" href="#" data-toggle="collapse" aria-expanded="true">
-                                                    <i class="fa fa-bed"></i>
+                                                    <i class="fa fa-users"></i>
                                                     <span>Employee-Project Report</span>
                                                 </a>
                                             </li>

@@ -112,21 +112,21 @@ tr.shown td.details-control {
                                 <div class="tab-pane active" id="sidebar-tabs-menu">
                                     <div>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
-                                            <li class=""><a href="AddProfitCostCenter.aspx"><i class="fa fa-calendar"></i><span>Add Profit/Cost Center</span></a>
+                                            <li class=""><a href="AddProfitCostCenter.aspx"><i class="fa fa-plus-square"></i><span>Add Profit/Cost Center</span></a>
                                             </li>
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block" id="leavesidebar">
                                             <li class="" id="liActive">
                                                 <a class="" href="#" data-toggle="collapse" aria-expanded="true">
-                                                    <i class="fa fa-bed"></i>
+                                                    <i class="fa fa-eye"></i>
                                                     <span>View Profit/Cost Center</span>
                                                 </a>
                                             </li>
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block" id="leavesidebar">
                                             <li class="active" >
-                                                <a class="" href="EmployeeProjectReport.aspx" data-toggle="collapse" aria-expanded="true">
-                                                    <i class="fa fa-bed"></i>
+                                                <a class="" href="EmployeeProjectReport.aspx">
+                                                    <i class="fa fa-users"></i>
                                                     <span>Employee-Project Report</span>
                                                 </a>
                                             </li>
