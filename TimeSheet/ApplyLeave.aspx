@@ -27,7 +27,8 @@
     <link href="alert/themes/default/theme.min.css" rel="stylesheet" />
 
     <link href="admin/plugins/DataTables-1.10.4/media/DT_bootstrap.css" rel="stylesheet" />
-    <link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <link href="css/jqueryui.1.11.3.css" rel="stylesheet" />
+    <%--<link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet">--%>
 </head>
 <style>
     .navbar-brand.navbar-brand-primary, .navbar-brand.navbar-brand-primary:hover
@@ -608,7 +609,8 @@ color:white
     <script src="bootstrap/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
     <script src="admin/plugins/DataTables-1.10.4/media/jquery.dataTables.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-   <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+   <%--<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>--%>
+    <script src="bootstrap/js/jquery.ui.1.11.3.js"></script>
 
     <script src="alert/js/alert.min.js"></script>
     <script type="text/javascript">

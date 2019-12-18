@@ -842,6 +842,7 @@
     <Content Include="ChangePassword.aspx" />
     <Content Include="commonrequest.aspx" />
     <Content Include="CopyViewEmployee.aspx" />
+    <Content Include="css\jqueryui.1.11.3.css" />
     <Content Include="data.html" />
     <Content Include="Delete_Employee.aspx" />
     <Content Include="dresscodepolicy.aspx" />
@@ -1325,6 +1326,7 @@
     <Content Include="bootstrap-datepicker\build\build_standalone.less" />
     <Content Include="bootstrap-datepicker\component.json" />
     <Content Include="bootstrap-datepicker\less\datepicker.less" />
+    <Content Include="bootstrap\js\jquery.ui.1.11.3.js" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
