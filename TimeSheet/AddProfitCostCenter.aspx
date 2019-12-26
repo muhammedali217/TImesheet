@@ -112,7 +112,7 @@ tr.shown td.details-control {
                                             <li class="" id="liActive"><a href="#"><i class="fa fa-plus-square"></i><span>Add Profit/Cost Center</span></a>
                                             </li>
                                         </ul>
-                                        <ul class="sidebar-menu sm-icons-right sm-icons-block" id="leavesidebar">
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block" id="leave">
                                             <li class="">
                                                 <a href="ViewProfitCostCenter.aspx">
                                                     <i class="fa fa-eye"></i>
@@ -148,13 +148,7 @@ tr.shown td.details-control {
                                     <div>
                                   <form>
                                      <div class="col-md-6 col-md-offset-3" >
-                                         <section class="col-md-6">
-                                      <fieldset class="Employee-code">
-                                        <label for="exampleInputEmail1">Profit/Cost Center Code</label> <font color="red" size="4px"><b> * </b></font>
-                                        <input type="text" class="form-control" id="txtProfitcode" placeholder="Enter Profit/Cost Code">
-                                      </fieldset>
-                                      </section>
-                                      <section class="col-md-6">
+                                         <section class="col-sm-6">
                                         <fieldset class="Employee-code">
                                             <label for="exampleInputEmail1">Profit/Cost Type</label><font color="red" size="4px"><b> * </b></font>
                                                 <select class="form-control input-alt" id="ddlType" style="width: 100%;margin-left: 0px;display:inline;">
@@ -164,6 +158,13 @@ tr.shown td.details-control {
                                                 </select>
                                             </fieldset>
                                         </section>
+                                         <section class="col-md-6">
+                                              <fieldset class="Employee-code">
+                                                <label for="exampleInputEmail1">Profit/Cost Center Code</label> <font color="red" size="4px"><b> * </b></font>
+                                                <input type="text" class="form-control" id="txtProfitcode" placeholder="Enter Profit/Cost Code">
+                                                  <label id="lblRule" style="display: inline-block;color: red;font-size: 12px;"></label>
+                                              </fieldset>
+                                          </section>
                                             </div>
                                       <br />
                                         <div class="col-md-6 col-md-offset-3" style="margin-top: 2%;" >
@@ -172,9 +173,6 @@ tr.shown td.details-control {
                                                 <label for="exampleInputEmail1">Owner</label><font color="red" size="4px"><b> * </b></font>
                                                 <select class="form-control input-alt" id="ddlOwner" style="width: 100%;margin-left: 0px;display:inline;">
                                                     <option value="">Select Owner</option>
-                                                    <option value="Devi">Devi</option>
-                                                    <option value="Ravi">Ravi</option>
-                                                    <option value="SreeKumar">SreeKumar</option>
                                                   </select>
                                               </fieldset>
                                             </section>                                     
