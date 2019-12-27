@@ -13,7 +13,7 @@
         ListProfitCost();
     }
 
-    $("#tblProfitCostDetails").on('mousedown.save', "i.fa.fa-floppy-o", function (e) {
+    $(document).on('mousedown.save', "i.fa.fa-floppy-o", function (e) {
         var $row = $(this).closest("tr");
         $tds = $row.find("td");
 

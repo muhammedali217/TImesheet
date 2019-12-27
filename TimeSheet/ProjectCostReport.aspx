@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EmployeeProjectReport.aspx.cs" Inherits="TimeSheet.EmployeeProjectReport" %>
+﻿\<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProjectCostReport.aspx.cs" Inherits="TimeSheet.ProjectCostReport" %>
 
 <!DOCTYPE html>
 
@@ -123,16 +123,16 @@ tr.shown td.details-control {
                                             </li>
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block" id="leavesidebar">
-                                            <li class="active" id="liActive">
-                                                <a class="" href="#" data-toggle="collapse" aria-expanded="true">
+                                            <li class="active" id="">
+                                                <a class="" href="EmployeeProjectReport.aspx">
                                                     <i class="fa fa-users"></i>
                                                     <span>Employee P/C Report</span>
                                                 </a>
                                             </li>
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block" id="projectreport">
-                                            <li class="active" id="">
-                                                <a class="" href="ProjectCostReport.aspx">
+                                            <li class="active" id="liActive">
+                                                <a class="" href="#" data-toggle="collapse" aria-expanded="true">
                                                     <i class="fa fa-code"></i>
                                                     <span>Project P/C Report</span>
                                                 </a>
@@ -152,7 +152,7 @@ tr.shown td.details-control {
                             <div class="item col-md-12 col-sm-12 col-xs-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h2 align="center">Employee-Profit/Cost Center Report</h2>
+                                        <h2 align="center">Project-Profit/Cost Center Report</h2>
                                     </div>
                                     <hr />
                                     <div>
@@ -208,7 +208,7 @@ tr.shown td.details-control {
     <script src="admin/js/vendor-forms.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>   
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-    <script src="pagescripts/EmployeeProjectReport.js"></script>
+    <script src="pagescripts/ProjectCostReport.js"></script>
     <script src="alert/js/alert.min.js"></script>
 </body>
 </html>

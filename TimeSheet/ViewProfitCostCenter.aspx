@@ -131,6 +131,14 @@ tr.shown td.details-control {
                                                 </a>
                                             </li>
                                         </ul>
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block" id="projectreport">
+                                            <li class="active" id="">
+                                                <a class="" href="ProjectCostReport.aspx">
+                                                    <i class="fa fa-code"></i>
+                                                    <span>Project P/C Report</span>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -150,6 +158,7 @@ tr.shown td.details-control {
                                      <hr />
                                     <div id="tblProfitCost" style="margin-top:-28px";>
                                     </div>
+                                    <label style="color:red;margin-left:369px;margin-top:18px;">*Only Code,Type and Owner fields are editable</label>
                                 </div>
                             </div>
                         </div>

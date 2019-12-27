@@ -27,7 +27,7 @@
                         /* Reduced data set */
                     ],
                     "aoColumns": [
-                         {
+                        {
                             "sTitle": "Sl No",
                             'sWidth': '10%',
                             'sClass': 'center'
@@ -37,12 +37,8 @@
                             'sWidth': '1%',
                             'sClass': 'center',
                             'bVisible': false
-                        },{
-                            "sTitle": "Project Name",
-                            'sWidth': '10%',
-                            'sClass': 'center'
                         }, {
-                            "sTitle": "Month",
+                            "sTitle": "Project Name",
                             'sWidth': '10%',
                             'sClass': 'center'
                         }, {
@@ -96,9 +92,9 @@
                 varParams.strArgmt = $("#ddlYear").val();
                 varProcParams[1] = varParams;
                 varParams = {};
-                
+
                 var SpParams = {};
-                SpParams.strProc = "EmployeeProject_Report";
+                SpParams.strProc = "Project_ProfitCostReport";
                 SpParams.oProcParams = varProcParams;
 
                 $.ajax({
@@ -116,7 +112,7 @@
                                     profitcostCode = (response.details[j].ProfitCostCenter_Code).toString();
                                 else
                                     profitcostCode = 'No Code';
-                                jQuery("#tableProjectReportDetails").dataTable().fnAddData([j + 1, (response.details[j].Projects_ID).toString(), (response.details[j].Projects_Name).toString(), (response.details[j].Month).toString(), profitcostCode]);
+                                jQuery("#tableProjectReportDetails").dataTable().fnAddData([j + 1, (response.details[j].Projects_ID).toString(), (response.details[j].Projects_Name).toString(), profitcostCode]);
                             }
                             jQuery("#tableProjectReportDetails").dataTable().fnDraw();
                         }
@@ -155,12 +151,8 @@
         year.push(current_year - 2);
         year.push(current_year - 1);
         year.push(current_year);
-        console.log(year);
 
-        for (var i = 0; i < year.length; i++) {
-            {
-                $("#ddlYear").append(new Option(year[i], year[i]));
-            }
-        }
+        for (var i = 0; i < year.length; i++)
+            $("#ddlYear").append(new Option(year[i], year[i]));
     }
 });

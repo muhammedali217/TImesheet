@@ -128,6 +128,14 @@ tr.shown td.details-control {
                                                 </a>
                                             </li>
                                         </ul>
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block" id="projectreport">
+                                            <li class="active" id="">
+                                                <a class="" href="ProjectCostReport.aspx">
+                                                    <i class="fa fa-code"></i>
+                                                    <span>Project P/C Report</span>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
