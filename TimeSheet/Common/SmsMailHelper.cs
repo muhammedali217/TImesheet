@@ -623,9 +623,9 @@ namespace TimeSheet.Common
         {
 
 
-            //strReceiversAddress = "<info@techvantagesystems.com>";
-            strReceiversAddress = "<monisha@techvantagesystems.com>";
-            //strCCAddress = "<balu.ramesh@techvantagesystems.com>,<jeeja.deviprasad@techvantagesystems.com>,<smitha.binoy@techvantagesystems.com>,<ravi@techvantagesystems.com>,<meenu@techvantagesystems.com>";
+            strReceiversAddress = "<info@techvantagesystems.com>";
+            //strReceiversAddress = "<monisha@techvantagesystems.com>";
+            strCCAddress = "<balu.ramesh@techvantagesystems.com>,<jeeja.deviprasad@techvantagesystems.com>,<smitha.binoy@techvantagesystems.com>,<ravi@techvantagesystems.com>,<meenu@techvantagesystems.com>";
             StringBuilder oStringBuilder = new StringBuilder();
 
             // string strHostedUrl = Convert.ToString(ConfigurationManager.ConnectionStrings["HostedUrl"] + "/login.aspx");

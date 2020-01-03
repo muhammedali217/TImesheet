@@ -849,6 +849,7 @@
     <Content Include="ChangePassword.aspx" />
     <Content Include="commonrequest.aspx" />
     <Content Include="CopyViewEmployee.aspx" />
+    <Content Include="css\images\ui-icons_222222_256x240.png" />
     <Content Include="css\jqueryui.1.11.3.css" />
     <Content Include="data.html" />
     <Content Include="Delete_Employee.aspx" />

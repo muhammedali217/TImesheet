@@ -160,6 +160,10 @@
                 var thursdayDate = format(Thurday);
                 var fridayDate = format(Friday);
                 var mon = Monday.getFullYear();
+                var tue = tuesday.getFullYear();
+                var wed = Wedday.getFullYear();
+                var thu = Thurday.getFullYear();
+                var fri = Friday.getFullYear();
                 
                 if (mon < year) {
                     if (mondayDate >= currentDay) 
@@ -173,27 +177,57 @@
                     else 
                         $('#div1').hide();
                 }
+                if (tue < year) {
+                    if (tuesdayDate >= currentDay)
+                        $('#div2').show();
 
-                if (tuesdayDate <= currentDay) 
-                    $('#div2').show();
-                
-                else 
-                    $('#div2').hide();
+                    else
+                        $('#div2').hide();
+                }
+                else {
+                    if (tuesdayDate <= currentDay)
+                        $('#div2').show();
+                    else
+                        $('#div2').hide();
+                }
+                if (wed < year) {
+                    if (wednesdayDate >= currentDay)
+                        $('#div3').show();
 
-                if (wednesdayDate <= currentDay) 
-                    $('#div3').show();
-                else 
-                    $('#div3').hide();
+                    else
+                        $('#div3').hide();
+                }
+                else {
+                    if (wednesdayDate <= currentDay)
+                        $('#div3').show();
+                    else
+                        $('#div3').hide();
+                }
 
-                if (thursdayDate <= currentDay) 
-                    $('#div4').show();
-                else 
-                    $('#div4').hide();
-
-                if (fridayDate <= currentDay) 
-                    $('#div5').show();
-                else 
-                    $('#div5').hide();
+                if (thu < year) {
+                    if (thursdayDate >= currentDay)
+                        $('#div4').show();
+                    else
+                        $('#div4').hide();
+                }
+                else {
+                    if (thursdayDate <= currentDay)
+                        $('#div4').show();
+                    else
+                        $('#div4').hide();
+                }
+                if (fri < year) {
+                    if (fridayDate >= currentDay)
+                        $('#div5').show();
+                    else
+                        $('#div5').hide();
+                }
+                else {
+                    if (fridayDate <= currentDay)
+                        $('#div5').show();
+                    else
+                        $('#div5').hide();
+                }
             }
         });
 

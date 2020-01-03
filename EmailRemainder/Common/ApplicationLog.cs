@@ -156,7 +156,7 @@ namespace EmailRemainder.Common
             System.Net.Mail.SmtpClient oSmtpClient;
             MailMessage oMailMessage = new MailMessage();
             oMailMessage.From = new MailAddress("techvantagetechies@gmail.com", "Time Sheet", System.Text.Encoding.UTF8);
-            oMailMessage.To.Add("aswathy@techvantagesystems.com");
+            oMailMessage.To.Add("monisha@techvantagesystems.com");
             oMailMessage.Subject = "Job Error in Techvantage TimeSheet";
             oMailMessage.Body = strText;
             oMailMessage.IsBodyHtml = true;
