@@ -30,6 +30,8 @@
             $("#lblStar").hide();
             $("#lblProfitCostCode").hide();
             $("#star").hide();
+            $("#btnthisWeek").hide();
+            $("#txtprofitcostcode").hide();
         }
 
         var employeeLeaveDateLabel = [];
