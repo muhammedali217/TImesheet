@@ -23,7 +23,7 @@ namespace TimeSheet.Common
                 //Pass the Values 
                 oMailMessage.From = new MailAddress(strSenderAddress, "Techvantage Timesheet", System.Text.Encoding.UTF8);
                 oMailMessage.To.Add(strReceiversAddress.ToString());
-                //oMailMessage.Bcc.Add(strCCAddress.ToString());
+                oMailMessage.Bcc.Add(strCCAddress.ToString());
                 oMailMessage.Subject = strGlobalSubject;
                 oMailMessage.Body = strGlobalText;
                 //add our attachment      
@@ -100,9 +100,10 @@ namespace TimeSheet.Common
         {
 
 
-            //strReceiversAddress = "<melwyn@techvantagesystems.com>,<melwyn12me@gmail.com>";
+            //strReceiversAddress = "<monisha@techvantagesystems.com>";
             strReceiversAddress = "<info@techvantagesystems.com>";
             strCCAddress = "<balu.ramesh@techvantagesystems.com>,<jeeja.deviprasad@techvantagesystems.com>,<smitha.binoy@techvantagesystems.com>";
+            //strCCAddress = "<smitha.binoy@techvantagesystems.com>";
             StringBuilder oStringBuilder = new StringBuilder();
 
             // string strHostedUrl = Convert.ToString(ConfigurationManager.ConnectionStrings["HostedUrl"] + "/login.aspx");
@@ -267,7 +268,7 @@ namespace TimeSheet.Common
         public static void RequestEmail2Admin(string strRequestType, string stEmpName, string TrvlFDate, string TrvlTDate, string TrvlRemarks, string VisaType, string VisaRemarks, string IdRqType, string IdRemarks, string ExpnseFor, string ExpnseCost, string ExpnsePaidTo, string WrkFHmeFDate, string WrkFHmeTDate, string WrkFHmeReason, string ReimbursementFor, string ReimbursementUsed, string ReimbursementRemarks, string ReimbursementAmount,string commonRqFor,string commonRqPurpse,string commonRqDesc)
         {
 
-
+            //strReceiversAddress = "<monisha@techvantagesystems.com>";
             strReceiversAddress = "<info@techvantagesystems.com>";
             strCCAddress = "<balu.ramesh@techvantagesystems.com>,<jeeja.deviprasad@techvantagesystems.com>,<smitha.binoy@techvantagesystems.com>";
             StringBuilder oStringBuilder = new StringBuilder();
