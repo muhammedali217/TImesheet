@@ -166,7 +166,7 @@ namespace PushNotifyJob
             oMailMessage.IsBodyHtml = true;
             oSmtpClient = new System.Net.Mail.SmtpClient("smtp.gmail.com", 25);
             oSmtpClient.UseDefaultCredentials = false;
-            oSmtpClient.Credentials = new NetworkCredential("techvantagetechies@gmail.com", "Gf@rce#20!8");
+            oSmtpClient.Credentials = new NetworkCredential("techvantagetechies@gmail.com", "Gravity@2019#");
             oSmtpClient.EnableSsl = true;
             oSmtpClient.Send(oMailMessage);
         }

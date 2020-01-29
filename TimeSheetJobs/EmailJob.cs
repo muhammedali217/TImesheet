@@ -36,16 +36,16 @@ namespace TimeSheetJobs
             //Console.WriteLine(day);
             PipeClient.WriteLine("Day: " + day.ToString());
             PipeClient.WriteLine("Time: "+ time.ToString());
-            oMailController.SendRemainderEmailToAllEmployee();
-            //if (day == 5 && time == "04:05:00")
-            //{
-            //    oMailController.SendRemainderEmailToAllEmployee();
-            //    PipeClient.WriteLine("Email Send To All Employees");
-            //}
-            //else
-            //{
-            //    PipeClient.WriteLine("Email not yet Send");
-            //}
+            //oMailController.SendRemainderEmailToAllEmployee();
+            if (day == 5 && time == "04:05:00")
+            {
+                oMailController.SendRemainderEmailToAllEmployee();
+                PipeClient.WriteLine("Email Send To All Employees");
+            }
+            else
+            {
+                PipeClient.WriteLine("Email not yet Send");
+            }
         }
 
         public override bool IsRepeatable()

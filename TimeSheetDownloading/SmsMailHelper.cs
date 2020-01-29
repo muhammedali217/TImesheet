@@ -44,7 +44,7 @@ namespace TimeSheetDownloading
                 oMailMessage.Attachments.Add(attachFile);
                 oSmtpClient = new System.Net.Mail.SmtpClient("smtp.gmail.com", 25);
                 oSmtpClient.UseDefaultCredentials = false;
-                oSmtpClient.Credentials = new NetworkCredential("techvantagetechies@gmail.com", "password#123");
+                oSmtpClient.Credentials = new NetworkCredential("techvantagetechies@gmail.com", "Gravity@2019#");
                 oSmtpClient.EnableSsl = true;
                 oMailMessage.IsBodyHtml = true;
 

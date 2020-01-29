@@ -35,7 +35,7 @@ namespace TimeSheet.Common
 
                 oSmtpClient = new System.Net.Mail.SmtpClient("smtp.gmail.com", 25);
                 oSmtpClient.UseDefaultCredentials = false;
-                oSmtpClient.Credentials = new NetworkCredential("techvantagetechies@gmail.com", "Gf@rce#20!8");
+                oSmtpClient.Credentials = new NetworkCredential("techvantagetechies@gmail.com", "Gravity@2019#");
                 oSmtpClient.EnableSsl = true;
                 oMailMessage.IsBodyHtml = true;
 
@@ -259,12 +259,6 @@ namespace TimeSheet.Common
             }
         }
 
-
-
-
-
-
-
         public static void RequestEmail2Admin(string strRequestType, string stEmpName, string TrvlFDate, string TrvlTDate, string TrvlRemarks, string VisaType, string VisaRemarks, string IdRqType, string IdRemarks, string ExpnseFor, string ExpnseCost, string ExpnsePaidTo, string WrkFHmeFDate, string WrkFHmeTDate, string WrkFHmeReason, string ReimbursementFor, string ReimbursementUsed, string ReimbursementRemarks, string ReimbursementAmount,string commonRqFor,string commonRqPurpse,string commonRqDesc)
         {
 
@@ -308,7 +302,6 @@ namespace TimeSheet.Common
                 oStringBuilder.Append("<br/><br/>");
                 oStringBuilder.Append("</div>");
             }
-
 
 
             if (strRequestType == "VISA")
@@ -514,8 +507,6 @@ namespace TimeSheet.Common
                 oStringBuilder.Append("</span>");
 
                 
-
-                
                 oStringBuilder.Append("<br/><br/>");
                 oStringBuilder.Append("</div>");
             }
@@ -527,10 +518,6 @@ namespace TimeSheet.Common
                 SendEMail();
             }
         }
-
-
-
-
 
         public static void RequestAcceptRejectEmail(string stEmpName, string strEmail, string stRequestType, string strReqDate, string strRequestStatus, string strRemarks)
         {

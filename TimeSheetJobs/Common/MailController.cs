@@ -9,9 +9,9 @@ namespace TimeSheetJobs
             try
             {                
                 MailRepository oMailRepository = new MailRepository();
-                //string dtEmployeeEmails = oMailRepository.GetAllEmployeesEmailId();
-                //MailHelper.TimesheetRemainderEmail(dtEmployeeEmails);
-                MailHelper.TimesheetRemainderEmail("monisha@techvantagesystems.com");
+                string dtEmployeeEmails = oMailRepository.GetAllEmployeesEmailId();
+                MailHelper.TimesheetRemainderEmail(dtEmployeeEmails);
+                //MailHelper.TimesheetRemainderEmail("monisha@techvantagesystems.com");
                 return "send";
             }
             catch 
