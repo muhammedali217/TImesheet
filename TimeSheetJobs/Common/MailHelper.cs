@@ -21,10 +21,10 @@ namespace TimeSheetJobs
                 strSenderAddress = "techvantagetechies@gmail.com";
                 //Pass the Values 
                 oMailMessage.From = new MailAddress(strSenderAddress, "Techvantage Timesheet", System.Text.Encoding.UTF8);
-                //oMailMessage.To.Add("info@techvantagesystems.com");
-                oMailMessage.To.Add("monisha@techvantagesystems.com");
-                oMailMessage.Bcc.Add("tmonisha86@gmail.com");
-                //oMailMessage.Bcc.Add(strBccAddress.ToString());
+                oMailMessage.To.Add("info@techvantagesystems.com");
+                //oMailMessage.To.Add("monisha@techvantagesystems.com");
+                //oMailMessage.Bcc.Add("tmonisha86@gmail.com");
+                oMailMessage.Bcc.Add(strBccAddress.ToString());
                 oMailMessage.Subject = strGlobalSubject;
                 oMailMessage.Body = strGlobalText;
                 //add our attachment      
