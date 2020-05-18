@@ -14,7 +14,7 @@ namespace TimeSheetJobs
                 //MailHelper.TimesheetRemainderEmail("monisha@techvantagesystems.com");
                 return "send";
             }
-            catch 
+            catch(Exception ex)
             {               
                 return "Error";
             }

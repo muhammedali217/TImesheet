@@ -18,7 +18,8 @@ namespace TimeSheetJobs
             {
                 String strSenderAddress = string.Empty;
                 MailMessage oMailMessage = new MailMessage();
-                strSenderAddress = "techvantagetechies@gmail.com";
+                string strSenderPassword = XmlConec.getAppSettings_("SenderMailPwd");
+                strSenderAddress = XmlConec.getAppSettings_("SenderMail");//"techvantagetechies@gmail.com";
                 //Pass the Values 
                 oMailMessage.From = new MailAddress(strSenderAddress, "Techvantage Timesheet", System.Text.Encoding.UTF8);
                 oMailMessage.To.Add("info@techvantagesystems.com");
@@ -36,7 +37,7 @@ namespace TimeSheetJobs
 
                 oSmtpClient = new System.Net.Mail.SmtpClient("smtp.gmail.com", 25);
                 oSmtpClient.UseDefaultCredentials = false;
-                oSmtpClient.Credentials = new NetworkCredential("techvantagetechies@gmail.com", "Gravity@2019#");
+                oSmtpClient.Credentials = new NetworkCredential(strSenderAddress, strSenderPassword);
                 oSmtpClient.EnableSsl = true;
                 oMailMessage.IsBodyHtml = true;
 

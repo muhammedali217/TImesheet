@@ -37,7 +37,7 @@ namespace TimeSheetJobs
             PipeClient.WriteLine("Day: " + day.ToString());
             PipeClient.WriteLine("Time: "+ time.ToString());
             //oMailController.SendRemainderEmailToAllEmployee();
-            if (day == 5 && time == "04:05:00")
+            if (day == 5 && time == "16:23:00")
             {
                 oMailController.SendRemainderEmailToAllEmployee();
                 PipeClient.WriteLine("Email Send To All Employees");

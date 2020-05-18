@@ -40,6 +40,7 @@
             // TimSheetServiceInstaller
             // 
             this.TimSheetServiceInstaller.ServiceName = "TimeSheetJobs";
+            this.TimSheetServiceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 

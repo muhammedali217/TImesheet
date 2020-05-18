@@ -11,16 +11,11 @@ namespace TimeSheetJobs
         private static string strReceiversAddress = null;
         private static string strGlobalSubject = "", strGlobalText = "";
 
-       
-
-
         private static void SendEMailWithAttachment()
         {
             System.Net.Mail.SmtpClient oSmtpClient;
             try
             {
-                
-                
                 DataTableSuccess oDataTableWStatus = new DataTableSuccess();
 
                 TimeSheetRepository oTimeSheetRepository = new TimeSheetRepository();
@@ -32,7 +27,9 @@ namespace TimeSheetJobs
                 Attachment attachFile = new Attachment(ms, "TimeSheet.xls", "application/vnd.ms-excel");
                 String strSenderAddress = string.Empty;
                 MailMessage oMailMessage = new MailMessage();
-                strSenderAddress = "techvantagetechies@gmail.com";
+                //strSenderAddress = "techvantagetechies@gmail.com";
+                string strSenderPassword = XmlConec.getAppSettings_("SenderMailPwd");
+                strSenderAddress = XmlConec.getAppSettings_("SenderMail");
                 //Pass the Values 
                 oMailMessage.From = new MailAddress(strSenderAddress, "Techvantage Timesheet", System.Text.Encoding.UTF8);
                 oMailMessage.To.Add(strReceiversAddress.ToString());
@@ -44,7 +41,7 @@ namespace TimeSheetJobs
                 oMailMessage.Attachments.Add(attachFile);
                 oSmtpClient = new System.Net.Mail.SmtpClient("smtp.gmail.com", 25);
                 oSmtpClient.UseDefaultCredentials = false;
-                oSmtpClient.Credentials = new NetworkCredential("techvantagetechies@gmail.com", "Gravity@2019#");
+                oSmtpClient.Credentials = new NetworkCredential(strSenderAddress, strSenderPassword);
                 oSmtpClient.EnableSsl = true;
                 oMailMessage.IsBodyHtml = true;
 
