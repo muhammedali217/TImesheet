@@ -195,8 +195,17 @@ tr.shown td.details-control {
                                                         </a>
                                                     </li>
                                                 </ul>
-                                            </li>                                           
+                                            </li>
+
+                                           
                                         </ul>
+
+                                                 
+
+                                        
+                                
+
+
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
                                             <li class="active">
@@ -236,8 +245,15 @@ tr.shown td.details-control {
                                                         </a>
                                                     </li>
                                                 </ul>
-                                            </li>                                           
+                                            </li>
+
+                                           
                                         </ul>
+
+
+
+
+
                                            <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
                                             <li class="active">
@@ -368,7 +384,9 @@ tr.shown td.details-control {
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="uploadknwldgedoc.aspx"><i class="fa fa-file"></i><span>Upload Knowledge Doc</span></a>
-                                            </li>                                         
+                                            </li>
+                                           
+                                            
                                         </ul>
                                        
 
@@ -441,12 +459,23 @@ tr.shown td.details-control {
                                     </div>
                                      <hr />
                                   
-                                    <form>                                    
+                                    <form>
+                                     
+                                   
+
+                                        
+                                          
+
+
                                         <div class="col-md-6 col-md-offset-4" >
+
                                           <section class="col-md-6">
                                       <fieldset class="Employee-code">
                                         <label for="exampleInputEmail1">Employees</label><font color="red" size="4px"><b> &nbsp;&nbsp;* </b></font><br />
-                                       <select class="js-example-basic-multiple" multiple="multiple" id="ddlEmployee" style="width: 75%"></select>                                        
+                                       <select class="js-example-basic-multiple" multiple="multiple" id="ddlEmployee" style="width: 75%"></select>
+                                        
+                                  
+
                                       </fieldset>
                                       </section>
 
@@ -473,7 +502,8 @@ tr.shown td.details-control {
                                           <section class="btn-group pull-left">
                  
                                                <button type="button" class="btn btn-danger b.tn-lg" id="btnCancel">Cancel</button> 
-                                               <button type="button" class="btn btn-default bt.n-lg" id="btnUpdate">Update</button> 
+                                               <button type="button" class="btn btn-default bt.n-lg" id="btnUpdate">Update PL</button> 
+                                              <button type="button" class="btn btn-default bt.n-lg" id="btnUpdateSL">Update SL</button>
                                               <button type="button" class="btn btn-warning bt.n-lg" id="btnShowLeave">Show Leave</button>
                                                
                  

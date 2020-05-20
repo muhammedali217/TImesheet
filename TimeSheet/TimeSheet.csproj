@@ -874,6 +874,7 @@
     <Content Include="leavedashboard.aspx" />
     <Content Include="leavepolicy.aspx" />
     <Content Include="leaveupdate.aspx" />
+    <Content Include="pagescripts\leaveupdate.js" />
     <Content Include="login.html" />
     <Content Include="admin\plugins\Jquery_Validation\css\cmxform.css" />
     <Content Include="admin\plugins\Jquery_Validation\css\cmxformTemplate.css" />
@@ -1137,7 +1138,7 @@
     <Content Include="pagescripts\idcardrequest.js" />
     <Content Include="pagescripts\knwldgecenter.js" />
     <Content Include="pagescripts\leavedashboard.js" />
-    <Content Include="pagescripts\leaveupdate.js" />
+    <Content Include="pagescripts\leaveupdate_old.js" />
     <Content Include="pagescripts\login.js" />
     <Content Include="pagescripts\lopdetails.js" />
     <Content Include="pagescripts\meetingroom.js" />
