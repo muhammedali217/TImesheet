@@ -61,12 +61,21 @@
         var curr = new Date; // get current date
         //var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
         //var last = first + 6; // last day is the first day + 6
-        //alert(first);  
-        var Monday = new Date(curr.setDate(curr.getDate() - curr.getDay() +1));
-        var tuesday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 2));
-        var Wedday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 3));
-        var Thurday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 4));
-        var Friday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 5));
+        //alert(first); 
+        if (Localvaluee == 114) {
+            var Monday = new Date(curr.setDate(curr.getDate() - curr.getDay() - 6));
+            var tuesday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 2));
+            var Wedday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 3));
+            var Thurday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 4));
+            var Friday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 5));
+        }
+        else {
+            var Monday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 1));
+            var tuesday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 2));
+            var Wedday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 3));
+            var Thurday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 4));
+            var Friday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 5));
+        }
         
         function format(inputDate) {
             var dateofDay;
@@ -333,6 +342,7 @@
             var WednesdayWrkedHours = [];
             var ThursdayWrkedHours = [];
             var FridayWrkedHours = [];
+            var comments = [];
 
             $("#div1").children("input[type=number]").each(function () {
                 MondayWrkedHours.push($(this).val());
@@ -353,6 +363,11 @@
                 FridayWrkedHours.push($(this).val());
             });
 
+            $("#div6").children("textarea").each(function() {
+                if($(this).val()!='')
+                    comments.push($(this).val());
+            });
+
             var Mon = MondayWrkedHours.toString();
             var MonW = Mon.replace(/,/g, "");
 
@@ -367,6 +382,9 @@
 
             var Fri = FridayWrkedHours.toString();
             var FriW = Fri.replace(/,/g, "");
+
+            var comm = comments.toString();
+            var comment = comm.replace(/,/g, "");
             //alert(MonW);
             //alert(MondayWrkedHours.toString());
             if ($("#ddlNewProject").val() == "") {
@@ -379,11 +397,11 @@
             }
             else if (MonW != "" || TueW != "" || WedW != "" || ThurW != "" || Fri != "") {
 
-                EnterWeeklyTimeSheet(arrayOfTaskIds.toString(), $("#ddlNewProject").val(), Localvalue, MondayWrkedHours.toString(), format(Monday));
-                EnterWeeklyTimeSheet(arrayOfTaskIds.toString(), $("#ddlNewProject").val(), Localvalue, TuesdayWrkedHours.toString(), format(tuesday));
-                EnterWeeklyTimeSheet(arrayOfTaskIds.toString(), $("#ddlNewProject").val(), Localvalue, WednesdayWrkedHours.toString(), format(Wedday));
-                EnterWeeklyTimeSheet(arrayOfTaskIds.toString(), $("#ddlNewProject").val(), Localvalue, ThursdayWrkedHours.toString(), format(Thurday));
-                EnterWeeklyTimeSheet(arrayOfTaskIds.toString(), $("#ddlNewProject").val(), Localvalue, FridayWrkedHours.toString(), format(Friday));
+                EnterWeeklyTimeSheet(arrayOfTaskIds.toString(), $("#ddlNewProject").val(), Localvalue, MondayWrkedHours.toString(), format(Monday), comments.toString());
+                EnterWeeklyTimeSheet(arrayOfTaskIds.toString(), $("#ddlNewProject").val(), Localvalue, TuesdayWrkedHours.toString(), format(tuesday), comments.toString());
+                EnterWeeklyTimeSheet(arrayOfTaskIds.toString(), $("#ddlNewProject").val(), Localvalue, WednesdayWrkedHours.toString(), format(Wedday), comments.toString());
+                EnterWeeklyTimeSheet(arrayOfTaskIds.toString(), $("#ddlNewProject").val(), Localvalue, ThursdayWrkedHours.toString(), format(Thurday), comments.toString());
+                EnterWeeklyTimeSheet(arrayOfTaskIds.toString(), $("#ddlNewProject").val(), Localvalue, FridayWrkedHours.toString(), format(Friday), comments.toString());
                 //$("#lblMessage").css({ "color": "#062011", "font-size": "18px" });
                 //$("#lblMessage").text("TIMESHEET SUBMITTED.");
 
@@ -397,7 +415,7 @@
             }
 
         });
-        function EnterWeeklyTimeSheet(SubTasksIdArray, ProjectsId, Employee_ID, TimeSheet_wrkHours, TimeSheet_Date) {
+        function EnterWeeklyTimeSheet(SubTasksIdArray, ProjectsId, Employee_ID, TimeSheet_wrkHours, TimeSheet_Date,Timesheet_Description) {
             var varProcParams = new Array();
             var varParams = {};
             varParams.strKey = "SubTasksIdArray";
@@ -425,7 +443,7 @@
 
             var varParams = {};
             varParams.strKey = "TimeSheet_Description";
-            varParams.strArgmt = '';
+            varParams.strArgmt = Timesheet_Description;
             varProcParams[4] = varParams;
             varParams = {};
 
