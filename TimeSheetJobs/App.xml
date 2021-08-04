@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <appSettings>
+    <add key="SQLServer" value="65.19.181.60" />
+    <add key="SQLUserId" value="techvantage" />
+    <add key="SQLPassword" value="Lavender#20!8#" />
+    <add key="Database" value="LeaveMngment" />
+    <add key="Authentic" value="true" />
+    <add key="MsgInterval" value="1000" />
+    <add key="Environment" value="TimeSheetJobs" />
+    <add key="SenderMail" value="techvantageanalytics@gmail.com" />
+    <add key="SenderMailPwd" value="LemonGrass@098" />
+  </appSettings>
+</configuration>
