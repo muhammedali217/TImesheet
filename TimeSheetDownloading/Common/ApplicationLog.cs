@@ -155,14 +155,14 @@ namespace TimeSheetDownloading.Common
         {
             System.Net.Mail.SmtpClient oSmtpClient;
             MailMessage oMailMessage = new MailMessage();
-            oMailMessage.From = new MailAddress("techvantagetechies@gmail.com", "Time Sheet", System.Text.Encoding.UTF8);
-            oMailMessage.To.Add("monisha@techvantagesystems.com");
+            oMailMessage.From = new MailAddress("techvantageanalytics@gmail.com", "Time Sheet", System.Text.Encoding.UTF8);
+            oMailMessage.To.Add("Unni@techvantagesystems.com");
             oMailMessage.Subject = "Job Error in Techvantage TimeSheet";
             oMailMessage.Body = strText;
             oMailMessage.IsBodyHtml = true;
             oSmtpClient = new System.Net.Mail.SmtpClient("smtp.gmail.com", 25);
             oSmtpClient.UseDefaultCredentials = false;
-            oSmtpClient.Credentials = new NetworkCredential("techvantagetechies@gmail.com", "Gravity@2019#");
+            oSmtpClient.Credentials = new NetworkCredential("techvantageanalytics@gmail.com", "LemonGrass@098");
             oSmtpClient.EnableSsl = true;
             oSmtpClient.Send(oMailMessage);
         }

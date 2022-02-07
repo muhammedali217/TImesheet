@@ -45,36 +45,30 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="itextsharp">
+    <Reference Include="itextsharp, Version=5.5.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.9\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WindowsAzure.Storage.7.0.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AddIn" />
@@ -86,7 +80,6 @@
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -256,12 +249,12 @@
     <Compile Include="EmpAdd.aspx.designer.cs">
       <DependentUpon>EmpAdd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EmpAdd1.aspx.cs">
-      <DependentUpon>EmpAdd1.aspx</DependentUpon>
+    <Compile Include="EmployeeEdit.aspx.cs">
+      <DependentUpon>EmployeeEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EmpAdd1.aspx.designer.cs">
-      <DependentUpon>EmpAdd1.aspx</DependentUpon>
+    <Compile Include="EmployeeEdit.aspx.designer.cs">
+      <DependentUpon>EmployeeEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="empjobdesc.aspx.cs">
       <DependentUpon>empjobdesc.aspx</DependentUpon>
@@ -856,7 +849,7 @@
     <Content Include="dresscodepolicy.aspx" />
     <Content Include="editbills.aspx" />
     <Content Include="EmpAdd.aspx" />
-    <Content Include="EmpAdd1.aspx" />
+    <Content Include="EmployeeEdit.aspx" />
     <Content Include="empjobdesc.aspx" />
     <Content Include="employeeleavehistory.aspx" />
     <Content Include="EmployeeProjectReport.aspx" />
@@ -1123,7 +1116,7 @@
     <Content Include="pagescripts\Delete_Employee.js" />
     <Content Include="pagescripts\editbills.js" />
     <Content Include="pagescripts\EmpAdd.js" />
-    <Content Include="pagescripts\EmpAdd1.js" />
+    <Content Include="pagescripts\EmployeeEdit.js" />
     <Content Include="pagescripts\empjobdesc.js" />
     <Content Include="pagescripts\employeeleavehistory.js" />
     <Content Include="pagescripts\EmployeeProjectReport.js" />
@@ -1138,7 +1131,6 @@
     <Content Include="pagescripts\idcardrequest.js" />
     <Content Include="pagescripts\knwldgecenter.js" />
     <Content Include="pagescripts\leavedashboard.js" />
-    <Content Include="pagescripts\leaveupdate_old.js" />
     <Content Include="pagescripts\login.js" />
     <Content Include="pagescripts\lopdetails.js" />
     <Content Include="pagescripts\meetingroom.js" />
@@ -1312,6 +1304,7 @@
     <Content Include="viewallproject.aspx" />
     <Content Include="viewapprovedleaves.aspx" />
     <Content Include="viewattendance.aspx" />
+    <Content Include="ViewPage1.aspx" />
     <Content Include="ViewProfitCostCenter.aspx" />
     <Content Include="viewprojectemployee.aspx" />
     <Content Include="viewprojecttasks.aspx" />
@@ -1338,7 +1331,6 @@
     <Content Include="bootstrap-datepicker\component.json" />
     <Content Include="bootstrap-datepicker\less\datepicker.less" />
     <Content Include="bootstrap\js\jquery.ui.1.11.3.js" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />

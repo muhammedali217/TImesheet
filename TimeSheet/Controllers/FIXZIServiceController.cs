@@ -365,6 +365,28 @@ namespace TimeSheet.Controllers
         }
 
         [AcceptVerbs("GET", "POST")]
+        public string EmployeeUpdateedEmail(Employee oEmployee)
+        {
+            try
+            {
+
+                DataTableSuccess oDataTableMail = new DataTableSuccess();
+                string EmpName = Convert.ToString(oEmployee.EmpName);//name
+                string EmpCode = Convert.ToString(oEmployee.EmpCode);//email
+                string EmpDesignation = Convert.ToString(oEmployee.EmpDesignation);//password
+                string UserName = Convert.ToString(Environment.UserName);
+                SmsMailHelper.EmployeeUpdatedEmail(EmpName, EmpCode, EmpDesignation);
+                return "Success ";
+            }
+            catch (Exception exMe)
+            {
+                ApplicationLog.LogError(exMe.Message, "Error in accessing EmployeeAddedEmail service from Web");
+                return exMe.Message;
+            }
+        }
+
+
+        [AcceptVerbs("GET", "POST")]
         public HttpResponseMessage LeaveApplicationEmail(Leave oLeave)
         {
             try
@@ -823,9 +845,15 @@ namespace TimeSheet.Controllers
                 string gendrmamWomen = oCertificate.GentleManWomen.ToString();
                 string himhis = oCertificate.himhis.ToString();
 
+                
+
                 string filepath = "~/Certification/" + shortname + ".pdf";
                 //(HttpContext.Current.Server.MapPath("~/KnowledgeCenter")
-                FileStream fs = new FileStream(HttpContext.Current.Server.MapPath(filepath), FileMode.Create, FileAccess.Write, FileShare.None);
+               // var stream = new FileStream(filepath, (FileMode)FileAccess.Read);
+                //var reader = new StreamReader(stream);
+               // File.Delete(filepath);
+
+                FileStream fs = new FileStream(HttpContext.Current.Server.MapPath(filepath), FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
                 Document doc = new Document(PageSize.A4, 75f, 50f, 50f, 50f);
 
                 PdfWriter writer = PdfWriter.GetInstance(doc, fs);
@@ -838,7 +866,8 @@ namespace TimeSheet.Controllers
                 var MyFont = FontFactory.GetFont("Arial", 11, FontColour);
 
 
-                string imageURL = "http://www.techvantagesystems.com/img/logo.png";
+                //string imageURL = "https://www.techvantagesystems.com/img/logo.png";
+                string imageURL = "https://www.techvantagesystems.com/media/1208/logo.png";
                 iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(imageURL);
                 //Resize image depend upon your need
                 //jpg.ScaleToFit(160f, 46f);

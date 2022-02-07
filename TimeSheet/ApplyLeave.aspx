@@ -28,7 +28,7 @@
 
     <link href="admin/plugins/DataTables-1.10.4/media/DT_bootstrap.css" rel="stylesheet" />
     <link href="css/jqueryui.1.11.3.css" rel="stylesheet" />
-    <%--<link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet">--%>
+    <link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
 </head>
 <style>
     .navbar-brand.navbar-brand-primary, .navbar-brand.navbar-brand-primary:hover
@@ -438,13 +438,14 @@ color:white
                                             <h2 align="center">Apply Leave </h2>
                                             
                                         <hr />
+                                           
                                             <section class="col-md-6">
 
                                                 <fieldset class="form-gr.oup">
-                                                    <label for="exampleInputEmail1">Leave From</label><font color="red" size="4px"><b> &nbsp;&nbsp;* </b></font>
+                                                    <label for="exampleInputEmail1">Leave From</label><font color="red" size="4px"><b> &nbsp;&nbsp;* </b></font><br /><br />
                                                     <div class='input-group date' id='Div1'>
-                                                        <input type='text' class="form-control" id="txtLeaveFrom" placeholder="Choose Date" name="fromLeaveDate"/>
-                                                        <input type="checkbox" name="chkfrm" value="Yes" id="chkfrmFN" > FN </input>
+                                                        <input type='text' class="form-control" id="txtLeaveFrom" placeholder="Choose Date" name="fromLeaveDate" /><br /><br />
+                                                       &nbsp;&nbsp; <input type="checkbox" name="chkfrm" value="Yes" id="chkfrmFN" > FN </input>&nbsp;&nbsp;
                                                         <input type="checkbox" name="chkfrm" value="Yes" id="chkfrmAN" > AN </input>&nbsp;
                                                         
                                                     </div>
@@ -454,10 +455,10 @@ color:white
 
                                             <section class="col-md-6">
                                                 <fieldset class="form-gr.oup">
-                                                    <label for="exampleInputEmail1">Leave To</label><font color="red" size="4px"><b> &nbsp;&nbsp;* </b></font>
+                                                    <label for="exampleInputEmail1">Leave To</label><font color="red" size="4px"><b> &nbsp;&nbsp;* </b></font><br /><br />
                                                     <div class='input-group date' id='Div2'>
-                                                        <input type='text' class="form-control" id="txtLeaveTo" placeholder="Choose Date" />
-                                                        <input type="checkbox" name="chkto" value="Yes" id="chktoFN" > FN </input>
+                                                        <input type='text' class="form-control" id="txtLeaveTo" placeholder="Choose Date" /><br /><br />
+                                                       &nbsp;&nbsp;  <input type="checkbox" name="chkto" value="Yes" id="chktoFN" > FN </input>&nbsp;&nbsp;
                                                          <input type="checkbox" name="chkto" value="Yes" id="chktoAN" > AN </input>&nbsp;
                                                         
                                                     </div>
@@ -470,7 +471,8 @@ color:white
 
                                             <section class="col-md-6">
                                                 <fieldset class="Employee-code">
-                                                    <label for="ddlLeaveType">Leave Type</label><font color="red" size="4px"><b> &nbsp;&nbsp;* </b></font><br />
+                                                     <div>
+                                                    <label for="ddlLeaveType">Leave Type</label><font color="red" size="4px"><b> &nbsp;&nbsp;* </b></font><br /><br />
                                                     <select class="styled-select black select" id="ddlLeaveType" name="dropdown" style="margin-top: -16px; margin-bottom: 5px; margin-left: -1px;width: 258px;height: 30px;">
                                                         <option value="0">SELECT Leave Type</option>
                                                         <option value="1">Privilege Leave</option>
@@ -479,13 +481,14 @@ color:white
                                                         <option value="4">Paternity leave</option>
                                                         <option>On Duty</option>
                                                         <option>LOP</option>
+                                                       <option value="5">Covid</option>
 
 
 
 
 
                                                     </select>
-
+</div>
                                                 </fieldset>
                                             </section>
 
@@ -494,14 +497,14 @@ color:white
 
                                             <section class="col-md-6">
                                                 <fieldset class="Employee-code">
-                                                    <label for="remainingLeaves" id="Remains" style="color:red">Remaining</label>
+                                                    <label for="remainingLeaves" id="Remains" style="color:red">Remaining</label><br /><br />
                                                     <input type="text" class="form-control" id="remainingLeaves">
                                                 </fieldset>
                                             </section>
 
                                             <section class="col-md-6">
                                                 <fieldset class="Employee-code">
-                                                    <label for="exampleInputEmail1" style="margin-left: 0px;">No Of Days</label>
+                                                    <label for="exampleInputEmail1" style="margin-left: 0px;">No Of Days</label><br /><br />
                                                     <input type="text" class="form-control" id="txtTotalLeave" style="height:32px;width:68px;margin-left: 0px;">
                                                 </fieldset>
                                             </section>
@@ -511,7 +514,7 @@ color:white
                                         <div class="col-md-6 col-md-offset-3">
                                             <section class="col-md-12">
                                                 <fieldset class="Employee-code">
-                                                    <label for="exampleInputEmail1">Reason For Leave</label><font color="red"><b> &nbsp;&nbsp;* </b></font>
+                                                    <label for="exampleInputEmail1">Reason For Leave</label><font color="red"><b> &nbsp;&nbsp;* </b></font><br /><br />
                                                     <input type="text" class="form-control" id="txtReason" placeholder="Enter Reason for Leave" style="height:57px;width:525px;">
                                                 </fieldset>
                                             </section>

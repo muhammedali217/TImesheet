@@ -235,8 +235,10 @@
             jqTds[2].innerHTML = '<input type="text" id="ToDate" class="m-wrap medium" style="width:100px;" value="' + aData[3] + '">';
             jqTds[3].innerHTML = '<label id="lblNoOfDays">' + aData[4] + '</label>';
             jqTds[4].innerHTML = '<input id="txtReason" type="text" class="m-wrap medium" style="width:200px;" value="' + aData[5] + '">';
-            jqTds[5].innerHTML = '<h4><a class="save" style="color:#008055;">UPDATE</a></h4>';
-            jqTds[6].innerHTML = '<h4><a class="cancel" style="color:red;"href=" ">CANCEL</a></h4>';
+            jqTds[5].innerHTML = '<label id="lblNoOfDays">' + aData[6] + '</label>';
+            jqTds[6].innerHTML = '<label id="lblNoOfDays">' + aData[7] + '</label>';
+            jqTds[7].innerHTML = '<h4><a class="save" style="color:#008055;">UPDATE</a></h4>';
+            jqTds[8].innerHTML = '<h4><a class="cancel" style="color:red;"href=" ">CANCEL</a></h4>';
 
             $('#FromDate').datepicker({ todayHighlight: true });
             $('#ToDate').datepicker({ todayHighlight: true });

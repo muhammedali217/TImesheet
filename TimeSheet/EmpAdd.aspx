@@ -451,6 +451,7 @@ button:hover {
                                     <div class="panel-heading">
                                         <h2 align="center">ADD EMPLOYEE</h2>
                                     </div>
+                                     <li class="active"><%--<a href="EmployeeEdit.aspx"><span>Edit Employee</span></a>--%>
                                     <hr />
                                     <form id="EmployeeAddForm" class="form-horizontal">
                              <div class="tab" align="center" id="tab1"> <h4 align="center">Official Details</h4>

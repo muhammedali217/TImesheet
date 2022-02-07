@@ -24,6 +24,11 @@
             if ($('#txtEmpName').val() == '') {
                 $.alert.open('Please enter the Employee Name');
             }
+            else if ($('#txtEmpName').val().indexOf(',') <=0 )
+            {
+                $.alert.open('Please enter the Employee Name like Firstname,Lastname ');
+                //$.alert.open('Please enter the Employee Name1');
+            }
             else if ($('#ddlEmpStatus').val() == 'Select the Employee Status') {
                 $.alert.open('Please select the Employee Status');
             }

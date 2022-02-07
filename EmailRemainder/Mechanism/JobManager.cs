@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmailRemainder.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -18,6 +19,9 @@ namespace EmailRemainder.Mechanism
 
             try
             {
+
+               
+
                 // get all job implementations of this assembly.
                 IEnumerable<Type> jobs = GetAllTypesImplementingInterface(typeof(Job));
                 // execute each job

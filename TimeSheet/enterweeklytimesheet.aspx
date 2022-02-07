@@ -268,17 +268,17 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                             <label for="exampleInputEmail1" style="width: 20%; margin-left: 95px;display:inline" id="labelPrjAssigned">&nbsp;Projects Assigned</label>
                                             <font color="red" size="4px" id="star"><b id="lblStar">*</b></font>
                                             <label for="exampleInputEmail1" style="width: 20%; margin-left: 156px;display:inline" id="lblProfitCostType">&nbsp;</label>
-                                        </div>
+                                        </div><br />
                                         <select class="form-control input-alt" name="ddlNewProject" id="ddlNewProject" style="width: 20%;margin-left: 95px;display:inline">
                                             <option value="">Select Project</option>
                                         </select>
                                         <input type="text" id="txtprofitcostcode" style="display:inline;margin-left:6%;background-color: #ecf0f1;background-image: none;border: 1px solid #ecf0f1;border-radius: 4px;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;line-height: 2;width: 25%;align-items: center;text-align: center!important;color:black;" readonly="readonly">
-                                        <button type="button" class="btn btn-primary bt.n-lg" style="margin-top: -159px;margin-bottom:30px;margin-left: 888px;font-size:10px;background-color:#26a69a;border-color:#26a69a;" id="btnthisWeek">CLICK TO VIEW THIS WEEK TIMESHEET</button>
+                                        <button type="button" class="btn btn-primary bt.n-lg" style="margin-top: -30px;margin-bottom:30px;margin-left: 788px;font-size:10px;background-color:#26a69a;border-color:#26a69a;" id="btnthisWeek">CLICK TO VIEW THIS WEEK TIMESHEET</button>
                                     </div>
                                     <br />
-                                    <br />
+                                  
                                     
-                                    <table id="example" class="display" cellspacing="11px" cellpadding="50px" width="80%" border="2" align="center">
+                                    <table id="example" class="display" cellspacing="11px" cellpadding="50px" width="85%" border="2" align="center">
                                         <thead style="height: 50px; width: 5px; padding: 50px">
                                             <tr>
                                                 <th style="text-align:center; color: black;">Task<br />

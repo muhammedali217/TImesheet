@@ -50,6 +50,47 @@ namespace TimeSheet.Common
         }
 
 
+        public static void EmployeeUpdatedEmail(string EmpName, string EmpCode, string EmpDesgntn)
+        {
+            strReceiversAddress = "<Unni@techvantagesystems.com>";
+           // strCCAddress = "<info@techvantagesystems.com>,<smitha.binoy@techvantagesystems.com>,<jeeja.deviprasad@techvantagesystems.com>";
+            StringBuilder oStringBuilder = new StringBuilder();
+
+            // string strHostedUrl = Convert.ToString(ConfigurationManager.ConnectionStrings["HostedUrl"] + "/login.aspx");
+
+
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:130%; display: block; font-weight: 500\">");
+            oStringBuilder.Append("Hi  , <br/><br/>");
+            oStringBuilder.Append("</span>");
+
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:130%; display: block; font-weight: 500\">");
+            oStringBuilder.Append("One Employee added in Techvantage Database. Details Given below:- <br/><br/>");
+            oStringBuilder.Append("</span>");
+
+
+
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:130%; display: block; font-weight: 500\">");
+            oStringBuilder.Append("Employee Name             :  " + EmpName);
+            oStringBuilder.Append("</span>");
+
+
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:130%; display: block; font-weight: 500\">");
+            oStringBuilder.Append("Employee Code         : " + EmpCode + " <br/>");
+            oStringBuilder.Append("</span>");
+
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:130%; display: block; font-weight: 500\">");
+            oStringBuilder.Append("Designation            &nbsp; &nbsp;  &nbsp;&nbsp;         : " + EmpDesgntn);
+            oStringBuilder.Append("</span>");
+
+
+
+            strGlobalSubject = EmpName + "details updated";
+            strGlobalText = oStringBuilder.ToString();
+            if (!String.IsNullOrEmpty(strReceiversAddress))
+            {
+                SendEMail();
+            }
+        }
 
         public static void EmployeeAddedEmail(string EmpName, string EmpCode, string EmpDesgntn)
         {

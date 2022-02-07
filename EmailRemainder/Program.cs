@@ -1,4 +1,5 @@
-﻿using EmailRemainder.Mechanism;
+﻿using EmailRemainder.Common;
+using EmailRemainder.Mechanism;
 
 namespace EmailRemainder
 {
@@ -6,6 +7,8 @@ namespace EmailRemainder
     {
         static void Main(string[] args)
         {
+            
+
             JobManager jobManager = new JobManager();
             jobManager.ExecuteAllJobs();
         }

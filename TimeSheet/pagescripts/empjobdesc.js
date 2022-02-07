@@ -12,13 +12,34 @@
         //location.reload();
         var Localvalue = localStorage.getItem('EmployeeId');
         var name = localStorage.getItem('EmployeeName');
-        document.getElementById("filesrc").src = "KnowledgeCenter/" + name + ".pdf";
+        var url = "KnowledgeCenter/" + name + ".pdf";
+        var http = new XMLHttpRequest();
+        http.open('HEAD', url, false); // false = Synchronous
+
+        http.send(null); // it will stop here until this http request is complete
+
+        // when we are here, we already have a response, b/c we used Synchronous XHR
+        // alert(http.status);
+        if (http.status === 200) {
+            url = "KnowledgeCenter/" + name + ".pdf";
+        }
+        else {
+
+            url = "KnowledgeCenter/Test_File_K.pdf";
+        }
+        //alert(url);
+
+        document.getElementById("filesrc").src = url;
         $("#lblName").text(name);
 
 
-        $("#myJD").attr("href", "KnowledgeCenter/" + name + ".pdf");
+        $("#myJD").attr("href", url);
         $("#btnRefresh").click(function () {
-            location.reload();
+            //var url = "KnowledgeCenter/" + name + ".pdf";
+            
+                    location.reload();
+              
+            
         });
         //
         //var varProcParams = new Array();

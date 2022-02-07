@@ -32,7 +32,7 @@ namespace SendingDueBills
                 Attachment attachFile = new Attachment(ms, "Due Bills For this Week.xls", "application/vnd.ms-excel");
                 String strSenderAddress = string.Empty;
                 MailMessage oMailMessage = new MailMessage();
-                strSenderAddress = "techvantagetechies@gmail.com";
+                strSenderAddress = "techvantageanalytics@gmail.com";
                 //Pass the Values 
                 oMailMessage.From = new MailAddress(strSenderAddress, "Techvantage Timesheet", System.Text.Encoding.UTF8);
                 oMailMessage.To.Add(strReceiversAddress.ToString());
@@ -45,7 +45,7 @@ namespace SendingDueBills
                 oMailMessage.Attachments.Add(attachFile);
                 oSmtpClient = new System.Net.Mail.SmtpClient("smtp.gmail.com", 25);
                 oSmtpClient.UseDefaultCredentials = false;
-                oSmtpClient.Credentials = new NetworkCredential("techvantagetechies@gmail.com", "Gravity@2019#");
+                oSmtpClient.Credentials = new NetworkCredential("techvantageanalytics@gmail.com", "LemonGrass@098");
                 oSmtpClient.EnableSsl = true;
                 oMailMessage.IsBodyHtml = true;
 

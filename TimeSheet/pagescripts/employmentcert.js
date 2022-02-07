@@ -74,7 +74,47 @@
             });
         });
     }
+
+  
+
     $('#btnDownLoad').click(function () {
-        window.location = "/Certification/" + name + ".pdf";
+
+        function doesFileExist(urlToFile) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('HEAD', urlToFile, false);
+            xhr.send();
+
+            if (xhr.status == "404") {
+                return false;
+            } else {
+                return true;
+            }
+        }
+       // var url = "/Certification/" + name + ".pdf";
+
+        var url = "/Certification/" + name + ".pdf";
+        if (doesFileExist(url))
+        {
+            
+           // alert(url);
+            var http = new XMLHttpRequest();
+            http.open('HEAD', url, false); // false = Synchronous
+
+            http.send(null); // it will stop here until this http request is complete
+
+            // when we are here, we already have a response, b/c we used Synchronous XHR
+           // alert(http.status);
+            if (http.status === 200) {
+                window.location = "/Certification/" + name + ".pdf";
+            }
+
+           // window.open(" http://localhost:15794/Certification/UNNIKRISHNAN.PDF", "resizeable,scrollbar");
+            
+        }
+        else {
+            alert('Employment Cretificate has not generated');
+        };
+        // window.location = "/Certification/" + name + ".pdf";
+        
     });
 });

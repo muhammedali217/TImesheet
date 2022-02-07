@@ -66,6 +66,7 @@
         var availSL;
         var availMaternLeave;
         var availPeternLeave;
+        var LeaveHistory_Aditional;
 
 
         function LeaveInfo() {
@@ -76,7 +77,7 @@
             varParams.strArgmt = Localvalue;
             varProcParams[0] = varParams;
             varParams = {};
-
+           
 
             var SpParams = {};
             SpParams.strProc = "Employee_LeaveDetails";
@@ -95,7 +96,7 @@
                         availSL = response.details[0].LeaveHistory_SickL;
                         availMaternLeave = response.details[0].LeaveHistory_MaternityL;
                         availPeternLeave = response.details[0].LeaveHistory_PaternityL;
-
+                        LeaveHistory_Aditional = response.details[0].LeaveHistory_AditionalL;
 
                         if (availLeave > 0) {
 
@@ -333,8 +334,14 @@
 
             else if ($("#txtTotalLeave").val() == '') {
                 $.alert.open({ type: 'warning', content: 'Please Choose To date since you are not taken half day.' });
-            }
 
+            }
+            else if ($("#ddlLeaveType").val() == '5' && $("#remainingLeaves").val() <='0')  {
+                $.alert.open({ type: 'warning', content: 'Please Choose other leave type.' });
+            }
+            else if ($("#ddlLeaveType").val() == '5' && ($("#remainingLeaves").val() - $("#txtTotalLeave").val()) < '0') {
+                $.alert.open({ type: 'warning', content: 'You have exceeded the limit of this leave type, please choose other type.' });
+            }
 
             else if ($("#txtTotalLeave").val() <= 0) {
                 $.alert.open({ type: 'warning', content: 'Please Choose valid dates' });
@@ -344,7 +351,7 @@
             }
 
             else {
-
+                
                 LOPCheck($("#txtTotalLeave").val());
 
             }
@@ -610,6 +617,10 @@
         else if (ddlvalue == '4') {
 
             $('#remainingLeaves').val(availPeternLeave);
+        }
+        else if (ddlvalue == '5') {
+
+            $('#remainingLeaves').val(LeaveHistory_Aditional);
         }
         else {
 

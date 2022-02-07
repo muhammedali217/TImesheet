@@ -59,10 +59,10 @@
         var day = null;
 
         var curr = new Date; // get current date
-        //var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
+       //var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
         //var last = first + 6; // last day is the first day + 6
-        //alert(first); 
-        if (Localvaluee == 114) {
+       // alert(first-6); 
+        if (Localvaluee == 2259) {
             var Monday = new Date(curr.setDate(curr.getDate() - curr.getDay() - 6));
             var tuesday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 2));
             var Wedday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 3));
