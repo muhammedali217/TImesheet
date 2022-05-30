@@ -48,6 +48,12 @@ namespace TimeSheetJobs
             {
                 PipeClient.WriteLine("Email not yet Send");
             }
+            if (time == "01:00:00")
+            {
+                oMailController.SendBirthDayEmailToAllEmployee();
+                PipeClient.WriteLine("Birth Day Email Send To Employees");
+            }
+
         }
 
         public override bool IsRepeatable()

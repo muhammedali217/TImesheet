@@ -434,13 +434,17 @@
                                           
                                         <select class="js-example-basic-multiple" multiple="multiple" id="ddlEmployee" style="width: 75%"></select>
                                             
-                                
+                                txtinvolvement
                                               
 
 
                                         
 
                                       </fieldset>
+ <fieldset class="Employee-code">
+                                                    <label for="exampleInputEmail1" style="margin-left: 0px;">Involvement %</label><br />
+                                                    <input type="text" class="form-control" id="txtinvolvement" style="height:32px;width:68px;margin-left: 0px;">
+                                                </fieldset>
                                       </section>
 
 

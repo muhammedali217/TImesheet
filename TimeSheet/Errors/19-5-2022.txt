@@ -1,0 +1,12 @@
+Time of Error: 19-05-2022 09.32 AM
+Index #0
+Message: String or binary data would be truncated.
+LineNumber: 51
+Source: .Net SqlClient Data Provider
+Procedure: involvament_process
+Index #1
+Message: The statement has been terminated.
+LineNumber: 51
+Source: .Net SqlClient Data Provider
+Procedure: involvament_process
+

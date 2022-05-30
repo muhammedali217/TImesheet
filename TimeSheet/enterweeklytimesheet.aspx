@@ -132,6 +132,57 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                             <li class="active"><a href="employmentcert.aspx"><i class="fa fa-th-large"></i><span>Employment Certificate</span></a>
                                             </li>
                                         </ul>
+
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="projectpercentagelist.aspx"><i class="fa fa-th-large"></i><span>Utilization</span></a>
+                                            </li>
+                                        </ul>
+
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="inv_report.aspx"><i class="fa fa-th-large"></i><span>Utilization Report</span></a>
+                                            </li>
+                                        </ul>
+                                         <div id="Assetmenu">
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+
+                                            <li class="active">
+                                                <a class="" href="#nav-Employee" data-toggle="collapse" aria-expanded="true">
+                                                    <i class="fa fa-users"></i>
+                                                    <span>Asset</span>
+                                                </a>
+                                                
+                                                <ul class="collapse" id="nav-Employee" aria-expanded="true" style="">
+                                                    <li>
+                                                        <a href="AssetMaster.aspx">
+                                      
+                                                            <span>Asset Master</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="Viewasset.aspx">
+                                                           
+                                                            <span>View Asset</span>
+                                                        </a>
+                                                    </li>
+                                                     <li>
+                                                        <a href="Editasset.aspx">
+                                                           
+                                                            <span>Edit  Asset Details</span>
+                                                        </a>
+                                                    </li>
+                                                     <li>
+                                                        <a href="AssetEmployeeAllocation.aspx">
+                                                           
+                                                            <span>Asset Allocation</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+</div>
+                                        
+                                        
+
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="knwldgecenter.aspx"><i class="fa fa-book"></i><span>Knowledge Center</span></a>
                                             </li>

@@ -1,0 +1,28 @@
+Time of Error: 04-05-2022 12.36 PM
+Index #0
+Message: Procedure or function 'Project_AssignEmployees' expects parameter '@Involvementp', which was not supplied.
+LineNumber: 0
+Source: .Net SqlClient Data Provider
+Procedure: Project_AssignEmployees
+
+Time of Error: 04-05-2022 01.50 PM
+Index #0
+Message: Procedure or function 'Project_AssignEmployees' expects parameter '@Involvementp', which was not supplied.
+LineNumber: 0
+Source: .Net SqlClient Data Provider
+Procedure: Project_AssignEmployees
+
+Time of Error: 04-05-2022 01.53 PM
+Index #0
+Message: Procedure or function 'Project_AssignEmployees' expects parameter '@Involvementp', which was not supplied.
+LineNumber: 0
+Source: .Net SqlClient Data Provider
+Procedure: Project_AssignEmployees
+
+Time of Error: 04-05-2022 02.01 PM
+Index #0
+Message: Conversion failed when converting the varchar value '4.8' to data type bit.
+LineNumber: 14
+Source: .Net SqlClient Data Provider
+Procedure: Project_AssignEmployees
+

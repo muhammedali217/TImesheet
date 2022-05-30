@@ -1,0 +1,17 @@
+Time of Error: 01-11-2021 05.52 PM
+Index #0
+Message: Invalid length parameter passed to the LEFT or SUBSTRING function.
+LineNumber: 46
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+Index #1
+Message: Cannot insert the value NULL into column 'Employee_FirstName', table 'LeaveMngment.dbo.Employee'; column does not allow nulls. INSERT fails.
+LineNumber: 53
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+Index #2
+Message: The statement has been terminated.
+LineNumber: 53
+Source: .Net SqlClient Data Provider
+Procedure: Employee_Add
+

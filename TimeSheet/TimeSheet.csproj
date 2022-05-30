@@ -156,6 +156,27 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AssetAllocation.aspx.cs">
+      <DependentUpon>AssetAllocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssetAllocation.aspx.designer.cs">
+      <DependentUpon>AssetAllocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssetEmployeeAllocation.aspx.cs">
+      <DependentUpon>AssetEmployeeAllocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssetEmployeeAllocation.aspx.designer.cs">
+      <DependentUpon>AssetEmployeeAllocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssetMaster.aspx.cs">
+      <DependentUpon>AssetMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssetMaster.aspx.designer.cs">
+      <DependentUpon>AssetMaster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AssignProject.aspx.cs">
       <DependentUpon>AssignProject.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -234,6 +255,13 @@
     </Compile>
     <Compile Include="dresscodepolicy.aspx.designer.cs">
       <DependentUpon>dresscodepolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Editasset.aspx.cs">
+      <DependentUpon>Editasset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editasset.aspx.designer.cs">
+      <DependentUpon>Editasset.aspx</DependentUpon>
     </Compile>
     <Compile Include="editbills.aspx.cs">
       <DependentUpon>editbills.aspx</DependentUpon>
@@ -347,6 +375,27 @@
     <Compile Include="ImportExcel_To_DB.aspx.designer.cs">
       <DependentUpon>ImportExcel_To_DB.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Involvement_Report.aspx.cs">
+      <DependentUpon>Involvement_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Involvement_Report.aspx.designer.cs">
+      <DependentUpon>Involvement_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invreport_view.aspx.cs">
+      <DependentUpon>invreport_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invreport_view.aspx.designer.cs">
+      <DependentUpon>invreport_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inv_report.aspx.cs">
+      <DependentUpon>inv_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inv_report.aspx.designer.cs">
+      <DependentUpon>inv_report.aspx</DependentUpon>
+    </Compile>
     <Compile Include="knwldgecenter.aspx.cs">
       <DependentUpon>knwldgecenter.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -442,6 +491,13 @@
     </Compile>
     <Compile Include="ProjectCostReport.aspx.designer.cs">
       <DependentUpon>ProjectCostReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="projectpercentagelist.aspx.cs">
+      <DependentUpon>projectpercentagelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="projectpercentagelist.aspx.designer.cs">
+      <DependentUpon>projectpercentagelist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="raiseticket.aspx.cs">
@@ -549,6 +605,13 @@
     <Compile Include="viewapprovedleaves.aspx.designer.cs">
       <DependentUpon>viewapprovedleaves.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Viewasset.aspx.cs">
+      <DependentUpon>Viewasset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Viewasset.aspx.designer.cs">
+      <DependentUpon>Viewasset.aspx</DependentUpon>
+    </Compile>
     <Compile Include="viewattendance.aspx.cs">
       <DependentUpon>viewattendance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -625,6 +688,13 @@
     </Compile>
     <Compile Include="visarequest.aspx.designer.cs">
       <DependentUpon>visarequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="workfromhome.aspx.cs">
       <DependentUpon>workfromhome.aspx</DependentUpon>
@@ -713,6 +783,7 @@
     <Content Include="admin\images\inactive1.png" />
     <Content Include="admin\images\lap.png" />
     <Content Include="admin\images\meeting.png" />
+    <Content Include="admin\images\Picture1.png" />
     <Content Include="admin\images\tech_v-Logo3.png" />
     <Content Include="admin\images\tech_v-Logo_colo5r.png" />
     <Content Include="admin\js\jquery.js" />
@@ -747,6 +818,7 @@
     <Content Include="admin\js\plugins\maps_google\jquery-ui-map\ui\jquery.ui.map.overlays.js" />
     <Content Include="admin\js\plugins\maps_google\jquery-ui-map\ui\jquery.ui.map.rdfa.js" />
     <Content Include="admin\js\plugins\maps_google\jquery-ui-map\ui\jquery.ui.map.services.js" />
+    <Content Include="admin\js\table2excel.js" />
     <Content Include="admin\js\vendor-bundle-all.min.js" />
     <Content Include="admin\js\vendor-charts-all.min.js" />
     <Content Include="admin\js\vendor-charts-easy-pie.min.js" />
@@ -809,6 +881,9 @@
     <Content Include="alert\themes\default\x2\prompt.png" />
     <Content Include="alert\themes\default\x2\warning.png" />
     <Content Include="ApplyLeave.aspx" />
+    <Content Include="AssetAllocation.aspx" />
+    <Content Include="AssetEmployeeAllocation.aspx" />
+    <Content Include="AssetMaster.aspx" />
     <Content Include="AssignProject.aspx" />
     <Content Include="AssignSubTasks.aspx" />
     <Content Include="billadd.aspx" />
@@ -842,11 +917,19 @@
     <Content Include="ChangePassword.aspx" />
     <Content Include="commonrequest.aspx" />
     <Content Include="CopyViewEmployee.aspx" />
+    <Content Include="css\images\Bimages\Img1.jpg" />
+    <Content Include="css\images\Bimages\Img2.jpg" />
+    <Content Include="css\images\Bimages\Img3.jpg" />
+    <Content Include="css\images\Bimages\Img4.jpg" />
+    <Content Include="css\images\Bimages\Img5.jpg" />
+    <Content Include="css\images\Bimages\Img6.jpg" />
+    <Content Include="css\images\Bimages\Img7.jpg" />
     <Content Include="css\images\ui-icons_222222_256x240.png" />
     <Content Include="css\jqueryui.1.11.3.css" />
     <Content Include="data.html" />
     <Content Include="Delete_Employee.aspx" />
     <Content Include="dresscodepolicy.aspx" />
+    <Content Include="Editasset.aspx" />
     <Content Include="editbills.aspx" />
     <Content Include="EmpAdd.aspx" />
     <Content Include="EmployeeEdit.aspx" />
@@ -863,10 +946,18 @@
     <Content Include="holidaycalenderemployee.aspx" />
     <Content Include="idcardrequest.aspx" />
     <Content Include="ImportExcel_To_DB.aspx" />
+    <Content Include="Involvement_Report.aspx" />
+    <Content Include="invreport_view.aspx" />
+    <Content Include="inv_report.aspx" />
     <Content Include="knwldgecenter.aspx" />
     <Content Include="leavedashboard.aspx" />
     <Content Include="leavepolicy.aspx" />
     <Content Include="leaveupdate.aspx" />
+    <Content Include="pagescripts\AssetAllocation.js" />
+    <Content Include="pagescripts\AssetEmployeeAllocation.js" />
+    <Content Include="pagescripts\AssetMaster.js" />
+    <Content Include="pagescripts\EditAsset.js" />
+    <Content Include="pagescripts\involvementreport.js" />
     <Content Include="pagescripts\leaveupdate.js" />
     <Content Include="login.html" />
     <Content Include="admin\plugins\Jquery_Validation\css\cmxform.css" />
@@ -1136,6 +1227,7 @@
     <Content Include="pagescripts\meetingroom.js" />
     <Content Include="pagescripts\new.js" />
     <Content Include="pagescripts\NewTask2Project.js" />
+    <Content Include="pagescripts\prjectperscantage.js" />
     <Content Include="pagescripts\ProjectAdd.js" />
     <Content Include="pagescripts\ProjectCostReport.js" />
     <Content Include="pagescripts\raiseticket.js" />
@@ -1152,6 +1244,7 @@
     <Content Include="pagescripts\ViewAllEmployee.js" />
     <Content Include="pagescripts\viewallproject.js" />
     <Content Include="pagescripts\viewapprovedleaves.js" />
+    <Content Include="pagescripts\Viewasset.js" />
     <Content Include="pagescripts\viewattendance.js" />
     <Content Include="pagescripts\ViewProfitCostCenter.js" />
     <Content Include="pagescripts\viewprojectemployee.js" />
@@ -1166,6 +1259,7 @@
     <Content Include="pagescripts\workfromhome.js" />
     <Content Include="ProjectAdd.aspx" />
     <Content Include="ProjectCostReport.aspx" />
+    <Content Include="projectpercentagelist.aspx" />
     <Content Include="raiseticket.aspx" />
     <Content Include="reimbursement.aspx" />
     <Content Include="reimbursementpolicy.aspx" />
@@ -1303,6 +1397,7 @@
     <Content Include="ViewAllEmployee.aspx" />
     <Content Include="viewallproject.aspx" />
     <Content Include="viewapprovedleaves.aspx" />
+    <Content Include="Viewasset.aspx" />
     <Content Include="viewattendance.aspx" />
     <Content Include="ViewPage1.aspx" />
     <Content Include="ViewProfitCostCenter.aspx" />
@@ -1325,6 +1420,7 @@
     <Content Include="bootstrap-datetimepicker\build\build.less" />
     <Content Include="bootstrap-datetimepicker\build\build_standalone.less" />
     <Content Include="bootstrap-datetimepicker\less\datetimepicker.less" />
+    <Content Include="WebForm1.aspx" />
     <Content Include="workfromhome.aspx" />
     <Content Include="bootstrap-datepicker\build\build.less" />
     <Content Include="bootstrap-datepicker\build\build_standalone.less" />

@@ -12,6 +12,20 @@
     else {
         var dayOfWeek = localStorage.getItem('Day');
         var currentHour = localStorage.getItem('Hour');       
+        var Localvalue = localStorage.getItem('EmployeeId');
+        
+        if (Localvalue == 126) {
+
+            document.getElementById('Assetmenu').style.display = 'block';
+
+           
+            //document.getElementById('ddtopmenubar').style.display = 'block';
+        }
+        else {
+            document.getElementById('Assetmenu').style.display = 'none';
+           
+        }
+
 
         if (dayOfWeek >= 5 && currentHour >= 17) {
             $('#lblAlert').css({

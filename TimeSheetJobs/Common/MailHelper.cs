@@ -88,5 +88,45 @@ namespace TimeSheetJobs
                 SendEMail();
             }
         }
+
+        public static void BirthdaywishesEmail(string Email,string Name,string message)
+        {
+
+            strBccAddress = Email;
+            StringBuilder oStringBuilder = new StringBuilder();
+
+            oStringBuilder.Append("<div style='background-color:#F3F3F3;border:1px solid #e5e5e5;padding:14px;border-left:4px solid #26a69a; font-size: 14px;line-height: 21px;'> <span style=\"color:Black; font-family:Arial;text-align:left;font-size:14px; display: block; font-weight: 500\">");
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:15px; display: block; font-weight: 500\">");
+            oStringBuilder.Append("Dear Team Techvantage , <br/><br/>");
+            oStringBuilder.Append("</span>");
+
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:14px; display: block; font-weight: 500\">");
+            oStringBuilder.Append("This is a gentle reminder to inform you all, that please do not forget to enter your weekly timesheet.<br/>");
+            oStringBuilder.Append("</span>");
+            oStringBuilder.Append("<br/>");
+
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:14px; display: block; font-weight: 500\">");
+            oStringBuilder.Append("Note: Our timesheet application's timesheet page will automatically close at 5 PM. So kindly submit timesheet before that.<br/>");
+            oStringBuilder.Append("</span>");
+            oStringBuilder.Append("<br/>");
+
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:15px; display: block; font-weight: 500\">");
+            oStringBuilder.Append("<a href='http://timesheet.techvantagesystems.com/' style='font-color:'#26a69a;font-size: 16px;font-weight:700px;'>TimeSheet Login</a>");
+            oStringBuilder.Append("</span>");
+            oStringBuilder.Append("<br/>");
+
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:15px; display: block; font-weight: 500\">");
+            oStringBuilder.Append("Regards,");
+            oStringBuilder.Append("<br>Techvantage Timesheet");
+            oStringBuilder.Append("</span>");
+
+            strGlobalSubject = "Reminder - Enter Weekly Timesheet";
+            strGlobalText = oStringBuilder.ToString();
+            if (!String.IsNullOrEmpty(strBccAddress))
+            {
+                SendEMail();
+            }
+        }
+
     }
 }

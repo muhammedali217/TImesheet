@@ -1,0 +1,7 @@
+The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. Learn more atThe SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. Learn more atThe specified string is not in the form required for an e-mail address.Time of Error: 29-10-2021 02.37 PM
+Index #0
+Message: Conversion failed when converting the varchar value '8.00' to data type int.
+LineNumber: 26
+Source: .Net SqlClient Data Provider
+Procedure: TimeSheet_ViewToday
+

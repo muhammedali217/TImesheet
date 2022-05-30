@@ -155,9 +155,12 @@
             else if ($("#ddlEmployee").val() == '' || empId == null) {
                 $.alert.open({ type: 'warning', content: 'Please Assign atleast one employee.' });
             }
+            else if ($("#txtinvolvement").val() == '' ) {
+                $.alert.open({ type: 'warning', content: 'Please enter Involvement % .' });
+            }
 
             else {
-
+                alert($("#txtinvolvement").val());
                 //alert(empId);
                 var varProcParams = new Array();
 
@@ -173,6 +176,12 @@
                 varProcParams[1] = varParams;
                 varParams = {};
 
+                var varParams = {};
+                varParams.strKey = "Involvementp";
+                varParams.strArgmt = $("#txtinvolvement").val();
+                varProcParams[2] = varParams;
+                varParams = {};
+                
 
                 var SpParams = {};
                 SpParams.strProc = "Project_AssignEmployees";
