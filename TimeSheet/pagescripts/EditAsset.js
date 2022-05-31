@@ -155,7 +155,7 @@
 
                 var varParams = {};
                 varParams.strKey = "Asset_Enhancement";
-                varParams.strArgmt = "txtUsesw";
+                varParams.strArgmt = $("#txtUsesw").val();
                 varProcParams[5] = varParams;
                 varParams = {};
 

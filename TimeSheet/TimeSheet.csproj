@@ -163,6 +163,13 @@
     <Compile Include="AssetAllocation.aspx.designer.cs">
       <DependentUpon>AssetAllocation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AssetAllocationReport.aspx.cs">
+      <DependentUpon>AssetAllocationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssetAllocationReport.aspx.designer.cs">
+      <DependentUpon>AssetAllocationReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AssetEmployeeAllocation.aspx.cs">
       <DependentUpon>AssetEmployeeAllocation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -882,6 +889,7 @@
     <Content Include="alert\themes\default\x2\warning.png" />
     <Content Include="ApplyLeave.aspx" />
     <Content Include="AssetAllocation.aspx" />
+    <Content Include="AssetAllocationReport.aspx" />
     <Content Include="AssetEmployeeAllocation.aspx" />
     <Content Include="AssetMaster.aspx" />
     <Content Include="AssignProject.aspx" />
@@ -954,6 +962,7 @@
     <Content Include="leavepolicy.aspx" />
     <Content Include="leaveupdate.aspx" />
     <Content Include="pagescripts\AssetAllocation.js" />
+    <Content Include="pagescripts\AssetAllocationReport.js" />
     <Content Include="pagescripts\AssetEmployeeAllocation.js" />
     <Content Include="pagescripts\AssetMaster.js" />
     <Content Include="pagescripts\EditAsset.js" />

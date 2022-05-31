@@ -216,6 +216,12 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                                             <span>Asset Allocation</span>
                                                         </a>
                                                     </li>
+                                                      <li>
+                                                        <a href="AssetAllocationReport.aspx">
+                                                           
+                                                            <span>Asset Allocation Report</span>
+                                                        </a>
+                                                    </li>
                                                 </ul>
                                             </li>
                                         </ul>

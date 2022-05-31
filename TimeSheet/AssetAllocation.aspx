@@ -134,19 +134,25 @@
                                                     <li>
                                                         <a href="Viewasset.aspx">
                                                            
-                                                            <span>Asset Allocation</span>
+                                                            <span>View Asset</span>
                                                         </a>
                                                     </li>
                                                      <li>
                                                         <a href="Editasset.aspx">
                                                            
-                                                            <span>Edit Asset Details</span>
+                                                            <span>Edit  Asset Details</span>
+                                                        </a>
+                                                    </li>
+                                                     <li>
+                                                        <a href="AssetEmployeeAllocation.aspx">
+                                                           
+                                                            <span>Asset Allocation</span>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="AssetAllocation.aspx">
+                                                        <a href="AssetAllocationReport.aspx">
                                                            
-                                                            <span>Asset Allocation</span>
+                                                            <span>Asset Allocation Report</span>
                                                         </a>
                                                     </li>
                                                 </ul>

@@ -97,6 +97,7 @@
             //    $.alert.open({ type: 'warning', content: 'Please enter Ports Used.' });
             //}
             else {
+                alert($("#txtUsesw").val());
                 var varProcParams = new Array();
 
                 var varParams = {};
@@ -131,7 +132,7 @@
 
                 var varParams = {};
                 varParams.strKey = "Asset_Enhancement";
-                varParams.strArgmt = "txtUsesw";
+                varParams.strArgmt = $("#txtUsesw").val();
                 varProcParams[5] = varParams;
                 varParams = {};
 

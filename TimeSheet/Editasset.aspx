@@ -115,7 +115,7 @@
                                             <li class="active"><a href="inv_report.aspx"><i class="fa fa-th-large"></i><span>Involvement Report</span></a>
                                             </li>
                                         </ul>
-                                        <div id="Assetmenu">
+                                         <div id="Assetmenu">
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
                                             <li class="active">
@@ -147,6 +147,12 @@
                                                         <a href="AssetEmployeeAllocation.aspx">
                                                            
                                                             <span>Asset Allocation</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="AssetAllocationReport.aspx">
+                                                           
+                                                            <span>Asset Allocation Report</span>
                                                         </a>
                                                     </li>
                                                 </ul>

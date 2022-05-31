@@ -10,7 +10,7 @@
         window.location = "login.html";
     }
     else {
-       
+
         var Localvalue = localStorage.getItem('EmployeeId');
 
         var name = localStorage.getItem('EmployeeName');
@@ -27,7 +27,7 @@
             document.getElementById('Assetmenu').style.display = 'none';
 
         }
-       
+
         Loadvalues();
 
         $('#tblContractor').html('<table cellpadding="0" class="display responsive nowrap"  cellspacing="0" border="0"  id="tableContractorDetails" style="width:800px;"></table>');
@@ -38,43 +38,45 @@
             "aoColumns": [
                 {
                     "sTitle": "Sl No",
-                   
+
                 },
                 {
-                    "sTitle": "Asset ID",
-                     'bVisible': false
+                    "sTitle": "Employee ID",
+                    'bVisible': false
                 }, {
-                    "sTitle": "Asset Code",
+                    "sTitle": "Employee Code",
                     'sWidth': '5%',
                     'sClass': 'center'
 
                 }, {
-                    "sTitle": "Asset Name",
+                    "sTitle": "Employee",
                     'sWidth': '1%',
                     'sClass': 'center'
                 }, {
-                    "sTitle": "Asset Type ID",
-                    'bVisible': false
+                    "sTitle": "Asset Code",
+                    'sWidth': '1%',
+                    'sClass': 'center'
                 }, {
-                    "sTitle": "OS Type",
+                    "sTitle": "Asset Name",
                     'sWidth': '0%',
                     'sClass': 'center'
 
                 }, {
-                    "sTitle": "Asset Os Key",
+                    "sTitle": "Asset Description",
                     'sWidth': '0%',
                     'sClass': 'center'
                 }, {
+                    "sTitle": "OS Type",
+                    'sWidth': '0%',
+                    'sClass': 'center'
+                },
+                {
                     "sTitle": "Softwares Used",
                     'sWidth': '0%',
                     'sClass': 'center'
                 },
                 {
-                    "sTitle": "Asset Status ID",
-                    'bVisible': false
-                },
-                {
-                    "sTitle": "Licenced Softwares",
+                    "sTitle": "Sez",
                     'sWidth': '0%',
                     'sClass': 'center'
                 },
@@ -89,18 +91,31 @@
                     'sClass': 'center'
                 },
                 {
-                    "sTitle": "Cess",
+                    "sTitle": "Allocated Date",
                     'sWidth': '0%',
                     'sClass': 'center'
                 },
 
                 {
-                    "sTitle": "Remarks",
+                    "sTitle": "Deallocated Date",
                     'sWidth': '0%',
                     'sClass': 'center'
                 },
-                
-
+                {
+                    "sTitle": "Allocated Status",
+                    'sWidth': '0%',
+                    'sClass': 'center'
+                },
+                {
+                    "sTitle": "Asset Remarks",
+                    'sWidth': '0%',
+                    'sClass': 'center'
+                },
+                {
+                    "sTitle": "Project",
+                    'sWidth': '0%',
+                    'sClass': 'center'
+                },
 
             ],
 
@@ -153,7 +168,7 @@
             //$(table).table2excel({
             //    filename: "Report_" + $("#ddlMonth option:selected").text() + $("#ddlYear").val() + ".xls", exclude_img: false, preserveColors: preserveColors
             //});
-            
+
             //$("#tblLeavehid").table2excel({
             //    filename: "Report_AssetDetails", exclude_img: false, preserveColors: true,
 
@@ -171,14 +186,14 @@
 
         function gettablevalues() {
 
-           
+
 
             var oTable = document.getElementById('tableContractorDetails');
 
             //gets rows of table
             var rowLength = oTable.rows.length;
             var tblstructure;
-            tblstructure = "<table><tr><th><b>Sl.No</th><th><b>Asset Code</th><th><b>Asset Name</b></th><th><b>OS Type</b></th><th><b>Asset OS Key</b></th><th><b>Softwares Used</b></th><th><b>Licenced Softwares</b></th> <th><b>Asset Status</b></th><th><b>Asset Type</b></th><th><b>Sez</b></th><th><b>Remarks</b></th></tr>";
+            tblstructure = "<table><tr><th><b>Sl.No</th><th><b>Employee Code</th><th><b>Employee</b></th><th><b>Asset Code</b></th><th><b>Asset Name</b></th><th><b>Asset Description</b></th><th><b>OS Type</b></th> <th><b>Software Used</b></th><th><b>Sez</b></th><th><b>Asset Status</b></th><th><b>Asset Type</b></th><th><b>Allocated Date</b></th><th><b>Deallocated Date</b></th><th><b>Allocated Status</b></th><th><b>Asset Remarks</b></th><th><b>Project</b></th></tr>";
             //loops through rows    
             for (i = 1; i < rowLength; i++) {
 
@@ -190,28 +205,28 @@
                 // alert(oCells.item(1).innerHTML);
                 //loops through each cell in current row
 
-                
-                
-                    tblstructure = tblstructure + "<tbody><tr>";
-                    for (var j = 0; j < cellLength; j++) {
 
-                        // get your cell info here
-                            var cellVal = oCells.item(j).innerHTML;
 
-                            tblstructure = tblstructure + "<td>" + oCells.item(j).innerHTML + "</td>";
-                      
-                    }
-                   
-                    tblstructure = tblstructure + "</tr></tbody>";
-               
-               
+                tblstructure = tblstructure + "<tbody><tr>";
+                for (var j = 0; j < cellLength; j++) {
+
+                    // get your cell info here
+                    var cellVal = oCells.item(j).innerHTML;
+
+                    tblstructure = tblstructure + "<td>" + oCells.item(j).innerHTML + "</td>";
+
+                }
+
+                tblstructure = tblstructure + "</tr></tbody>";
+
+
 
             }
             tblstructure = tblstructure + "</table >";
             console.log(tblstructure);
 
             document.getElementById('tblLeavehid').innerHTML = tblstructure;
-            
+
         }
 
         function Loadvalues() {
@@ -223,9 +238,9 @@
             //varProcParams[0] = varParams;
             //varParams = {};
 
-           
+
             var SpParams = {};
-            SpParams.strProc = "Get_Asset_Details";
+            SpParams.strProc = "Get_Asset_Allocation";
             // SpParams.oProcParams = varProcParams;
 
             $.ajax({
@@ -237,20 +252,19 @@
                 success: function (response) {
                     if (response.details != null) {
                         //$("#tableTimeSheet").dataTable().fnClearTable();
-                       
-                        for (var j = 0; j < response.details.length; j++) {
-                            
 
-                            jQuery("#tableContractorDetails").dataTable().fnAddData([j + 1, (response.details[j].Asset_id).toString(), (response.details[j].Asset_code).toString(), (response.details[j].Asset_Name).toString(), (response.details[j].Asset_Type_Id).toString(), (response.details[j].Asset_Description).toString(), (response.details[j].Asset_Key).toString(), (response.details[j].Asset_Enhancement).toString(), (response.details[j].Asset_Status_id).toString(), (response.details[j].Asset_Lic_Sw).toString(), (response.details[j].Asset_Status_Desc).toString(), (response.details[j].Assettype_Desc).toString(), (response.details[j].Asset_Cess).toString(), (response.details[j].Asset_Remarks).toString()]);
-                           
-                           
+                        for (var j = 0; j < response.details.length; j++) {
+
+                            alert(response.details[j].Employee_Id);
+                            jQuery("#tableContractorDetails").dataTable().fnAddData([j + 1, (response.details[j].Employee_Id).toString(), (response.details[j].Employee_Code).toString(), (response.details[j].Employee).toString(), (response.details[j].Asset_code).toString(), (response.details[j].Asset_Name).toString(), (response.details[j].Asset_Description).toString(), (response.details[j].Asset_enhancement).toString(), (response.details[j].Asset_Lic_Sw).toString(), (response.details[j].Asset_Cess).toString(), (response.details[j].Asset_Status_Desc).toString(), (response.details[j].Assettype_Desc).toString(), (response.details[j].Allocated_Date).toString(), (response.details[j].Deallocated_Date).toString(), (response.details[j].AllocatedStatus).toString(), (response.details[j].Asset_Remarks).toString(), (response.details[j].Remarks).toString()]);
+
                         }
                     }
                 }
             });
         }
 
-       
+
 
 
 

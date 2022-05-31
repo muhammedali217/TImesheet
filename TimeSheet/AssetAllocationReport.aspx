@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AssetMaster.aspx.cs" Inherits="TimeSheet.AssetMaster" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AssetAllocationReport.aspx.cs" Inherits="TimeSheet.AssetAllocationReport" %>
 
 <!DOCTYPE html>
 <html class="st-layout ls-top-navbar ls-bottom-footer show-sidebar sidebar-l2" lang="en">
@@ -8,13 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Techvantage | Project Add</title>
-   
+    <title>Techvantage | Involvement Percentage</title>
+    <!-- Compressed Vendor BUNDLE
+    Includes vendor (3rd party) styling such as the customized Bootstrap and other 3rd party libraries used for the current theme/module -->
     <link href="admin/css/vendor.min.css" rel="stylesheet">
-    
 
+    <!-- Compressed Theme BUNDLE
+Note: The bundle includes all the custom styling required for the current theme, however
+it was tweaked for the current theme/module and does NOT include ALL of the standalone modules;
+The bundle was generated using modern frontend development tools that are provided with the package
+To learn more about the development process, please refer to the documentation. -->
+    <!-- <link href="admin/css/theme.bundle.min.css" rel="stylesheet"> -->
+    <!-- Compressed Theme CORE
+This variant is to be used when loading the separate styling modules -->
     <link href="admin/css/theme-core.min.css" rel="stylesheet">
-   
+    <!-- Standalone Modules
+    As a convenience, we provide the entire UI framework broke down in separate modules
+    Some of the standalone modules may have not been used with the current theme/module
+    but ALL modules are 100% compatible -->
     <link href="admin/css/module-essentials.min.css" rel="stylesheet" />
     <link href="admin/css/module-layout.min.css" rel="stylesheet" />
     <link href="admin/css/module-sidebar.min.css" rel="stylesheet" />
@@ -25,34 +36,53 @@
     <link href="admin/css/custom.css" rel="stylesheet" />
     <link href="alert/css/alert.min.css" rel="stylesheet" />
     <link href="alert/themes/default/theme.min.css" rel="stylesheet" />
-    
+   <link href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css " rel="stylesheet " />
+   <link href="https://cdn.datatables.net/responsive/2.0.2/css/responsive.dataTables.min.css" rel ="stylesheet" />
+    <!-- <link href="admin/css/module-cover.min.css" rel="stylesheet" /> -->
+    <!-- <link href="admin/css/module-colors-alerts.min.css" rel="stylesheet" /> -->
+    <!-- <link href="admin/css/module-colors-background.min.css" rel="stylesheet" /> -->
+    <!-- <link href="admin/css/module-colors-buttons.min.css" rel="stylesheet" /> -->
+    <!-- <link href="admin/css/module-colors-calendar.min.css" rel="stylesheet" /> -->
+    <!-- <link href="admin/css/module-colors-progress-bars.min.css" rel="stylesheet" /> -->
+    <!-- <link href="admin/css/module-colors-text.min.css" rel="stylesheet" /> -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
 
     <link href="admin/plugins/DataTables-1.10.4/media/DT_bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet" />
 
 </head>
-    <style>
-        .navbar-brand.navbar-brand-primary, .navbar-brand.navbar-brand-primary:hover
-        {
-            background-color: #FFF ;
-        }
-        .sidebar-menu li ul li a
+<style>
+    .navbar-brand.navbar-brand-primary, .navbar-brand.navbar-brand-primary:hover
     {
-        line-height:38px;
-        font-size:13px;
-        color:#333;
+        background-color: #FFF;
     }
 
-  .sidebar-menu li a:hover {
-    font-size: 13px;
-    background-color: #138C90;
-}
+    .sidebar-menu li ul li a
+    {
+        line-height: 38px;
+        font-size: 13px;
+        color: #333;
+    }
 
-  .sidebar.sidebar-skin-blue .sidebar-menu.sm-icons-block li.active  a i {
-    color: greenyellow;
-    background-color: black;
-}
-    </style>
-<body id="viewEmployee">
+    .sidebar-menu li a:hover
+    {
+        font-size: 13px;
+        background-color: #138C90;
+    }
+
+    .sidebar.sidebar-skin-blue .sidebar-menu.sm-icons-block li.active a i
+    {
+        color: greenyellow;
+        background-color: black;
+    }
+</style>
+<body>
     <!-- Wrapper required for sidebar transitions -->
     <div class="st-container">
         <!-- Fixed navbar -->
@@ -60,22 +90,52 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a href="#sidebar-menu" data-toggle="sidebar-menu" data-effect="st-effect-3" class="toggle pull-left visible-xs"><i class="fa fa-bars"></i></a>
+
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="ProjectAdd.aspx" class="navbar-brand hidden-xs navbar-brand-primary">
-                        <img src="admin/images/tech_v-Logo_colo5r.png" alt="techvLogo"/>
+                    <a href="#" class="navbar-brand hidden-xs navbar-brand-primary">
+                        <img src="admin/images/tech_v-Logo_colo5r.png" alt="techvLogo" />
+
                     </a>
                 </div>
                 <div class="navbar-collapse collapse" id="collapse">
-                   
+                    <%--<form class="navbar-form navbar-left hidden-xs" role="search">
+                        <div class="search-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-w-150" placeholder="Search ..">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>--%>
                     <ul class="nav navbar-nav navbar-right">
+                        <%--<!-- notifications -->
+                        <li class="dropdown notifications updates hidden-xs hidden-sm">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <!--     <span class="badge badge-primary"></span>-->
+                            </a>
+
+                        </li>
+                        <!-- // END notifications -->
+                        <!-- messages -->
+                        <li class="dropdown notifications hidden-xs hidden-sm">
+                            <a href="#showImageModal" data-toggle="modal" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <!--      <span class="badge floating badge-danger">12</span>-->
+                            </a>
+
+                        </li>
+                        <!-- // END messages -->
+                        <!-- user -->--%>
                         <li class="dropdown user">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                               <img id="imageuser" class="img-circle" /><span id="lblName"></span><span class="caret"></span>
+                                <img src="admin/images/administrator1.png" class="img-circle" /><span id="lblName"></span><span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
 
@@ -83,10 +143,14 @@
                                 </li>
                             </ul>
                         </li>
+
                     </ul>
                 </div>
             </div>
         </div>
+
+
+
         <div class="st-pusher">
             <!-- Sidebar component with st-effect-3 (set on the toggle button within the navbar) -->
             <div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-blue sidebar-visible-desktop" id="sidebar-menu" data-type="collapse">
@@ -103,10 +167,12 @@
                                     <div>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employmentcert.aspx"><i class="fa fa-th-large"></i><span>Employment Certificate</span></a>
-                                            </li>
-                                        </ul>
 
-                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            </li>
+
+                                          
+                                        </ul>
+                                          <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="projectpercentagelist.aspx"><i class="fa fa-th-large"></i><span>Project Percenatage</span></a>
                                             </li>
                                         </ul>
@@ -115,7 +181,8 @@
                                             <li class="active"><a href="inv_report.aspx"><i class="fa fa-th-large"></i><span>Involvement Report</span></a>
                                             </li>
                                         </ul>
-                                       <div id="Assetmenu">
+
+                                          <div id="Assetmenu">
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
                                             <li class="active">
@@ -159,82 +226,117 @@
                                             </li>
                                         </ul>
 </div>
-                                        
-                                        
-
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="knwldgecenter.aspx"><i class="fa fa-book"></i><span>Knowledge Center</span></a>
                                             </li>
+                                           
+                                            
                                         </ul>
-                                       <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="ApplyLeave.aspx"><i class="fa fa-bed"></i><span>Apply Leave</span></a>
                                             </li>
+                                           
+                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employeeleavehistory.aspx"><i class="fa fa-bar-chart"></i><span>Leave History</span></a>
                                             </li>
+                                           
+                                            
                                         </ul>
-                                       <ul class="sidebar-menu sm-icons-right sm-icons-block">
-                                            <li id='listTimeSheet'class="active"><a href="enterweeklytimesheet.aspx"><i class="fa fa-clock-o"></i><span>Weekly TimeSheet</span></a>
+                                        
+                                       <%-- <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="EnterTimeSheet.aspx"><i class="fa fa-tasks"></i><span>Enter TimeSheet</span></a>
                                             </li>
+                                           
+                                            
+                                        </ul>--%>
+
+
+                                       <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="enterweeklytimesheet.aspx"><i class="fa fa-clock-o"></i><span>Weekly TimeSheet</span></a>
+                                            </li>
+                                           
+                                            
                                         </ul>
+
+
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employeetimesheet.aspx"><i class="fa fa-tasks"></i><span>View TimeSheet</span></a>
-                                            </li> 
+                                            </li>
+                                           
+                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="ChangePassword.aspx"><i class="fa fa-lock"></i><span>Change Password</span></a>
                                             </li>
+                                           
+                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="holidaycalenderemployee.aspx"><i class="fa fa-calendar"></i><span>Holiday Calender</span></a>
                                             </li>
+                                           
+                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
+
                                             <li class="active">
-                                                <a class="" href="#nav-Employee" data-toggle="collapse" aria-expanded="true"> <i class="fa fa-pencil-square-o"></i>
+                                                <a class="" href="#nav-Employee" data-toggle="collapse" aria-expanded="true">
+                                                    <i class="fa fa-pencil-square-o"></i>
                                                     <span>Request</span>
                                                 </a>
-                                                <ul class="collapse" id="nav-Employee" aria-expanded="true" style="">
+                                               <ul class="collapse" id="nav-Employee" aria-expanded="true" style="">
                                                     <li>
                                                          <a href="travelrequest.aspx">
+                                      
                                                             <span>Travel</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="visarequest.aspx">
+                                                           
                                                             <span>VISA</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                        <a href="idcardrequest.aspx">
+                                                           
                                                             <span>ID Card </span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="expensevoucher.aspx">
+                                                           
                                                             <span>Expense Voucher</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="workfromhome.aspx">
+                                                           
                                                             <span>Work From Home</span>
                                                         </a>
                                                     </li>
-                                                    <li>
+                                                   <li>
                                                         <a href="reimbursement.aspx">
+
                                                             <span>Reimbursement</span>
                                                         </a>
                                                     </li>
-                                                    <li>
+                                                   <li>
                                                         <a href="commonrequest.aspx">
+
                                                             <span>Others</span>
                                                         </a>
+
                                                     </li>
                                                 </ul>
                                             </li>
+
+                                           
                                         </ul>
                                          <ul class="sidebar-menu sm-icons-right sm-icons-block">
+
                                             <li class="active">
                                                 <a class="" href="#nav-Policies" data-toggle="collapse" aria-expanded="true">
                                                     <i class="fa fa-file-text"></i>
@@ -243,48 +345,65 @@
                                                 <ul class="collapse" id="nav-Policies" aria-expanded="true" style="">
                                                     <li>
                                                          <a href="leavepolicy.aspx">
+                                      
                                                             <span>Leave</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                        <a href="dresscodepolicy.aspx">
+                                      
                                                             <span>Dress Code</span>
                                                         </a>
+                                                   
                                                     </li>
                                                     <li>
                                                          <a href="reimbursementpolicy.aspx">
+                                      
                                                             <span>Reimbursement</span>
                                                         </a>
+                                                   
                                                     </li>
                                                     </ul>
                                                 </li>
                                             </ul>
+
                                          <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="empjobdesc.aspx"><i class="fa fa-graduation-cap"></i><span>Job Description</span></a>
                                             </li>
+
+
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="meetingroom.aspx"><i class="fa fa-users"></i><span>Meeting Room</span></a>
+                                            
                                             </li>
-                                        </ul>
-                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
-                                            <li class="active"><a href="employeerequeststatus.aspx"><i class="fa fa-pencil-square-o"></i><span>Request Status</span></a>
-                                            </li>
+
+
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="raiseticket.aspx"><i class="fa fa-desktop"></i><span>Register Issue</span></a>
+                                            
                                             </li>
+
+
                                         </ul>
                                     </div>
                                 </div>
+                                <!-- // END .tab-pane -->
+
                             </div>
+                            <!-- // END .tab-content -->
                         </div>
+                        <!-- // END .split-vertical-cell -->
                     </div>
+                    <!-- // END .split-vertical-body -->
+
                 </div>
             </div>
-           <!-- Need to enter -->
-
-              <div class="st-content" id="content">
+            <!-- sidebar effects INSIDE of st-pusher: -->
+            <!-- st-effect-3, st-effect-6, st-effect-7, st-effect-8, st-effect-14 -->
+            <!-- this is the wrapper for the content -->
+            <div class="st-content" id="content">
                 <!-- extra div for emulating position:fixed of the menu -->
                 <div class="st-content-inner">
                     <div class="container-fluid">
@@ -294,129 +413,32 @@
                                 <!-- Leaderboard -->
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h2 align="center">ADD Asset</h2>
-                                    </div>
-                                    <hr />
-                                    <form>
-                                     <div class="col-md-6 col-md-offset-3" >
-                                         <section class="col-md-6">
-                                      <fieldset class="Employee-code">
-                                        <label for="exampleInputEmail1">Asset Code</label> <font color="red" size="4px"><b> * </b></font>
-                                        <input type="text" class="form-control" id="txtAssetCode" placeholder="Enter Asset Code"/>
-                                      </fieldset>
-                                      </section>
-                                          <section class="col-md-6">
-                                      <fieldset class="Employee-code">
-                                        <label for="exampleInputEmail1">Asset Name</label>
-                                        <input type="text" class="form-control" id="txtAssetName" placeholder="Enter Asset Name"/>
-                                      </fieldset>
-                                      </section>
-                                            </div>
-                                        <div class="col-md-6 col-md-offset-3" >
+                                        <h2 align="center">Asset Details</h2>
+                                     </div>
 
-                                      <section class="col-md-6">
-                                             <fieldset class="form-gr.oup">
-                                                 <label for="exampleInputEmail1">Asset Type</label><font color="red" size="4px"><b> * </b></font>
-                                            <div class='input-group date' id='Div1'>
-                                                 <select class="form-control input-alt" name="ddlAsseetType" id="ddlAsseetType">
-                                        <option value="">Choose Asset Type</option>
-                                    </select>
-                                                
-                                            </div>
-                                        </fieldset>
+                                     
 
-                                      </section>
-
-                                      <section class="col-md-6">
-                                             <fieldset class="form-gr.oup">
-                                                 <label for="exampleInputEmail1">OS Type</label><font color="red" size="4px"><b> * </b></font>
-                                            <div class='input-group date' >
-                                                 <input type="text" class="form-control" id="txtAssetEnhance" placeholder="Enter OS Type"/>
-                                               
-                                            </div>
-                                        </fieldset>
-
-                                      </section>
-                                            </div>
-                                         <div class="col-md-6 col-md-offset-3" >
-
-                                          <section class="col-md-6">
-                                      <fieldset class="Employee-code">
-                                        <label for="exampleInputEmail1">OS Key</label><font color="red" size="4px"><b> * </b></font>
-                                         <input type="text" class="form-control" id="txtAssetKey" placeholder="Enter OS Key"/>
-                                      </fieldset>
-                                      </section>
-
-                                          <section class="col-md-6">
-                                      <fieldset class="Employee-code">
-                                        <label for="exampleInputEmail1">Softwares Used</label>
-                                        <input type="text" class="form-control" id="txtUsesw" placeholder="Enter Softwares"/>
-                                           
-                                      </fieldset>
-                                      </section>
-                                            </div>
-
-                            <div class="col-md-6 col-md-offset-3" >
-                                    <section class="col-md-6">
-                                      <fieldset class="Employee-code">
-                                        <label for="exampleInputEmail1">Asset Status </label><font color="red" size="4px"><b> </b></font>
-                                        <select class="form-control input-alt" name="ddlStatus" id="ddlStatus">
-                                        <option value="">Choose Status</option>
-                                    </select>
-                                      </fieldset>
-                                      </section>
-
-                                          <section class="col-md-6">
-                                      <fieldset class="Employee-code">
-                                        <label for="exampleInputEmail1">Remarks</label><br />
-                                        <input type="text" class="form-control" id="txtRemarks" placeholder="Enter Remarks"/>
-                                      </fieldset>
-                                      </section>
-                                    </div>
-
-                                         <div class="col-md-6 col-md-offset-3" >
-                                    <section class="col-md-6">
-                                      <fieldset class="Employee-code">
-                                        <label for="exampleInputEmail1">Licenced Softwares</label><font color="red" size="4px"><b> </b></font>
-                                        <input type="text" class="form-control" id="txtLicenced" placeholder="Licenced Softwares"/>
-                                      </fieldset>
-                                      </section>
- <section class="col-md-6">
-                                      <fieldset class="Employee-code">
-                                        <label for="exampleInputEmail1">Sez</label><br />
-                                        <input type="text" class="form-control" id="txtCess" placeholder="Sez"/>
-                                      </fieldset>
-                                      </section>
-                                          
-                                    </div>
-                       
-                
-                                   
-
-
-                                         
-
-                                    
-
-                                         
-
-
-                                         <span class="clearfix"></span>
-                                      <hr />
-                                      <div style="padding:15px;" class="col-md-6 col-md-offset-3  text-center" >
-                                          <section class="btn-group">
-                 
-                                               <button type="button" class="btn btn-danger b.tn-lg" id="btnCancel">Cancel</button> 
-                                              <button type="button" class="btn btn-default bt.n-lg" id="btnSubmit">Submit</button> 
-                 
-                                         </section>
-                                      </div>
-                                        <span class="clearfix"></span>
-                                     </form> 
-                                      
+                                    <div id="tblLeaveSummary">
 
                                 </div>
-                                <!-- // Leaderboard -->
+                                        <hr />
+                                   
+                                
+                                 <div id="tblContractor" style="margin-top:-65px";>
+                                    </div>
+
+                                   <div style="padding:15px;" class="col-md-6 col-md-offset-3  text-center" >
+                                          <section class="btn-group">
+                 
+                                               
+                                              <button type="button" class="btn btn-default bt.n-lg" id="btnSubmit">Download</button> 
+                 
+                                         </section>
+                                       <div id="tblLeavehid" style="display:none;">
+                                    </div>
+                                      </div>     
+                            </div>
+                            <!-- // Leaderboard -->
                             </div>
 
 
@@ -431,10 +453,7 @@
         </div>
         <!-- /st-pusher -->
         <!-- Footer -->
-
         <footer class="footer">
-          
-       
         </footer>
         <!-- // Footer -->
     </div>
@@ -470,14 +489,34 @@
     <script src="admin/js/vendor-tables.min.js"></script>
     <script src="admin/js/vendor-forms.min.js"></script>
 
-   
-     <script src="admin/js/jquery.js"></script>
-   <script src="pagescripts/AssetMaster.js"></script>
-   <script src="bootstrap/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <!-- <script src="admin/js/vendor-charts-flot.min.js"></script> -->
+    <!-- <script src="admin/js/vendor-charts-easy-pie.min.js"></script> -->
+    <!-- <script src="admin/js/vendor-charts-morris.min.js"></script> -->
+    <!-- <script src="admin/js/vendor-charts-sparkline.min.js"></script> -->
+
+    <!-- <script src="admin/js/vendor-angular.min.js"></script> -->
+    <!-- Compressed Vendor Scripts Bundle
+    Includes all of the 3rd party JavaScript libraries above.
+    The bundle was generated using modern frontend development tools that are provided with the package
+    To learn more about the development process, please refer to the documentation.
+    Do not use it simultaneously with the separate bundles above. -->
+    <!-- <script src="admin/js/vendor-bundle-all.min.js"></script> -->
+    <!-- Compressed App Scripts Bundle
+    Includes Custom Application JavaScript used for the current theme/module;
+    Do not use it simultaneously with the standalone modules below. -->
+    <!-- <script src="admin/js/module-bundle-main.min.js"></script> -->
+    <!-- Standalone Modules
+    As a convenience, we provide the entire UI framework broke down in separate modules
+    Some of the standalone modules may have not been used with the current theme/module
+    but ALL the modules are 100% compatible -->
+    <script src="admin/js/jquery.js"></script>
+    <script src="pagescripts/AssetAllocationReport.js"></script>
     <script src="alert/js/alert.min.js"></script>
+    <script src="admin/plugins/DataTables-1.10.4/media/jquery.dataTables.min.js"></script>
+    <script src="bootstrap/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="admin/js/table2excel.js"></script>
+    <%--    <script src="admin/plugins/DataTables-1.10.4/media/DT_bootstrap.js"></script>--%>
 </body>
 </html>
-  
 
 
-   
