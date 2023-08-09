@@ -46,7 +46,14 @@
              }, {
                  "sTitle": "Request Type",
                  'sWidth': '10%'
-             }, {
+                }, {
+                    "sTitle": "From Date",
+                    'sWidth': '12%'
+                }, {
+                    "sTitle": "To Date",
+                    'sWidth': '12%'
+                },
+                {
                  "sTitle": "Requested Date",
                  'sWidth': '10%'
              }, {
@@ -101,17 +108,17 @@
                 success: function (response) {
                     if (response.details != null) {
                         //$("#tableTimeSheet").dataTable().fnClearTable();
-                        for (var j = 0; j < response.details.length; j++) {
+                        for (var j = 0; j < response.details.length; j++) {                            
                             if ((response.details[j].Request_Status).toString() == "APPROVED") {
-                                jQuery("#employeeLeaveStatusTable").dataTable().fnAddData([(response.details[j].Request_Id).toString(), '#' + RandomNumber(), (response.details[j].RequestType).toString(), (response.details[j].ReqDate).toString(), '<b><label style="text-align:center; color: green;">' + (response.details[j].Request_Status) + '</label></b>']);
+                                jQuery("#employeeLeaveStatusTable").dataTable().fnAddData([(response.details[j].Request_Id).toString(), '#' + RandomNumber(), (response.details[j].RequestType).toString(), (response.details[j].FromDate).toString(), (response.details[j].ToDate).toString(), (response.details[j].ReqDate).toString(), '<b><label style="text-align:center; color: green;">' + (response.details[j].Request_Status) + '</label></b>']);
                             }
                             else if ((response.details[j].Request_Status).toString() == "PENDING") {
-                                jQuery("#employeeLeaveStatusTable").dataTable().fnAddData([(response.details[j].Request_Id).toString(), '#' + RandomNumber(), (response.details[j].RequestType).toString(), (response.details[j].ReqDate).toString(), '<b><label style="text-align:center; color: rgb(126, 0, 140);">' + (response.details[j].Request_Status) + '</label></b>']);
+                                jQuery("#employeeLeaveStatusTable").dataTable().fnAddData([(response.details[j].Request_Id).toString(), '#' + RandomNumber(), (response.details[j].RequestType).toString(), (response.details[j].FromDate).toString(), (response.details[j].ToDate).toString(),(response.details[j].ReqDate).toString(), '<b><label style="text-align:center; color: rgb(126, 0, 140);">' + (response.details[j].Request_Status) + '</label></b>']);
                             }
                             else {
-                                jQuery("#employeeLeaveStatusTable").dataTable().fnAddData([(response.details[j].Request_Id).toString(), '#' + RandomNumber(), (response.details[j].RequestType).toString(), (response.details[j].ReqDate).toString(), '<b><label style="text-align:center; color: red;">' + (response.details[j].Request_Status) + '</label></b>']);
+                                jQuery("#employeeLeaveStatusTable").dataTable().fnAddData([(response.details[j].Request_Id).toString(), '#' + RandomNumber(), (response.details[j].RequestType).toString(), (response.details[j].FromDate).toString(), (response.details[j].ToDate).toString(), (response.details[j].ReqDate).toString(), '<b><label style="text-align:center; color: red;">' + (response.details[j].Request_Status) + '</label></b>']);
                             }
-                        }
+                        }                       
                     }
                 }
             });

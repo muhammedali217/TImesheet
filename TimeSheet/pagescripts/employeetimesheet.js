@@ -15,6 +15,19 @@
 
 
         $("#lblName").text(name);
+
+
+        if (Localvalue == 126 || Localvalue == 2 || Localvalue == 12) {
+
+            document.getElementById('Assetmenu').style.display = 'block';
+
+
+            //document.getElementById('ddtopmenubar').style.display = 'block';
+        }
+        else {
+            document.getElementById('Assetmenu').style.display = 'none';
+
+        }
         var varDate = new Date();
         var varCurDate = varDate.getDate();
         var varCurMonth = (varDate.getMonth() + 1);
@@ -29,6 +42,7 @@
 
         $("#txtDate").val(varCurMonth + "/" + varCurDate + "/" + varCurYear);
         Loadvalues();
+
         $('#tblimeSheet').html('<table cellpadding="0" class="display responsive nowrap"  cellspacing="0" border="0" id="tableTimeSheet"></table>');
 
         var oTable = $('#tableTimeSheet').dataTable({

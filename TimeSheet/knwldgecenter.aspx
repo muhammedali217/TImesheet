@@ -58,32 +58,27 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 
 </head>
 <style>
-    .navbar-brand.navbar-brand-primary, .navbar-brand.navbar-brand-primary:hover
-    {
+    .navbar-brand.navbar-brand-primary, .navbar-brand.navbar-brand-primary:hover {
         background-color: #FFF;
     }
 
-    .sidebar-menu li ul li a
-    {
+    .sidebar-menu li ul li a {
         line-height: 38px;
         font-size: 13px;
         color: #333;
     }
 
-    .sidebar-menu li a:hover
-    {
+    .sidebar-menu li a:hover {
         font-size: 13px;
         background-color: #138C90;
     }
 
-    .sidebar.sidebar-skin-blue .sidebar-menu.sm-icons-block li.active a i
-    {
+    .sidebar.sidebar-skin-blue .sidebar-menu.sm-icons-block li.active a i {
         color: greenyellow;
         background-color: black;
     }
 
-    .color-i
-    {
+    .color-i {
         color: #333;
         -webkit-transition: all 0.3s;
         -moz-transition: all 0.3s;
@@ -92,18 +87,15 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
         transition: all 0.3s;
     }
 
-        .color-i:hover
-        {
+        .color-i:hover {
             color: #ce4844;
         }
 
-    .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th
-    {
+    .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
         font-size: 16px;
     }
 
-    .panel-body
-    {
+    .panel-body {
         padding-bottom: 45px;
     }
 </style>
@@ -190,13 +182,62 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 <div class="tab-pane active" id="sidebar-tabs-menu">
 
                                     <div>
-                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                        <%-- <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employmentcert.aspx"><i class="fa fa-th-large"></i><span>Employment Certificate</span></a>
 
                                             </li>
 
 
+                                        </ul>--%>
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="ViewAccessDetails.aspx"><i class="fa fa-th-large"></i><span>Attendance</span></a>
+                                            </li>
                                         </ul>
+
+                                        <div id="Assetmenu">
+                                            <ul class="sidebar-menu sm-icons-right sm-icons-block">
+
+                                                <li class="active">
+                                                    <a class="" href="#nav-Employee" data-toggle="collapse" aria-expanded="true">
+                                                        <i class="fa fa-users"></i>
+                                                        <span>Asset</span>
+                                                    </a>
+
+                                                    <ul class="collapse" id="nav-Employee" aria-expanded="true" style="">
+                                                        <li>
+                                                            <a href="AssetMaster.aspx">
+
+                                                                <span>Asset Master</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="Viewasset.aspx">
+
+                                                                <span>View Asset</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="Editasset.aspx">
+
+                                                                <span>Edit  Asset Details</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="AssetEmployeeAllocation.aspx">
+
+                                                                <span>Asset Allocation</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="AssetAllocationReport.aspx">
+
+                                                                <span>Asset Allocation Report</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="knwldgecenter.aspx"><i class="fa fa-book"></i><span>Knowledge Center</span></a>
                                             </li>
@@ -253,63 +294,42 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
                                             <li class="active">
-                                                <a class="" href="#nav-Employee" data-toggle="collapse" aria-expanded="true">
-
-
-
+                                                <a class="" href="#nav-Requests" data-toggle="collapse" aria-expanded="true">
                                                     <i class="fa fa-pencil-square-o"></i>
-                                                    <span>Request</span>
+                                                    <span>Requests</span>
                                                 </a>
-                                                <ul class="collapse" id="nav-Employee" aria-expanded="true" style="">
+                                                <ul id="nav-Requests" class="collapse" aria-expanded="true" style="">
                                                     <li>
-                                                        <a href="travelrequest.aspx">
-
-                                                            <span>Travel</span>
+                                                        <a href="Admin_LeaveMgt.aspx">
+                                                            
+                                                            <span>Leave Requests</span>
                                                         </a>
                                                     </li>
+                                                    
                                                     <li>
-                                                        <a href="visarequest.aspx">
-
-                                                            <span>VISA</span>
+                                                        <a href="ViewTimeSheet.aspx">
+                                                            
+                                                            <span>Time Sheet</span>
                                                         </a>
                                                     </li>
-                                                    <li>
-                                                        <a href="idcardrequest.aspx">
-
-                                                            <span>ID Card </span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="expensevoucher.aspx">
-
-                                                            <span>Expense Voucher</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="workfromhome.aspx">
-
-                                                            <span>Work From Home</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="reimbursement.aspx">
-
-                                                            <span>Reimbursement</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="commonrequest.aspx">
-
+                                                     
+                                                   <li>
+                                                         <a href="viewrequests.aspx">
+                                                            
                                                             <span>Others</span>
                                                         </a>
-
-                                                    </li>
+                                                    </li>  
                                                 </ul>
                                             </li>
 
-
+                                           
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="Employee_Handbook.aspx"><i class="fa fa-calendar"></i><span>Employee Handbook</span></a>
+                                            </li>
+                                        </ul>
+
+                                        <%-- <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
                                             <li class="active">
                                                 <a class="" href="#nav-Policies" data-toggle="collapse" aria-expanded="true">
@@ -339,13 +359,13 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                                     </li>
                                                 </ul>
                                             </li>
-                                        </ul>
-                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                        </ul>--%>
+                                        <%-- <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="empjobdesc.aspx"><i class="fa fa-graduation-cap"></i><span>Job Description</span></a>
                                             </li>
 
 
-                                        </ul>
+                                        </ul>--%>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="meetingroom.aspx"><i class="fa fa-users"></i><span>Meeting Room</span></a>
 
@@ -355,7 +375,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="raiseticket.aspx"><i class="fa fa-desktop"></i><span>Register Issue</span></a>
-                                            
+
                                             </li>
 
 
@@ -388,17 +408,17 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h2 align="center">KNOWLEDGE CENTER</h2>
-                                         </div>
-                                        <hr />
-                                   
+                                    </div>
+                                    <hr />
+
 
                                     <br />
                                     <br />
 
                                     <div class="panel-body">
                                         <center>
-                                        <div id="tblKnwldge"></div>
-                                            </center>
+                                            <div id="tblKnwldge"></div>
+                                        </center>
                                         <!--end of table-->
                                     </div>
                                     <%-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. INTRODUCTION TO R PROGRAMMING&nbsp;&nbsp;&nbsp;<font style="color: rgb(138, 20, 66); font-size: 12px;">Session on 25/ 05/ 2016 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="KnowledgeCenter/RIntroduction.pptx" class="span3">DOWNLOAD</a><br />

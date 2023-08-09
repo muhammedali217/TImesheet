@@ -115,7 +115,7 @@
 
         <div class="st-pusher">
             <!-- Sidebar component with st-effect-3 (set on the toggle button within the navbar) -->
-            <div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-blue sidebar-visible-desktop" id="sidebar-menu" data-type="collapse">
+           <div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-blue sidebar-visible-desktop" id="sidebar-menu" data-type="collapse">
                 <div class="split-vertical">
                     <div class="sidebar-block tabbable tabs-icons">
                         <ul class="nav nav-tabs">
@@ -125,125 +125,153 @@
                         <div class="split-vertical-cell">
                             <div class="tab-content">
                                 <div class="tab-pane active" id="sidebar-tabs-menu">
+
                                     <div>
-                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                       <%-- <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employmentcert.aspx"><i class="fa fa-th-large"></i><span>Employment Certificate</span></a>
-
                                             </li>
-
-
+                                        </ul>--%>
+                                           <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="ViewAccessDetails.aspx"><i class="fa fa-th-large"></i><span>Attendance</span></a>
+                                            </li>
                                         </ul>
+
+                                        <%--<ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="projectpercentagelist.aspx"><i class="fa fa-th-large"></i><span>Utilization</span></a>
+                                            </li>
+                                        </ul>--%>
+
+                                        <%--<ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="inv_report.aspx"><i class="fa fa-th-large"></i><span>Utilization Report</span></a>
+                                            </li>
+                                        </ul>--%>
+                                           <div id="Assetmenu">
+                                            <ul class="sidebar-menu sm-icons-right sm-icons-block">
+
+                                            <li class="active">
+                                                <a class="" href="#nav-Policies" data-toggle="collapse" aria-expanded="true">
+                                                    <i class="fa fa-file-text"></i>
+                                                    <span>Asset</span>
+                                                </a>
+                                                <ul class="collapse" id="nav-Policies" aria-expanded="true" style="">
+                                                    <li>
+                                                        <a href="AssetMaster.aspx">
+                                      
+                                                            <span>Asset Master</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="Viewasset.aspx">
+                                                           
+                                                            <span>View Asset</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="Editasset.aspx">
+                                                           
+                                                            <span>Edit  Asset Details</span>
+                                                        </a>
+                                                    </li>
+                                                     <li>
+                                                        <a href="AssetEmployeeAllocation.aspx">
+                                                           
+                                                            <span>Asset Allocation</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="AssetAllocationReport.aspx">
+                                                           
+                                                            <span>Asset Allocation Report</span>
+                                                        </a>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        
+                                                
+                                                
+</div>
+                                        
+                                        
+
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="knwldgecenter.aspx"><i class="fa fa-book"></i><span>Knowledge Center</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
-                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                       <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="ApplyLeave.aspx"><i class="fa fa-bed"></i><span>Apply Leave</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employeeleavehistory.aspx"><i class="fa fa-bar-chart"></i><span>Leave History</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
-                                        
-                                        <%--<ul class="sidebar-menu sm-icons-right sm-icons-block">
-                                            <li class="active"><a href="EnterTimeSheet.aspx"><i class="fa fa-tasks"></i><span>Enter TimeSheet</span></a>
-                                            </li>
-                                           
-                                            
-                                        </ul>--%>
-
-
                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
-                                            <li class="active"><a href="enterweeklytimesheet.aspx"><i class="fa fa-clock-o"></i><span>Weekly TimeSheet</span></a>
+                                            <li id='listTimeSheet'class="active"><a href="enterweeklytimesheet.aspx"><i class="fa fa-clock-o"></i><span>Weekly TimeSheet</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
-
-
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employeetimesheet.aspx"><i class="fa fa-tasks"></i><span>View TimeSheet</span></a>
-                                            </li>
-                                           
-                                            
+                                            </li> 
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="ChangePassword.aspx"><i class="fa fa-lock"></i><span>Change Password</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="holidaycalenderemployee.aspx"><i class="fa fa-calendar"></i><span>Holiday Calender</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
-
                                             <li class="active">
-                                                <a class="" href="#nav-Employee" data-toggle="collapse" aria-expanded="true">
-                                                    <i class="fa fa-pencil-square-o"></i>
+                                                <a class="" href="#nav-Employee" data-toggle="collapse" aria-expanded="true"> <i class="fa fa-pencil-square-o"></i>
                                                     <span>Request</span>
                                                 </a>
                                                 <ul class="collapse" id="nav-Employee" aria-expanded="true" style="">
                                                     <li>
                                                          <a href="travelrequest.aspx">
-                                      
                                                             <span>Travel</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="visarequest.aspx">
-                                                           
                                                             <span>VISA</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                        <a href="idcardrequest.aspx">
-                                                           
                                                             <span>ID Card </span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="expensevoucher.aspx">
-                                                           
                                                             <span>Expense Voucher</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="workfromhome.aspx">
-                                                           
                                                             <span>Work From Home</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="reimbursement.aspx">
-
                                                             <span>Reimbursement</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="commonrequest.aspx">
-
                                                             <span>Others</span>
                                                         </a>
-
                                                     </li>
                                                 </ul>
                                             </li>
-
-                                           
                                         </ul>
-                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
-
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="Employee_Handbook.aspx"><i class="fa fa-calendar"></i><span>Employee Handbook</span></a>
+                                            </li>
+                                        </ul>
+                                        <%-- <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active">
                                                 <a class="" href="#nav-Policies" data-toggle="collapse" aria-expanded="true">
                                                     <i class="fa fa-file-text"></i>
@@ -252,60 +280,43 @@
                                                 <ul class="collapse" id="nav-Policies" aria-expanded="true" style="">
                                                     <li>
                                                          <a href="leavepolicy.aspx">
-                                      
                                                             <span>Leave</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                        <a href="dresscodepolicy.aspx">
-                                      
                                                             <span>Dress Code</span>
                                                         </a>
-                                                   
                                                     </li>
                                                     <li>
                                                          <a href="reimbursementpolicy.aspx">
-                                      
                                                             <span>Reimbursement</span>
                                                         </a>
-                                                   
                                                     </li>
                                                     </ul>
                                                 </li>
-                                            </ul>
-
-                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            </ul>--%>
+                                         <%--<ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="empjobdesc.aspx"><i class="fa fa-graduation-cap"></i><span>Job Description</span></a>
                                             </li>
-
-
-                                        </ul>
+                                        </ul>--%>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="meetingroom.aspx"><i class="fa fa-users"></i><span>Meeting Room</span></a>
-                                            
                                             </li>
-
-
+                                        </ul>
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="employeerequeststatus.aspx"><i class="fa fa-pencil-square-o"></i><span>Request Status</span></a>
+                                            </li>
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="raiseticket.aspx"><i class="fa fa-desktop"></i><span>Register Issue</span></a>
-                                            
                                             </li>
-
-
                                         </ul>
-
                                     </div>
                                 </div>
-                                <!-- // END .tab-pane -->
-
                             </div>
-                            <!-- // END .tab-content -->
                         </div>
-                        <!-- // END .split-vertical-cell -->
                     </div>
-                    <!-- // END .split-vertical-body -->
-
                 </div>
             </div>
             <!-- sidebar effects INSIDE of st-pusher: -->

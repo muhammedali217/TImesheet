@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.NetworkInformation;
 using System.Web;
 using System.Web.Http;
 using TimeSheet.Common;
@@ -133,7 +134,90 @@ namespace TimeSheet.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, exMe.Message, Configuration.Formatters.JsonFormatter);
             }
         }
+        //test API for Daily Attendnace
+        [AcceptVerbs("GET", "POST")]
+        public HttpResponseMessage GetHTTPResponseDailyAttendance(ServiceParams oServiceParams)
+        {
+            Jobs objJobs = new Jobs();
+            TimeZoneInfo INDIAN_ZONE = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
+            DateTime dtIndianTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, INDIAN_ZONE);
+            int day = dtIndianTime.Day, month = dtIndianTime.Month, year = dtIndianTime.Year;
+            try
+            {
+                string empId = oServiceParams.oProcParams.FirstOrDefault().strArgmt.ToString();
+                string host = System.Configuration.ConfigurationManager.AppSettings["SmartOfficedb"].ToString();
+                Ping pingSender = new Ping();
+                PingReply reply = pingSender.Send(host);
+                if (reply.Status == IPStatus.Success)
+                {
+                    objJobs.DailyJob(empId);
+                }
 
+                var response = "Success";
+                return Request.CreateResponse(HttpStatusCode.OK, response, Configuration.Formatters.JsonFormatter);
+            }
+            catch (Exception exMe)
+            {
+                ApplicationLog.LogError(exMe.Message, "Error in daily attendance API");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, exMe.Message, Configuration.Formatters.JsonFormatter);
+            }
+
+        }
+        //Email Send By ID
+        [AcceptVerbs("GET", "POST")]
+        public HttpResponseMessage TimeSheetEnableMailNotification(ServiceParams oServiceParams)
+        {
+            Jobs objJobs = new Jobs();
+            TimeZoneInfo INDIAN_ZONE = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
+            DateTime dtIndianTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, INDIAN_ZONE);
+            int day = dtIndianTime.Day, month = dtIndianTime.Month, year = dtIndianTime.Year;
+            try
+            {
+                string EmpName = oServiceParams.oProcParams[0].strArgmt.ToString();
+                string EmpEmail = oServiceParams.oProcParams[1].strArgmt.ToString();
+                SmsMailHelper.TimeSheetEnableMailNotification(EmpName, EmpEmail);
+                var response = "Success";
+                return Request.CreateResponse(HttpStatusCode.OK, response, Configuration.Formatters.JsonFormatter);
+            }
+            catch (Exception exMe)
+            {
+                ApplicationLog.LogError(exMe.Message, "Error in daily attendance API");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, exMe.Message, Configuration.Formatters.JsonFormatter);
+            }
+
+        }
+        // Weekly or Monthly WFh or Out of office Attendance update
+        [AcceptVerbs("GET", "POST")]
+        public HttpResponseMessage UpdateOutofOfficeAttendance(ServiceParams oServiceParams)
+        {
+            Jobs objJobs = new Jobs();
+            TimeZoneInfo INDIAN_ZONE = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
+            DateTime dtIndianTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, INDIAN_ZONE);
+            int day = dtIndianTime.Day, month = dtIndianTime.Month, year = dtIndianTime.Year;
+            try
+            {
+                int nArgIncre = 0;
+                // SqlParameter[] arlParams = new SqlParameter[nArgCnt];
+                if (oServiceParams.oProcParams != null)
+                {
+                    objJobs.WeeklyJobForOutofOfficeAttendance(oServiceParams.oProcParams[0].strKey.ToString(), oServiceParams.oProcParams[0].strArgmt.ToString(), oServiceParams.oProcParams[1].strKey.ToString(), oServiceParams.oProcParams[1].strArgmt.ToString());
+                    //for (int j = 0; j < oServiceParams.oProcParams.Count; j++)
+                    //{
+                    //    arlParams[nArgIncre] = new SqlParameter(("@" + oServiceParams.oProcParams[j].strKey), oServiceParams.oProcParams[j].strArgmt);
+                    //    nArgIncre = nArgIncre + 1;
+                    //}
+                }
+
+                var response = "Success";
+                return Request.CreateResponse(HttpStatusCode.OK, response, Configuration.Formatters.JsonFormatter);
+            }
+            catch (Exception exMe)
+            {
+                ApplicationLog.LogError(exMe.Message, "Error in daily attendance API");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, exMe.Message, Configuration.Formatters.JsonFormatter);
+            }
+
+        }
         //Common service for Web
         [AcceptVerbs("GET", "POST")]
         public HttpResponseMessage GetHTTPResponseDataWeb(ServiceParams oServiceParams)
@@ -342,7 +426,7 @@ namespace TimeSheet.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, exMe.Message, Configuration.Formatters.JsonFormatter);
             }
         }
-        
+
         [AcceptVerbs("GET", "POST")]
         public string EmployeeAddedEmail(Employee oEmployee)
         {
@@ -350,9 +434,9 @@ namespace TimeSheet.Controllers
             {
 
                 DataTableSuccess oDataTableMail = new DataTableSuccess();
-                string EmpName = Convert.ToString(oEmployee.EmpName);//name
-                string EmpCode = Convert.ToString(oEmployee.EmpCode);//email
-                string EmpDesignation = Convert.ToString(oEmployee.EmpDesignation);//password
+                string EmpName = Convert.ToString(oEmployee.EmpName);
+                string EmpCode = Convert.ToString(oEmployee.EmpCode);
+                string EmpDesignation = Convert.ToString(oEmployee.EmpDesignation);
                 string UserName = Convert.ToString(Environment.UserName);
                 SmsMailHelper.EmployeeAddedEmail(EmpName, EmpCode, EmpDesignation);
                 return "Success ";
@@ -845,13 +929,13 @@ namespace TimeSheet.Controllers
                 string gendrmamWomen = oCertificate.GentleManWomen.ToString();
                 string himhis = oCertificate.himhis.ToString();
 
-                
+
 
                 string filepath = "~/Certification/" + shortname + ".pdf";
                 //(HttpContext.Current.Server.MapPath("~/KnowledgeCenter")
-               // var stream = new FileStream(filepath, (FileMode)FileAccess.Read);
+                // var stream = new FileStream(filepath, (FileMode)FileAccess.Read);
                 //var reader = new StreamReader(stream);
-               // File.Delete(filepath);
+                // File.Delete(filepath);
 
                 FileStream fs = new FileStream(HttpContext.Current.Server.MapPath(filepath), FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
                 Document doc = new Document(PageSize.A4, 75f, 50f, 50f, 50f);
@@ -1337,4 +1421,3 @@ namespace TimeSheet.Controllers
         }
     }
 }
- 

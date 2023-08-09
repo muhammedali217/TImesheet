@@ -9,6 +9,8 @@ namespace TimeSheet
     {
         protected void Application_Start()
         {
+            //Scheduler objmyScheduler = new Scheduler();
+            //objmyScheduler.Scheduler_Start();
             AreaRegistration.RegisterAllAreas();
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

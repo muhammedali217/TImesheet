@@ -64,7 +64,7 @@ namespace TimeSheetDownloading
 
           
             //strReceiversAddress = "<melwyn@techvantagesystems.com>,<melwyn12me@gmail.com>";
-            strReceiversAddress = "<info@techvantagesystems.com>,<balu.ramesh@techvantagesystems.com>,<jeeja.deviprasad@techvantagesystems.com>,<smitha.binoy@techvantagesystems.com>";
+            strReceiversAddress = "<testtechvantage098@gmail.com>";
             StringBuilder oStringBuilder = new StringBuilder();
 
             // string strHostedUrl = Convert.ToString(ConfigurationManager.ConnectionStrings["HostedUrl"] + "/login.aspx");

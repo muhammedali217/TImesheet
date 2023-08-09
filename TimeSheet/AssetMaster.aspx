@@ -115,16 +115,15 @@
                                             <li class="active"><a href="inv_report.aspx"><i class="fa fa-th-large"></i><span>Involvement Report</span></a>
                                             </li>
                                         </ul>
-                                       <div id="Assetmenu">
-                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                        <div id="Assetmenu">
+                                            <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
                                             <li class="active">
-                                                <a class="" href="#nav-Employee" data-toggle="collapse" aria-expanded="true">
-                                                    <i class="fa fa-users"></i>
+                                                <a class="" href="#nav-Policies" data-toggle="collapse" aria-expanded="true">
+                                                    <i class="fa fa-file-text"></i>
                                                     <span>Asset</span>
                                                 </a>
-                                                
-                                                <ul class="collapse" id="nav-Employee" aria-expanded="true" style="">
+                                                <ul class="collapse" id="nav-Policies" aria-expanded="true" style="">
                                                     <li>
                                                         <a href="AssetMaster.aspx">
                                       
@@ -137,7 +136,7 @@
                                                             <span>View Asset</span>
                                                         </a>
                                                     </li>
-                                                     <li>
+                                                    <li>
                                                         <a href="Editasset.aspx">
                                                            
                                                             <span>Edit  Asset Details</span>
@@ -155,9 +154,13 @@
                                                             <span>Asset Allocation Report</span>
                                                         </a>
                                                     </li>
+                                                    
                                                 </ul>
                                             </li>
                                         </ul>
+                                        
+                                                
+                                                
 </div>
                                         
                                         
@@ -385,6 +388,21 @@
                                       <fieldset class="Employee-code">
                                         <label for="exampleInputEmail1">Sez</label><br />
                                         <input type="text" class="form-control" id="txtCess" placeholder="Sez"/>
+                                      </fieldset>
+                                      </section>
+                                          
+                                    </div>
+
+                                                    <div class="col-md-6 col-md-offset-3" >
+                                    <section class="col-md-6">
+                                      <fieldset class="Employee-code">
+                                        <label for="exampleInputEmail1">HSN Code</label><font color="red" size="4px"><b> </b></font>
+                                        <input type="text" class="form-control" id="txtHSNCode" placeholder="HSN Code"/>
+                                      </fieldset>
+                                      </section>
+ <section class="col-md-6">
+                                      <fieldset class="Employee-code">
+                                        
                                       </fieldset>
                                       </section>
                                           

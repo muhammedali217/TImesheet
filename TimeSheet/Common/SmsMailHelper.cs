@@ -4,6 +4,11 @@ using System.Net.Mail;
 using System.Text;
 using System.Data;
 using TimeSheet.Models;
+using MimeKit;
+using MailKit.Net.Smtp;
+using SmtpClient = MailKit.Net.Smtp.SmtpClient;
+using MailKit.Security;
+
 namespace TimeSheet.Common
 {
     public class SmsMailHelper
@@ -17,29 +22,39 @@ namespace TimeSheet.Common
             System.Net.Mail.SmtpClient oSmtpClient;
             try
             {
-                String strSenderAddress = string.Empty;
-                MailMessage oMailMessage = new MailMessage();
-                strSenderAddress = "techvantageanalytics@gmail.com";
-                //Pass the Values 
-                oMailMessage.From = new MailAddress(strSenderAddress, "Techvantage Timesheet", System.Text.Encoding.UTF8);
-                oMailMessage.To.Add(strReceiversAddress.ToString());
-                oMailMessage.Bcc.Add(strCCAddress.ToString());
-                oMailMessage.Subject = strGlobalSubject;
-                oMailMessage.Body = strGlobalText;
-                //add our attachment      
 
-                oMailMessage.DeliveryNotificationOptions = DeliveryNotificationOptions.OnSuccess;
-                //Attachment imgAtt = new Attachment(System.Web.Hosting.HostingEnvironment.MapPath("~/images/logo_eat.jpg"));
-                //oMailMessage.Attachments.Add(imgAtt);
+                MimeMessage emailMessage = new MimeMessage();
+                MailboxAddress emailFrom = new MailboxAddress("Time-Sheet","Time-sheet@techvantagesystems.com");
+                emailMessage.From.Add(emailFrom);
 
+                InternetAddressList tolist = new InternetAddressList();
+                string[] TCId = strReceiversAddress.Split(',');
+                foreach (string TCEmail in TCId)
+                {
+                    tolist.Add(new MailboxAddress(TCEmail));
+                }
 
-                oSmtpClient = new System.Net.Mail.SmtpClient("smtp.gmail.com", 25);
-                oSmtpClient.UseDefaultCredentials = false;
-                oSmtpClient.Credentials = new NetworkCredential("techvantageanalytics@gmail.com", "LemonGrass@098");
-                oSmtpClient.EnableSsl = true;
-                oMailMessage.IsBodyHtml = true;
+                MailboxAddress emailTo = new MailboxAddress(strReceiversAddress.ToString());
+                InternetAddressList Bcclist = new InternetAddressList();
+                string[] CCId = strCCAddress.Split(',');
+                foreach (string CCEmail in CCId)
+                {
+                    Bcclist.Add(new MailboxAddress(CCEmail));
+                }
 
-                oSmtpClient.Send(oMailMessage);
+               // MailboxAddress emailBcc = new MailboxAddress(strCCAddress.ToString());
+                emailMessage.To.AddRange(tolist);
+                emailMessage.Bcc.AddRange(Bcclist); 
+                emailMessage.Subject = strGlobalSubject;
+                BodyBuilder emailBodyBuilder = new BodyBuilder();
+                emailBodyBuilder.HtmlBody = strGlobalText;
+                emailMessage.Body = emailBodyBuilder.ToMessageBody();
+                SmtpClient emailClient = new SmtpClient();
+                emailClient.Connect("smtp.office365.com", 587, SecureSocketOptions.StartTls);
+                emailClient.Authenticate("Support@techvantagesystems.com", "Lavender#20!8#$");
+                emailClient.Send(emailMessage);
+                emailClient.Disconnect(true);
+                emailClient.Dispose();
 
             }
             catch (SmtpFailedRecipientsException ex)
@@ -52,8 +67,10 @@ namespace TimeSheet.Common
 
         public static void EmployeeUpdatedEmail(string EmpName, string EmpCode, string EmpDesgntn)
         {
-            strReceiversAddress = "<Unni@techvantagesystems.com>";
-           // strCCAddress = "<info@techvantagesystems.com>,<smitha.binoy@techvantagesystems.com>,<jeeja.deviprasad@techvantagesystems.com>";
+            //strReceiversAddress = "balu@techvantagesystems.com";
+            strReceiversAddress = "unni@techvantagesystems.com";
+            strCCAddress = "Unni@techvantagesystems.com,rajesh@techvantagesystems.com";
+            //strCCAddress = "info@techvantagesystems.com,smitha.binoy@techvantagesystems.com,jeeja.deviprasad@techvantagesystems.com";
             StringBuilder oStringBuilder = new StringBuilder();
 
             // string strHostedUrl = Convert.ToString(ConfigurationManager.ConnectionStrings["HostedUrl"] + "/login.aspx");
@@ -94,8 +111,12 @@ namespace TimeSheet.Common
 
         public static void EmployeeAddedEmail(string EmpName, string EmpCode, string EmpDesgntn)
         {
-            strReceiversAddress = "<balu.ramesh@techvantagesystems.com>";
-            strCCAddress="<info@techvantagesystems.com>,<smitha.binoy@techvantagesystems.com>,<jeeja.deviprasad@techvantagesystems.com>";
+            //strReceiversAddress = "balu.ramesh@techvantagesystems.com";
+            // strCCAddress="info@techvantagesystems.com,smitha.binoy@techvantagesystems.com,jeeja.deviprasad@techvantagesystems.com";
+
+            strReceiversAddress = "ali.muhammed@techvantagesystems.com";
+            strCCAddress = "ali.muhammed@techvantagesystems.com,rajesh@techvantagesystems.com";
+
             StringBuilder oStringBuilder = new StringBuilder();
 
             // string strHostedUrl = Convert.ToString(ConfigurationManager.ConnectionStrings["HostedUrl"] + "/login.aspx");
@@ -134,6 +155,44 @@ namespace TimeSheet.Common
             }
         }
 
+        public static void TimeSheetEnableMailNotification(string EmpName,string EmpEmail)
+        {            
+            // strCCAddress="info@techvantagesystems.com,smitha.binoy@techvantagesystems.com,jeeja.deviprasad@techvantagesystems.com";
+
+            strReceiversAddress = EmpEmail;
+            //strCCAddress = "smitha.binoy@techvantagesystems.com,rajesh@techvantagesystems.com";
+            strCCAddress = "ali.muhammed@techvantagesystems.com";
+
+            StringBuilder oStringBuilder = new StringBuilder();
+
+            // string strHostedUrl = Convert.ToString(ConfigurationManager.ConnectionStrings["HostedUrl"] + "/login.aspx");
+
+
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:14px; display: block; font-weight: 100\">");
+            oStringBuilder.Append("Hi "+EmpName+",<br/><br/>");
+            oStringBuilder.Append("</span>");
+
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:14px; display: block; font-weight: 100\">");
+            oStringBuilder.Append("The requested week timesheet has been enabled. Please update it ASAP today.  <br/><br/>");
+            oStringBuilder.Append("</span>");
+
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:14px; display: block; font-weight: 100\">");
+            oStringBuilder.Append("Thanks and Regards<br/>");
+            oStringBuilder.Append("Techvantage IT Team<br/><br/>");
+            oStringBuilder.Append("</span>");
+
+            oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:14px; display: block;\">");
+            oStringBuilder.Append("Note : Do not reply. This is system generated mail.<br/>");
+            
+            oStringBuilder.Append("</span>");
+
+            strGlobalSubject = "Timesheet Enabled";
+            strGlobalText = oStringBuilder.ToString();
+            if (!String.IsNullOrEmpty(strReceiversAddress))
+            {
+                SendEMail();
+            }
+        }
 
 
 
@@ -141,9 +200,10 @@ namespace TimeSheet.Common
         {
 
 
-            //strReceiversAddress = "<monisha@techvantagesystems.com>";
-            strReceiversAddress = "<info@techvantagesystems.com>";
-            strCCAddress = "<balu.ramesh@techvantagesystems.com>,<jeeja.deviprasad@techvantagesystems.com>,<smitha.binoy@techvantagesystems.com>";
+            //strReceiversAddress = "unni@techvantagesystems.com";
+           // strCCAddress = "Unni@techvantagesystems.com,rajesh@techvantagesystems.com";
+            strReceiversAddress = "info@techvantagesystems.com";
+             strCCAddress = "testtechvantage098@gmail.com";
             //strCCAddress = "<smitha.binoy@techvantagesystems.com>";
             StringBuilder oStringBuilder = new StringBuilder();
 
@@ -165,7 +225,7 @@ namespace TimeSheet.Common
 
 
             oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:14px; display: block; font-weight: 500\">");
-            oStringBuilder.Append("Leave Type  <span style='margin-left:55px;margin-top:15px;'></span> : &nbsp; &nbsp; " + strLeaveType + " <br/>");
+            oStringBuilder.Append("  Leave Type  <span style='margin-left:55px;margin-top:15px;'></span> : &nbsp; &nbsp; " + strLeaveType + " <br/>");
             oStringBuilder.Append("</span>");
 
             oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:14px; display: block; font-weight: 500\">");
@@ -173,7 +233,7 @@ namespace TimeSheet.Common
             oStringBuilder.Append("</span>");
 
             oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:14px; display: block; font-weight: 500\">");
-            oStringBuilder.Append("To  <span style='margin-left:113px;margin-top:15px;'></span>           : &nbsp; &nbsp; " + strtoDate);
+            oStringBuilder.Append("  To  <span style='margin-left:113px;margin-top:15px;'></span>           : &nbsp; &nbsp; " + strtoDate);
             oStringBuilder.Append("</span>");
 
             oStringBuilder.Append("<span style=\"color:Black; font-family:Arial;text-align:left;font-size:14px; display: block; font-weight: 500\">");
@@ -304,8 +364,8 @@ namespace TimeSheet.Common
         {
 
             //strReceiversAddress = "<monisha@techvantagesystems.com>";
-            strReceiversAddress = "<info@techvantagesystems.com>";
-            strCCAddress = "<balu.ramesh@techvantagesystems.com>,<jeeja.deviprasad@techvantagesystems.com>,<smitha.binoy@techvantagesystems.com>";
+            strReceiversAddress = "info@techvantagesystems.com";
+            strCCAddress = "testtechvantage098@gmail.com";
             StringBuilder oStringBuilder = new StringBuilder();
 
             // string strHostedUrl = Convert.ToString(ConfigurationManager.ConnectionStrings["HostedUrl"] + "/login.aspx");
@@ -652,9 +712,9 @@ namespace TimeSheet.Common
         {
 
 
-            strReceiversAddress = "<info@techvantagesystems.com>";
+            strReceiversAddress = "info@techvantagesystems.com";
             //strReceiversAddress = "<monisha@techvantagesystems.com>";
-            strCCAddress = "<balu.ramesh@techvantagesystems.com>,<jeeja.deviprasad@techvantagesystems.com>,<smitha.binoy@techvantagesystems.com>,<ravi@techvantagesystems.com>,<meenu@techvantagesystems.com>";
+            strCCAddress = "testtechvantage098@gmail.com";
             StringBuilder oStringBuilder = new StringBuilder();
 
             // string strHostedUrl = Convert.ToString(ConfigurationManager.ConnectionStrings["HostedUrl"] + "/login.aspx");
@@ -798,8 +858,8 @@ namespace TimeSheet.Common
 
         public static void ApproveRejectEmailNotification2Admin(string requestType,string EmpName,string requestDate,string reqStatus)
         {
-            strReceiversAddress = "<info@techvantagesystems.com>";
-            strCCAddress = "<balu.ramesh@techvantagesystems.com>,<jeeja.deviprasad@techvantagesystems.com>,<smitha.binoy@techvantagesystems.com>";
+            strReceiversAddress = "info@techvantagesystems.com";
+            strCCAddress = "testtechvantage098@gmail.com";
 
             //strReceiversAddress = "melwyn@techvantagesystems.com";
            
@@ -834,7 +894,7 @@ namespace TimeSheet.Common
         {
             //var RedirictLink = "http://localhost:15794/replytoticket.aspx?TicketId=" + TicketPKValue;
             var RedirictLink = "http://fixzitest.in/replytoticket.aspx?TicketId=" + TicketPKValue;
-            strReceiversAddress = "<rajesh@techvantagesystems.com>";
+            strReceiversAddress = "rajesh@techvantagesystems.com";
             strCCAddress = " ";
             
            // strReceiversAddress = "<balu.ramesh@techvantagesystems.com>,<info@techvantagesystems.com>,<smitha.binoy@techvantagesystems.com>,<jeeja.deviprasad@techvantagesystems.com>,<melwyn@techvantagesystems.com>";

@@ -203,6 +203,18 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                                     <span>Projects</span>
                                                 </a>
                                                 <ul id="nav-Project" class="collapse" aria-expanded="true" style="">
+                                                      <li>
+                                                        <a href="ClientDetails.aspx">
+                                      
+                                                            <span>Add Client</span>
+                                                        </a>
+                                                    </li>
+                                                     <li>
+                                                        <a href="ViewClientDetails.aspx">
+                                      
+                                                            <span>View Client</span>
+                                                        </a>
+                                                    </li>
                                                     <li>
                                                         <a href="ProjectAdd.aspx">
                                       

@@ -165,7 +165,7 @@ color:white
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a href="#sidebar-menu" data-toggle="sidebar-menu" data-effect="st-effect-3" class="toggle pull-left visible-xs"><i class="fa fa-bars"></i></a>
-
+                    
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
@@ -230,13 +230,64 @@ color:white
                             <div class="tab-content">
                                 <div class="tab-pane active" id="sidebar-tabs-menu">
                                     <div>
-                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                       <%-- <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employmentcert.aspx"><i class="fa fa-th-large"></i><span>Employment Certificate</span></a>
 
                                             </li>
 
 
+                                        </ul>--%>
+                                          <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="ViewAccessDetails.aspx"><i class="fa fa-th-large"></i><span>Attendance</span></a>
+                                            </li>
                                         </ul>
+                                        <div id="Assetmenu">
+                                            <ul class="sidebar-menu sm-icons-right sm-icons-block">
+
+                                            <li class="active">
+                                                <a class="" href="#nav-Policies" data-toggle="collapse" aria-expanded="true">
+                                                    <i class="fa fa-file-text"></i>
+                                                    <span>Asset</span>
+                                                </a>
+                                                <ul class="collapse" id="nav-Policies" aria-expanded="true" style="">
+                                                    <li>
+                                                        <a href="AssetMaster.aspx">
+                                      
+                                                            <span>Asset Master</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="Viewasset.aspx">
+                                                           
+                                                            <span>View Asset</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="Editasset.aspx">
+                                                           
+                                                            <span>Edit  Asset Details</span>
+                                                        </a>
+                                                    </li>
+                                                     <li>
+                                                        <a href="AssetEmployeeAllocation.aspx">
+                                                           
+                                                            <span>Asset Allocation</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="AssetAllocationReport.aspx">
+                                                           
+                                                            <span>Asset Allocation Report</span>
+                                                        </a>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        
+                                                
+                                                
+</div>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="knwldgecenter.aspx"><i class="fa fa-book"></i><span>Knowledge Center</span></a>
                                             </li>
@@ -346,6 +397,10 @@ color:white
 
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="Employee_Handbook.aspx"><i class="fa fa-calendar"></i><span>Employee Handbook</span></a>
+                                            </li>
+                                        </ul>
+                                        <%--<ul class="sidebar-menu sm-icons-right sm-icons-block">
 
                                             <li class="active">
                                                 <a class="" href="#nav-Policies" data-toggle="collapse" aria-expanded="true">
@@ -376,13 +431,13 @@ color:white
                                                     
                                                 </ul>
                                             </li>
-                                        </ul>
-                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                        </ul>--%>
+                                       <%-- <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="empjobdesc.aspx"><i class="fa fa-graduation-cap"></i><span>Job Description</span></a>
                                             </li>
 
 
-                                        </ul>
+                                        </ul>--%>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="meetingroom.aspx"><i class="fa fa-users"></i><span>Meeting Room</span></a>
                                             
@@ -482,11 +537,6 @@ color:white
                                                         <option>On Duty</option>
                                                         <option>LOP</option>
                                                        <option value="5">Covid</option>
-
-
-
-
-
                                                     </select>
 </div>
                                                 </fieldset>

@@ -51,6 +51,14 @@ namespace TimeSheetJobs
                 Strconn = "Data Source=" + getAppSettings_("SQLServer") + ";Initial Catalog=" + getAppSettings_("Database") + ";Persist Security Info=True;User ID=" + getAppSettings_("SQLUserId") + ";Password=" + getAppSettings_("SQLPassword");
             return Strconn;
         }
+        public static string GetSQLConectionusingSmartDB()
+        {
+            string Strcon = "";
+            
+                Strcon = getAppSettings_("SmartDbConnection");
+           
+            return Strcon;
+        }
 
         public static string GetESSLDbConnection()
         {

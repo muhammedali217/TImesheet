@@ -144,13 +144,13 @@ th {
                             <div class="tab-content">
                                 <div class="tab-pane active" id="sidebar-tabs-menu">
                                     <div>
-                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                       <%-- <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employmentcert.aspx"><i class="fa fa-th-large"></i><span>Employment Certificate</span></a>
 
                                             </li>
 
 
-                                        </ul>
+                                        </ul>--%>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="knwldgecenter.aspx"><i class="fa fa-book"></i><span>Knowledge Center</span></a>
                                             </li>
@@ -260,8 +260,11 @@ th {
 
                                            
                                         </ul>
-
-                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="Employee_Handbook.aspx"><i class="fa fa-calendar"></i><span>Employee Handbook</span></a>
+                                            </li>
+                                        </ul>
+                                         <%--<ul class="sidebar-menu sm-icons-right sm-icons-block">
 
                                             <li class="active">
                                                 <a class="" href="#nav-Policies" data-toggle="collapse" aria-expanded="true">
@@ -291,13 +294,13 @@ th {
                                                     </li>
                                                     </ul>
                                                 </li>
-                                            </ul>
-                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            </ul>--%>
+                                         <%--<ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="empjobdesc.aspx"><i class="fa fa-graduation-cap"></i><span>Job Description</span></a>
                                             </li>
 
 
-                                        </ul>
+                                        </ul>--%>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="meetingroom.aspx"><i class="fa fa-users"></i><span>Meeting Room</span></a>
                                             

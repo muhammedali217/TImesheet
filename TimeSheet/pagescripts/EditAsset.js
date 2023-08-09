@@ -184,6 +184,12 @@
                 varProcParams[9] = varParams;
                 varParams = {};
 
+                var varParams = {};
+                varParams.strKey = "Asset_HSNCode";
+                varParams.strArgmt = $("#txtHSNCode").val()
+                varProcParams[10] = varParams;
+                varParams = {};
+                 //alert( $("#txtHSNCode").val());
                 //var varParams = {};
                 //varParams.strKey = "Projects_VersionControl";
                 //varParams.strArgmt = $("#ddlEmployee option:selected").text();
@@ -368,7 +374,8 @@
                     $("#ddlStatus").val(response.details[0].Asset_Status_id)
                     $("#txtRemarks").val(response.details[0].Asset_Remarks)
                     $("#txtLicenced").val(response.details[0].Asset_Lic_Sw)
-                    $("#txtCess").val(response.details[0].Asset_Cess)
+                    $("#txtCess").val(response.details[0].asset_Cess)
+                    $("#txtHSNCode").val(response.details[0].Asset_HSNCode)
 
                    
 

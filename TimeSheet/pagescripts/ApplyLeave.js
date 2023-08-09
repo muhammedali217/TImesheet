@@ -1,6 +1,20 @@
 ﻿$(document).ready(function () {
     var disableddates = [];
+
+    if (Localvalue == 126 || Localvalue == 2 || Localvalue == 12) {
+
+        document.getElementById('Assetmenu').style.display = 'block';
+
+
+        //document.getElementById('ddtopmenubar').style.display = 'block';
+    }
+    else {
+        document.getElementById('Assetmenu').style.display = 'none';
+
+    }
     HolidayDates();
+
+
 
     function HolidayDates() {
         var SpParams = {};
@@ -177,10 +191,6 @@
         }
 
 
-
-
-
-
         $('#chkbxHalfDay').attr('checked', false); // Unchecks it
         $("#txtLeaveTo").prop('disabled', false);
 
@@ -340,6 +350,9 @@
                 $.alert.open({ type: 'warning', content: 'Please Choose other leave type.' });
             }
             else if ($("#ddlLeaveType").val() == '5' && ($("#remainingLeaves").val() - $("#txtTotalLeave").val()) < '0') {
+                $.alert.open({ type: 'warning', content: 'You have exceeded the limit of this leave type, please choose other type.' });
+            }            
+            else if ($("#ddlLeaveType").val() == '2' && $("#remainingLeaves").val() <= '0') {
                 $.alert.open({ type: 'warning', content: 'You have exceeded the limit of this leave type, please choose other type.' });
             }
 

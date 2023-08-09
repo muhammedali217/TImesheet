@@ -212,7 +212,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                          <section class="col-md-3">
                                       <fieldset class="Employee-code">
                                         <label for="exampleInputEmail1">Designation</label>
-                                        <input type="email" class="form-control" id="txtDesignation" placeholder="Enter Designation">
+                                        <input type="text" class="form-control" id="txtDesignation" placeholder="Enter Designation">
                                       </fieldset>
                                       </section>
 

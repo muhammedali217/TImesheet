@@ -128,20 +128,20 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                 <div class="tab-pane active" id="sidebar-tabs-menu">
 
                                     <div>
-                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                       <%-- <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="employmentcert.aspx"><i class="fa fa-th-large"></i><span>Employment Certificate</span></a>
                                             </li>
-                                        </ul>
+                                        </ul>--%>
 
-                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                        <%--<ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="projectpercentagelist.aspx"><i class="fa fa-th-large"></i><span>Utilization</span></a>
                                             </li>
-                                        </ul>
+                                        </ul>--%>
 
-                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                        <%--<ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="inv_report.aspx"><i class="fa fa-th-large"></i><span>Utilization Report</span></a>
                                             </li>
-                                        </ul>
+                                        </ul>--%>
                                          <div id="Assetmenu">
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
@@ -174,6 +174,12 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                                         <a href="AssetEmployeeAllocation.aspx">
                                                            
                                                             <span>Asset Allocation</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="AssetAllocationReport.aspx">
+                                                           
+                                                            <span>Asset Allocation Report</span>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -255,7 +261,11 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                                 </ul>
                                             </li>
                                         </ul>
-                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="Employee_Handbook.aspx"><i class="fa fa-calendar"></i><span>Employee Handbook</span></a>
+                                            </li>
+                                        </ul>
+                                        <%-- <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active">
                                                 <a class="" href="#nav-Policies" data-toggle="collapse" aria-expanded="true">
                                                     <i class="fa fa-file-text"></i>
@@ -279,11 +289,11 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                                     </li>
                                                     </ul>
                                                 </li>
-                                            </ul>
-                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            </ul>--%>
+                                         <%--<ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="empjobdesc.aspx"><i class="fa fa-graduation-cap"></i><span>Job Description</span></a>
                                             </li>
-                                        </ul>
+                                        </ul>--%>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="meetingroom.aspx"><i class="fa fa-users"></i><span>Meeting Room</span></a>
                                             </li>
@@ -362,22 +372,27 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                                 <td id="td2" class="tdMonday">
                                                      <br />
                                                     <div id="div1"></div><label id="MDay"></label>
+                                                    <div id="div11"></div><label id="MDay1"></label>
                                                 </td>
                                                 <td id="td3">
                                                      <br />
                                                     <div id="div2"></div><label id="TDay"></label>
+                                                    <div id="div21"></div><label id="TDay1"></label>
                                                 </td>
                                                 <td id="td4">
                                                      <br />
                                                     <div id="div3"></div><label id="WDay"></label>
+                                                    <div id="div31"></div><label id="WDay1"></label>
                                                 </td>
                                                 <td id="td5">
                                                      <br />
                                                     <div id="div4"></div><label id="ThDay"></label>
+                                                    <div id="div41"></div><label id="ThDay1"></label>
                                                 </td>
                                                 <td id="td6">
                                                      <br />
                                                     <div id="div5"></div><label id="FDay"></label>
+                                                    <div id="div51"></div><label id="FDay1"></label>
                                                 </td>
                                                 <td id="td7">
                                                      <br />

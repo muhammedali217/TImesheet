@@ -15,6 +15,7 @@
         $("#txtPrjectTo").datepicker();
         EmpDropDown();
         ProfitCostCode();
+        ClientDetails();
 
         $('#txtProjectName').on('change', function () {
 
@@ -28,12 +29,12 @@
             //alert(res + random);
         });
         $('#btnSubmit').click(function () {
-
+            
             if ($("#txtProjectName").val() == '') {
                 $.alert.open({ type: 'warning', content: 'Please enter Project Name.' });
             }
 
-            else if ($("#txtClientName").val() == '') {
+            else if ($("#ddlClient").val() == '') {
                 $.alert.open({ type: 'warning', content: 'Please enter client name.' });
             }
             else if ($("#txtDescription").val() == '') {
@@ -104,7 +105,7 @@
 
                 var varParams = {};
                 varParams.strKey = "Project_ClientName";
-                varParams.strArgmt = $("#txtClientName").val();
+                varParams.strArgmt = $("#ddlClient").val();
                 varProcParams[4] = varParams;
                 varParams = {};
 
@@ -261,6 +262,33 @@
                 }//response
             });//ajax
         }
+
+
+        function ClientDetails() {
+            var SpParams = {};
+            alert(
+            SpParams.strProc = "Client_Details";
+
+            $.ajax({
+                url: "/api/FIXZIService/GetHTTPDropDownResponse",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(SpParams),
+                success: function (response) {
+                    $('#ddlCode').empty();
+
+                    if (response != null) {
+                        for (var i = 0; i < response.length; i++) {
+                            {
+                                $("#ddlClient").append(new Option(response[i].DisplayMember, response[i].ValueMember));
+                            }
+                        }//for
+                    }//if
+                }//response
+            });//ajax
+        }
+
 
         function ProfitCostCode() {
             var SpParams = {};

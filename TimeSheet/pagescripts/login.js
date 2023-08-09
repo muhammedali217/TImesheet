@@ -93,7 +93,7 @@ $().ready(function () {
                     localStorage.setItem('Gender', Gender);
                     localStorage.setItem('Day', response.day);
                     localStorage.setItem('Hour', response.hour);
-                    window.location = "enterweeklytimesheet.aspx";
+                    window.location = "enterweeklytimesheet_new.aspx";
                 }
                 else if (response.status == "FAILED")
                 {

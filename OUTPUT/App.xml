@@ -8,7 +8,8 @@
     <add key="Authentic" value="true" />
     <add key="MsgInterval" value="1000" />
     <add key="Environment" value="TimeSheetJobs" />
-    <add key="SenderMail" value="techvantageanalytics@gmail.com" />
-    <add key="SenderMailPwd" value="LemonGrass@098" />
+    <add key="SenderMail" value="unni@techvantagesystems.com" />
+    <add key="SenderMailPwd" value="kannan@123" />
+    <add key="SmartDbConnection" value="Data Source=192.168.0.110;Initial Catalog=SmartOffice;User Id=techvantage;Password=LemonGrass@098" />
   </appSettings>
 </configuration>

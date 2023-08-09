@@ -22,8 +22,10 @@ namespace EmailRemainder.Common
             try
             {
                 string strEmailId = "", strPassword = "";
-                strEmailId = ConfigurationSettings.AppSettings["EmailId"].ToString();
-                strPassword = ConfigurationSettings.AppSettings["Password"].ToString();
+                // strEmailId = ConfigurationSettings.AppSettings["EmailId"].ToString();
+
+                strEmailId = XmlConec.getAppSettings_("SenderMail");//"techvantagetechies@gmail.com";
+                strPassword = XmlConec.getAppSettings_("SenderMailPwd");
                 String strSenderAddress = string.Empty;
                 MailMessage oMailMessage = new MailMessage();
                 strSenderAddress = "techvantageanalytics@gmail.com";

@@ -335,7 +335,7 @@
 
                                       <section class="col-md-6">
                                              <fieldset class="form-gr.oup">
-                                                 <label for="exampleInputEmail1">Asset Enhancement</label><font color="red" size="4px"><b> * </b></font>
+                                                 <label for="exampleInputEmail1">OS Type</label><font color="red" size="4px"><b> * </b></font>
                                             <div class='input-group date' >
                                                  <input type="text" class="form-control" id="txtAssetEnhance" placeholder="Enter Asset Enhancement"/>
                                                
@@ -348,7 +348,7 @@
 
                                           <section class="col-md-6">
                                       <fieldset class="Employee-code">
-                                        <label for="exampleInputEmail1">Asset Key</label><font color="red" size="4px"><b> * </b></font>
+                                        <label for="exampleInputEmail1">OS Key</label><font color="red" size="4px"><b> * </b></font>
                                          <input type="text" class="form-control" id="txtAssetKey" placeholder="Enter Asset Key"/>
                                       </fieldset>
                                       </section>
@@ -388,8 +388,22 @@
                                       </section>
 <section class="col-md-6">
                                       <fieldset class="Employee-code">
-                                        <label for="exampleInputEmail1">Cess</label><br />
+                                        <label for="exampleInputEmail1">SEZ</label><br />
                                         <input type="text" class="form-control" id="txtCess" placeholder="Cess"/>
+                                      </fieldset>
+                                      </section>
+                                          
+                                    </div>
+                                                           <div class="col-md-6 col-md-offset-3" >
+                                    <section class="col-md-6">
+                                      <fieldset class="Employee-code">
+                                        <label for="exampleInputEmail1">HSN Code</label><font color="red" size="4px"><b> </b></font>
+                                        <input type="text" class="form-control" id="txtHSNCode" placeholder="HSN Code"/>
+                                      </fieldset>
+                                      </section>
+ <section class="col-md-6">
+                                      <fieldset class="Employee-code">
+                                        
                                       </fieldset>
                                       </section>
                                           

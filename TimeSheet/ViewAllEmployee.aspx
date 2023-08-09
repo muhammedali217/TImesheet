@@ -403,6 +403,12 @@ tr.shown td.details-control {
                                            
                                             
                                         </ul>
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="EnableTimesheet.aspx"><i class="fa fa-exchange"></i><span>Enable Timesheet</span></a>
+                                                </li></ul>
+                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="RunJobs.aspx"><i class="fa fa-square"></i><span>SQL Jobs</span></a>
+                                                </li></ul>
                                          
                                     </div>
                                 </div>

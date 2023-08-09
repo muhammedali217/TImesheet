@@ -20,6 +20,10 @@ namespace TimeSheetJobs
         {
             return XmlConec.GetSQLConection();
         }
+        public static string GetConnectionofSmartDB()
+        {
+            return XmlConec.GetSQLConectionusingSmartDB();
+        }
 
         ~SQLHelper()
         {
@@ -69,6 +73,10 @@ namespace TimeSheetJobs
         #endregion
 
         #region ExecuteDataset
+        public static DataSet ExecuteDatasetUsingSmartdb(string commandText, params SqlParameter[] cmdParams)
+        {
+            return ExecuteDatasetUsingSmartDB(commandText, cmdParams);
+        }
         public static DataSet ExecuteDataset(string commandText)
         {
             return ExecuteDataset(commandText, (SqlParameter[])null);
@@ -90,7 +98,21 @@ namespace TimeSheetJobs
             return techvDataSet;
         }
         #endregion
-
+        public static DataSet ExecuteDatasetUsingSmartDB(string commandText, params SqlParameter[] cmdParams)
+        {
+            SqlCommand techvSqlCommand = new SqlCommand();
+            SqlConnection techvSqlConnection = new SqlConnection(GetConnectionofSmartDB());
+            PrepareCommand(techvSqlConnection, techvSqlCommand, commandText, cmdParams);
+            DataSet techvDataSet;
+            using (SqlDataAdapter da = new SqlDataAdapter(techvSqlCommand))
+            {
+                techvDataSet = new DataSet();
+                da.Fill(techvDataSet);
+                techvSqlCommand.Parameters.Clear();
+            }
+            techvSqlConnection.Dispose();
+            return techvDataSet;
+        }
         public static string BulkInsert(string strTableName, DataTable dtBulkValues)
         {
             string strResult = String.Empty;

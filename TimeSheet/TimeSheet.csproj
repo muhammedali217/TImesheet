@@ -45,8 +45,14 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp, Version=5.5.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.9\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=2.3.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.2.3.0\lib\net45\MailKit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
@@ -67,6 +73,9 @@
     <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WindowsAzure.Storage.7.0.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
     </Reference>
+    <Reference Include="MimeKit, Version=2.3.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.2.3.0\lib\net45\MimeKit.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -76,6 +85,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -212,12 +222,26 @@
     <Compile Include="billreports.aspx.designer.cs">
       <DependentUpon>billreports.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BirthdayCard.aspx.cs">
+      <DependentUpon>BirthdayCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BirthdayCard.aspx.designer.cs">
+      <DependentUpon>BirthdayCard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientDetails.aspx.cs">
+      <DependentUpon>ClientDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientDetails.aspx.designer.cs">
+      <DependentUpon>ClientDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="commonrequest.aspx.cs">
       <DependentUpon>commonrequest.aspx</DependentUpon>
@@ -326,12 +350,26 @@
     <Compile Include="employeetimesheet.aspx.designer.cs">
       <DependentUpon>employeetimesheet.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Employee_Handbook.aspx.cs">
+      <DependentUpon>Employee_Handbook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee_Handbook.aspx.designer.cs">
+      <DependentUpon>Employee_Handbook.aspx</DependentUpon>
+    </Compile>
     <Compile Include="employmentcert.aspx.cs">
       <DependentUpon>employmentcert.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="employmentcert.aspx.designer.cs">
       <DependentUpon>employmentcert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnableTimesheet.aspx.cs">
+      <DependentUpon>EnableTimesheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnableTimesheet.aspx.designer.cs">
+      <DependentUpon>EnableTimesheet.aspx</DependentUpon>
     </Compile>
     <Compile Include="EnterTimeSheet.aspx.cs">
       <DependentUpon>EnterTimeSheet.aspx</DependentUpon>
@@ -346,6 +384,13 @@
     </Compile>
     <Compile Include="enterweeklytimesheet.aspx.designer.cs">
       <DependentUpon>enterweeklytimesheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enterweeklytimesheet_new.aspx.cs">
+      <DependentUpon>Enterweeklytimesheet_new.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enterweeklytimesheet_new.aspx.designer.cs">
+      <DependentUpon>Enterweeklytimesheet_new.aspx</DependentUpon>
     </Compile>
     <Compile Include="expensevoucher.aspx.cs">
       <DependentUpon>expensevoucher.aspx</DependentUpon>
@@ -403,6 +448,7 @@
     <Compile Include="inv_report.aspx.designer.cs">
       <DependentUpon>inv_report.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Jobs.cs" />
     <Compile Include="knwldgecenter.aspx.cs">
       <DependentUpon>knwldgecenter.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -444,6 +490,13 @@
     </Compile>
     <Compile Include="meetingroom.aspx.designer.cs">
       <DependentUpon>meetingroom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuListUserControl1.ascx.cs">
+      <DependentUpon>MenuListUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuListUserControl1.ascx.designer.cs">
+      <DependentUpon>MenuListUserControl1.ascx</DependentUpon>
     </Compile>
     <Compile Include="Models\BillReport.cs" />
     <Compile Include="Models\Certificate.cs" />
@@ -535,6 +588,13 @@
     <Compile Include="replytoticket.aspx.designer.cs">
       <DependentUpon>replytoticket.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RunJobs.aspx.cs">
+      <DependentUpon>RunJobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RunJobs.aspx.designer.cs">
+      <DependentUpon>RunJobs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Sample.aspx.cs">
       <DependentUpon>Sample.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -584,6 +644,13 @@
     <Compile Include="uploadknwldgedoc.aspx.designer.cs">
       <DependentUpon>uploadknwldgedoc.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ViewAccessDetails.aspx.cs">
+      <DependentUpon>ViewAccessDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAccessDetails.aspx.designer.cs">
+      <DependentUpon>ViewAccessDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="viewallbills.aspx.cs">
       <DependentUpon>viewallbills.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -625,6 +692,13 @@
     </Compile>
     <Compile Include="viewattendance.aspx.designer.cs">
       <DependentUpon>viewattendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewClientDetails.aspx.cs">
+      <DependentUpon>ViewClientDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewClientDetails.aspx.designer.cs">
+      <DependentUpon>ViewClientDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewProfitCostCenter.aspx.cs">
       <DependentUpon>ViewProfitCostCenter.aspx</DependentUpon>
@@ -702,6 +776,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
     <Compile Include="workfromhome.aspx.cs">
       <DependentUpon>workfromhome.aspx</DependentUpon>
@@ -887,6 +968,7 @@
     <Content Include="alert\themes\default\x2\info.png" />
     <Content Include="alert\themes\default\x2\prompt.png" />
     <Content Include="alert\themes\default\x2\warning.png" />
+    <Content Include="App.xml" />
     <Content Include="ApplyLeave.aspx" />
     <Content Include="AssetAllocation.aspx" />
     <Content Include="AssetAllocationReport.aspx" />
@@ -896,6 +978,7 @@
     <Content Include="AssignSubTasks.aspx" />
     <Content Include="billadd.aspx" />
     <Content Include="billreports.aspx" />
+    <Content Include="BirthdayCard.aspx" />
     <Content Include="bootstrap-datepicker\css\datepicker.css" />
     <Content Include="bootstrap-datepicker\js\bootstrap-datepicker.js" />
     <Content Include="bootstrap-datetimepicker\css\datetimepicker.css" />
@@ -923,6 +1006,7 @@
     <Content Include="bootstrap\js\datepicker.js" />
     <Content Include="bootstrap\js\npm.js" />
     <Content Include="ChangePassword.aspx" />
+    <Content Include="ClientDetails.aspx" />
     <Content Include="commonrequest.aspx" />
     <Content Include="CopyViewEmployee.aspx" />
     <Content Include="css\images\Bimages\Img1.jpg" />
@@ -946,9 +1030,12 @@
     <Content Include="EmployeeProjectReport.aspx" />
     <Content Include="employeerequeststatus.aspx" />
     <Content Include="employeetimesheet.aspx" />
+    <Content Include="Employee_Handbook.aspx" />
     <Content Include="employmentcert.aspx" />
+    <Content Include="EnableTimesheet.aspx" />
     <Content Include="EnterTimeSheet.aspx" />
     <Content Include="enterweeklytimesheet.aspx" />
+    <Content Include="Enterweeklytimesheet_new.aspx" />
     <Content Include="expensevoucher.aspx" />
     <Content Include="holidaycalender.aspx" />
     <Content Include="holidaycalenderemployee.aspx" />
@@ -961,11 +1048,17 @@
     <Content Include="leavedashboard.aspx" />
     <Content Include="leavepolicy.aspx" />
     <Content Include="leaveupdate.aspx" />
+    <Content Include="MenuListUserControl1.ascx" />
     <Content Include="pagescripts\AssetAllocation.js" />
     <Content Include="pagescripts\AssetAllocationReport.js" />
     <Content Include="pagescripts\AssetEmployeeAllocation.js" />
     <Content Include="pagescripts\AssetMaster.js" />
+    <Content Include="pagescripts\BirthdayCard.js" />
+    <Content Include="pagescripts\ClientDetails.js" />
     <Content Include="pagescripts\EditAsset.js" />
+    <Content Include="pagescripts\Employee_Handbook.js" />
+    <Content Include="pagescripts\EnableTimesheet.js" />
+    <Content Include="pagescripts\Enterweeklytimesheet_new.js" />
     <Content Include="pagescripts\involvementreport.js" />
     <Content Include="pagescripts\leaveupdate.js" />
     <Content Include="login.html" />
@@ -1239,9 +1332,11 @@
     <Content Include="pagescripts\prjectperscantage.js" />
     <Content Include="pagescripts\ProjectAdd.js" />
     <Content Include="pagescripts\ProjectCostReport.js" />
+    <Content Include="pagescripts\Projectedit.js" />
     <Content Include="pagescripts\raiseticket.js" />
     <Content Include="pagescripts\reimbursement.js" />
     <Content Include="pagescripts\replytoticket.js" />
+    <Content Include="pagescripts\RunJobs.js" />
     <Content Include="pagescripts\Sample.js" />
     <Content Include="pagescripts\sample1.js" />
     <Content Include="pagescripts\singlebilldetail.js" />
@@ -1249,12 +1344,14 @@
     <Content Include="pagescripts\travelrequest.js" />
     <Content Include="pagescripts\uploadjobsdesc.js" />
     <Content Include="pagescripts\uploadknwldgedoc.js" />
+    <Content Include="pagescripts\ViewAccessDetails.js" />
     <Content Include="pagescripts\viewallbills.js" />
     <Content Include="pagescripts\ViewAllEmployee.js" />
     <Content Include="pagescripts\viewallproject.js" />
     <Content Include="pagescripts\viewapprovedleaves.js" />
     <Content Include="pagescripts\Viewasset.js" />
     <Content Include="pagescripts\viewattendance.js" />
+    <Content Include="pagescripts\ViewClient.js" />
     <Content Include="pagescripts\ViewProfitCostCenter.js" />
     <Content Include="pagescripts\viewprojectemployee.js" />
     <Content Include="pagescripts\viewprojecttasks.js" />
@@ -1268,11 +1365,13 @@
     <Content Include="pagescripts\workfromhome.js" />
     <Content Include="ProjectAdd.aspx" />
     <Content Include="ProjectCostReport.aspx" />
+    <Content Include="Projectedit.aspx" />
     <Content Include="projectpercentagelist.aspx" />
     <Content Include="raiseticket.aspx" />
     <Content Include="reimbursement.aspx" />
     <Content Include="reimbursementpolicy.aspx" />
     <Content Include="replytoticket.aspx" />
+    <Content Include="RunJobs.aspx" />
     <Content Include="Sample.aspx" />
     <Content Include="Sample1.aspx" />
     <Content Include="Scripts\form\css\EmpTest.css" />
@@ -1402,12 +1501,14 @@
     <Content Include="travelrequest.aspx" />
     <Content Include="uploadjobdesc.aspx" />
     <Content Include="uploadknwldgedoc.aspx" />
+    <Content Include="ViewAccessDetails.aspx" />
     <Content Include="viewallbills.aspx" />
     <Content Include="ViewAllEmployee.aspx" />
     <Content Include="viewallproject.aspx" />
     <Content Include="viewapprovedleaves.aspx" />
     <Content Include="Viewasset.aspx" />
     <Content Include="viewattendance.aspx" />
+    <Content Include="ViewClientDetails.aspx" />
     <Content Include="ViewPage1.aspx" />
     <Content Include="ViewProfitCostCenter.aspx" />
     <Content Include="viewprojectemployee.aspx" />
@@ -1430,12 +1531,14 @@
     <Content Include="bootstrap-datetimepicker\build\build_standalone.less" />
     <Content Include="bootstrap-datetimepicker\less\datetimepicker.less" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
     <Content Include="workfromhome.aspx" />
     <Content Include="bootstrap-datepicker\build\build.less" />
     <Content Include="bootstrap-datepicker\build\build_standalone.less" />
     <Content Include="bootstrap-datepicker\component.json" />
     <Content Include="bootstrap-datepicker\less\datepicker.less" />
     <Content Include="bootstrap\js\jquery.ui.1.11.3.js" />
+    <Content Include="libman.json" />
     <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />

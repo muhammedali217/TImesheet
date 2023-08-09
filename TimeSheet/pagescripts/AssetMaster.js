@@ -10,9 +10,22 @@
         window.location = "login.html";
     }
     else {
+        var Localvalue = localStorage.getItem('EmployeeId');
+        alert(Localvalue);
+        if (Localvalue == 126 || Localvalue == 2 || Localvalue == 12 || Localvalue == 2259) {
+
+            document.getElementById('Assetmenu').style.display = 'block';
+
+
+            //document.getElementById('ddtopmenubar').style.display = 'block';
+        }
+        else {
+            window.location = "login.html";
+
+        }
         var dayOfWeek = localStorage.getItem('Day');
         var currentHour = localStorage.getItem('Hour');
-        var Localvalue = localStorage.getItem('EmployeeId');
+        
        
         var name = localStorage.getItem('EmployeeName');
 
@@ -20,7 +33,7 @@
         //alert('hi');
         //document.getElementById("imageuser").src = 'admin / images / administrator3.png';
         document.getElementById('imageuser').setAttribute('src', 'admin/images/administrator3.png');
-        if (Localvalue == 126) {
+        if (Localvalue == 126 || Localvalue == 2 || Localvalue == 12 || Localvalue == 2259) {
 
             document.getElementById('Assetmenu').style.display = 'block';
 
@@ -65,6 +78,9 @@
             }
             else if ($("#ddlStatus").val() == '') {
                 $.alert.open({ type: 'warning', content: 'Please Select Status.' });
+            }
+            else if ($("#txtHSNCode").val() == '') {
+                $.alert.open({ type: 'warning', content: 'Please enter HSN Code' });
             }
             //else if ($("#txtAssetCode").val() == '') {
             //    $.alert.open({ type: 'warning', content: 'Please select Code' });
@@ -155,6 +171,7 @@
                 varProcParams[8] = varParams;
                 varParams = {};
 
+               
                 var varParams = {};
                 varParams.strKey = "Asset_Cess";
                 varParams.strArgmt = $("#txtCess").val()
@@ -162,68 +179,11 @@
                 varParams = {};
 
 
-                //var varParams = {};
-                //varParams.strKey = "Projects_VersionControl";
-                //varParams.strArgmt = $("#ddlEmployee option:selected").text();
-                //varParams.strArgmt = $("#txtVersioncontrol").val();
-                //varProcParams[9] = varParams;
-                //varParams = {};
-
-                //var varParams = {};
-                //varParams.strKey = "Projects_ProgrammingLanguages";
-                //varParams.strArgmt = $("#txtProgramminglanguages").val();
-                //varProcParams[10] = varParams;
-                //varParams = {};
-
-                //var varParams = {};
-                //varParams.strKey = "Projects_PackagesUsed";
-                //varParams.strArgmt = $("#txtPackagesused").val();
-                //varProcParams[11] = varParams;
-                //varParams = {};
-
-                //var varParams = {};
-                //varParams.strKey = "Projects_Framework";
-                //varParams.strArgmt = $("#txtFramework").val();
-                //varProcParams[12] = varParams;
-                //varParams = {};
-
-                //var varParams = {};
-                //varParams.strKey = "Projects_HostingServer";
-                //varParams.strArgmt = $("#txtHostingserver").val();
-                //varProcParams[13] = varParams;
-                //varParams = {};
-
-                //var varParams = {};
-                //varParams.strKey = "Projects_Database";
-                //varParams.strArgmt = $("#txtDatabase").val();
-                //varProcParams[14] = varParams;
-                //varParams = {};
-
-                //var varParams = {};
-                //varParams.strKey = "Projects_ThirdPartyTools";
-                //varParams.strArgmt = $("#txtThirdparty").val();
-                //varProcParams[15] = varParams;
-                //varParams = {};
-
-                //var varParams = {};
-                //varParams.strKey = "Projects_Security";
-                //varParams.strArgmt = $("#txtSecurity").val();
-                //varProcParams[16] = varParams;
-                //varParams = {};
-
-                //var varParams = {};
-                //varParams.strKey = "Projects_PortsUsed";
-                //varParams.strArgmt = $("#txtPortsused").val();
-                //varProcParams[17] = varParams;
-                //varParams = {};
-
-                //var varParams = {};
-                //varParams.strKey = "Projects_ProfitCenterCode";
-                //varParams.strArgmt = $("#ddlCode").val();
-                //varProcParams[18] = varParams;
-                //varParams = {};
-
-
+                var varParams = {};
+                varParams.strKey = "Asset_HSN_Code";
+                varParams.strArgmt = $("#txtHSNCode").val()
+                varProcParams[10] = varParams;
+                varParams = {};
 
                 var SpParams = {};
                 SpParams.strProc = "Asset_Add";

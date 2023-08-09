@@ -4,6 +4,7 @@
         window.location.href = "login.html";
     });
     var Localvalue = localStorage.getItem('AdminSession');
+    var relation;
     if (Localvalue == null) {
         $.alert.open({ type: 'warning', content: 'Session has timed out. Please Login again' });
         window.location = "login.html";
@@ -114,17 +115,18 @@
         $('#btnSubmit').click(function () {
             if ($('#ddlLineManager').val() == 'Select Line Managers') {
                 $.alert.open('Please select the Line Manager');
-            }
+            }            
             else {
                 EmployeeAdd();                
             }
         });
         $('#txt_emer_others').hide();
-        var relation;
+       
         $('#ddlrelation').change(function () {
+            debugger
             if ($('#ddlrelation').val() == 'Others') {
-                $('#txt_emer_others').show();
-                relation = $('#txt_emer_others').val();
+                $('#txt_emer_others').show();               
+                
             }
             else {
                 $('#txt_emer_others').hide();
@@ -304,6 +306,10 @@
 
 
         function EmployeeAdd() {
+            debugger
+            if ($('#ddlrelation').val() == 'Others') {
+                relation = $('#txt_emer_others').val();
+            }
 
             var varProcParams = new Array();
 
@@ -546,7 +552,7 @@
             var SpParams = {};
             SpParams.strProc = "Employee_Add";
             SpParams.oProcParams = varProcParams;
-
+            debugger
             var doj = $("#txtDOJ").val();
             var doj1 = doj.split('/');
 
@@ -561,7 +567,10 @@
                 PrvL = 3.0;
                 SickL = 3.0;
             }
-
+            else if ($("#ddlEmpStatus").val() =="Permanent") {
+                PrvL = 3.5;
+                SickL = 3.0;
+            }
             else {
                 PrvL = 0.0;
                 SickL = 0.0;
@@ -597,6 +606,21 @@
             else {
 
             }
+            debugger
+            var joiningMonth = (new Date(doj)).getMonth() + 1;
+            if (joiningMonth == "1" || joiningMonth == "4" || joiningMonth == "7" || joiningMonth == "10") {
+                PrvL = 3.5;
+                SickL = 3.0;
+            }
+            else if (joiningMonth == "2" || joiningMonth == "5" || joiningMonth == "8" || joiningMonth == "11") {
+                PrvL = 3.5 - 1;
+                SickL = 3.0;
+            }
+            else if (joiningMonth == "3" || joiningMonth == "6" || joiningMonth == "9" || joiningMonth == "12") {
+                PrvL = 3.5 - 2;
+                SickL = 3.0;
+            }
+            else { }
 
             if ($("#ddlGener").val() == "Female") {
                 MatrnL = 90;
@@ -622,6 +646,7 @@
                     if (response.status == 'SUCCESS') {                        
                         $.alert.open('Employee details added Successfully');                        
                         SendEmailToAdmin($("#txtEmpName").val(), $("#txtEmpCode").val(), $("#txtDesignation").val());
+                        debugger
                         EmpId = response.message;
                         AddLeaveHistory(PrvL, MatrnL, PaternL, SickL, Quarter1, Quarter2, Quarter3, Quarter4, PrvL, EmpId);
                         window.location = "ViewAllEmployee.aspx";

@@ -22,6 +22,18 @@
     else {
 
 
+        if (Localvalue == 126 || Localvalue == 2 || Localvalue == 12) {
+
+            document.getElementById('Assetmenu').style.display = 'block';
+
+
+            //document.getElementById('ddtopmenubar').style.display = 'block';
+        }
+        else {
+            document.getElementById('Assetmenu').style.display = 'none';
+
+        }
+
         $('#getCert').click(function () {
             $("#lblWait").show();
             if (Gender == 'Male') {

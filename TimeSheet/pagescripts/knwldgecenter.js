@@ -12,9 +12,21 @@
         var Localvalue = localStorage.getItem('EmployeeId');
         var name = localStorage.getItem('EmployeeName');
         $("#lblName").text(name);
+        if (Localvalue == 126 || Localvalue == 2 || Localvalue == 12) {
+
+            document.getElementById('Assetmenu').style.display = 'block';
+
+
+            //document.getElementById('ddtopmenubar').style.display = 'block';
+        }
+        else {
+            document.getElementById('Assetmenu').style.display = 'none';
+
+        }
+
         Loadvalues();
 
-        $('#tblKnwldge').html('<table cellpadding="0" class="display responsive nowrap" cellspacing="0" border="0"  id="tableKnwldgeCenter" style="width:300px;"></table>');
+        $('#tblKnwldge').html('<table cellpadding="0" class="display responsive nowrap" cellspacing="0" border="0"  id="tableKnwldgeCenter" style="width:700px;"></table>');
 
 
         var oTable = $('#tableKnwldgeCenter').dataTable({
@@ -23,7 +35,8 @@
             ],
 
             "aoColumns": [{
-                "sTitle": "Sl.No"
+                "sTitle": "Sl.No",
+                'sWidth': '50%'
             },
              {
                  "sTitle": "TOPIC",
@@ -33,7 +46,7 @@
                  'sWidth': '5%'
              }, {
                  "sTitle": "DOWNLOAD",
-                 'sWidth': '50%'
+                 'sWidth': '10%'
                  //,
                  //'bVisible': false
              }

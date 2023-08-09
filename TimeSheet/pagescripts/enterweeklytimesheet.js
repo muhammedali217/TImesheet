@@ -14,7 +14,7 @@
         var currentHour = localStorage.getItem('Hour');       
         var Localvalue = localStorage.getItem('EmployeeId');
         
-        if (Localvalue == 126) {
+        if (Localvalue == 126 || Localvalue == 2 || Localvalue == 12) {
 
             document.getElementById('Assetmenu').style.display = 'block';
 
@@ -326,10 +326,15 @@
                             "margin-right": "20px"
                         });
                         $('<input type="number" step="0.5" id=firstday class="FirstDay" name="1stday" placeholder="Hours"  style="height:25px;width:52px;margin-right:45px;float:right;clear:both;"/><br/><br/> ').appendTo('#div1');
+                        
                         $('<input type="number" step="0.5" class="SecondDay" name="wrkedHours" placeholder="Hours" style="height:25px;width:52px;margin-right:45px;float:right;clear:both;"/><br/><br/> ').appendTo('#div2');
+                        
                         $('<input type="number" step="0.5" id="thirdday" class="ThirdDay" name="wrkedHours" placeholder="Hours" style="height:25px;width:52px;margin-right:45px;float:right;clear:both;"/><br/><br/> ').appendTo('#div3');
+                        
                         $('<input type="number" step="0.5" class="FourthDay" name="wrkedHours" placeholder="Hours"  style="height:25px;width:52px;margin-right:45px;float:right;clear:both;"/><br/><br/> ').appendTo('#div4');
+                        
                         $('<input type="number" step="0.5" class="Fifth" name="wrkedHours" placeholder="Hours"  style="height:25px;width:52px;margin-right:45px;float:right;clear:both;"/><br/><br/> ').appendTo('#div5');
+                        
                         $('<textarea rows="0" class="remarks" cols="2" style="height:26px;width:152px;margin-left:15px;margin-right:15px;margin-bottom:-6.3px;"/><br/><br/> ').appendTo('#div6');
                     }
                 }
@@ -350,7 +355,7 @@
             var arrayOfTaskIds = $.map($(".myLabel"), function (n, i) {
                 return n.id;
             });
-            //alert(arrayOfTaskIds);
+            alert(arrayOfTaskIds);
             var MondayWrkedHours = [];
             var TuesdayWrkedHours = [];
             var WednesdayWrkedHours = [];
@@ -399,7 +404,7 @@
 
             var comm = comments.toString();
             var comment = comm.replace(/,/g, "");
-            //alert(MonW);
+            alert(MonW);
             //alert(MondayWrkedHours.toString());
             if ($("#ddlNewProject").val() == "") {
 

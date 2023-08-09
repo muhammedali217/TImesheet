@@ -126,8 +126,8 @@ namespace TimeSheet
             RecordErrorInNotepad(strText);
             System.Net.Mail.SmtpClient oSmtpClient;
             MailMessage oMailMessage = new MailMessage();
-            oMailMessage.From = new MailAddress("techvantageanalytics@gmail.com", "Time Sheet", System.Text.Encoding.UTF8);
-            oMailMessage.To.Add("Unni@techvantagesystems.com");
+            oMailMessage.From = new MailAddress("puretextingteam@gmail.com", "Time Sheet", System.Text.Encoding.UTF8);
+            oMailMessage.To.Add("ali.muhammed@techvantagesystems.com");
             oMailMessage.Subject = strSubject;
             oMailMessage.Body = strText;
             oMailMessage.IsBodyHtml = true;

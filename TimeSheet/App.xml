@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <appSettings>
+    <add key="SQLServer" value="localhost" />
+    <add key="SQLUserId" value="sa" />
+    <add key="SQLPassword" value="Password#123" />
+    <add key="Database" value="LeaveMngment" />
+	  <add key="accSQLServer" value="192.168.0.110" />
+	  <add key="accSQLUserId" value="techvantage" />
+	  <add key="accSQLPassword" value="LemonGrass@098" />
+	  <add key="accDatabase" value="SmartOffice" />
+    <add key="Authentic" value="true" />
+    <add key="MsgInterval" value="1000" />
+    <add key="Environment" value="AccessConroldataimport" />
+    <add key="SenderMail" value="unni@techvantagesystems.com" />
+    <add key="SenderMailPwd" value="kannan@123" />
+  </appSettings>
+</configuration>

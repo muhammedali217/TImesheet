@@ -13,6 +13,7 @@ namespace TimeSheetJobs
         /// Get the Job Name, which reflects the class name.
         /// </summary>
         /// <returns>The class Name.</returns>
+        DateTime CurrentTime = new DateTime();
         public override string GetName()
         {
             return this.GetType().Name;
@@ -30,6 +31,7 @@ namespace TimeSheetJobs
             //Console.WriteLine("-----------------------------");
             // Console.WriteLine(DateTime.Now.ToString("HH:mm:"));
             string time = DateTime.Now.ToString("HH:mm:ss");
+            DateTime TimeNow = DateTime.Now;            
 
             //Console.WriteLine(time);
             MailController oMailController = new MailController();
@@ -48,10 +50,21 @@ namespace TimeSheetJobs
             {
                 PipeClient.WriteLine("Email not yet Send");
             }
-            if (time == "01:00:00")
+            //if (time == "12:00:00")
+            //{
+            //    oMailController.SendBirthDayEmailToAllEmployee();
+            //    PipeClient.WriteLine("Birth Day Email Send To Employees");
+            //}
+            if (time == "17:15:00")
             {
-                oMailController.SendBirthDayEmailToAllEmployee();
-                PipeClient.WriteLine("Birth Day Email Send To Employees");
+                oMailController.UpdateTodayAttendance();
+                PipeClient.WriteLine("Attendance Updated");
+                CurrentTime = DateTime.Now;
+            }
+            else if(CurrentTime.AddMinutes(2)>=TimeNow)
+            {
+                oMailController.UpdateTodayAttendance();
+                PipeClient.WriteLine("Email Send To All Employees");
             }
 
         }

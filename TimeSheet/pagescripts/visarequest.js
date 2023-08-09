@@ -9,7 +9,17 @@
         var Localvalue = localStorage.getItem('EmployeeId');
         var name = localStorage.getItem('EmployeeName');
 
+        if (Localvalue == 126 || Localvalue == 2 || Localvalue == 12) {
 
+            document.getElementById('Assetmenu').style.display = 'block';
+
+
+            //document.getElementById('ddtopmenubar').style.display = 'block';
+        }
+        else {
+            document.getElementById('Assetmenu').style.display = 'none';
+
+        }
 
         $("#lblName").text(name);
         $("#txtTrvlDate").datepicker();
@@ -247,7 +257,7 @@
 
                         }
                         else {
-                            $.alert.open({ type: 'warning', content: "Error in request submitting. Try again." });
+                            alert('error');
                         }
                     }
                 });

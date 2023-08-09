@@ -89,7 +89,12 @@
                     'sClass': 'center'
                 },
                 {
-                    "sTitle": "Cess",
+                    "sTitle": "SEZ",
+                    'sWidth': '0%',
+                    'sClass': 'center'
+                },
+                {
+                    "sTitle": "HSN Code",
                     'sWidth': '0%',
                     'sClass': 'center'
                 },
@@ -178,7 +183,7 @@
             //gets rows of table
             var rowLength = oTable.rows.length;
             var tblstructure;
-            tblstructure = "<table><tr><th><b>Sl.No</th><th><b>Asset Code</th><th><b>Asset Name</b></th><th><b>OS Type</b></th><th><b>Asset OS Key</b></th><th><b>Softwares Used</b></th><th><b>Licenced Softwares</b></th> <th><b>Asset Status</b></th><th><b>Asset Type</b></th><th><b>Sez</b></th><th><b>Remarks</b></th></tr>";
+            tblstructure = "<table><tr><th><b>Sl No</th><th><b>Asset Code</th><th><b>Asset Name</b></th><th><b>OS Type</b></th><th><b>Asset OS Key</b></th><th><b>Softwares Used</b></th><th><b>Licenced Softwares</b></th> <th><b>Asset Status</b></th><th><b>Asset Type</b></th><th><b>Sez</b></th><th><b>HSN Code</b></th><th><b>Remarks</b></th></tr>";
             //loops through rows    
             for (i = 1; i < rowLength; i++) {
 
@@ -196,6 +201,9 @@
                     for (var j = 0; j < cellLength; j++) {
 
                         // get your cell info here
+                        //if (j == 0 || j == 2 || j == 2 || j == 2 || j == 2 || j == 2 || j == 2 || j == 2 || j == 2 || j == 2 || j == 2 || j == 2) {
+
+                        //}
                             var cellVal = oCells.item(j).innerHTML;
 
                             tblstructure = tblstructure + "<td>" + oCells.item(j).innerHTML + "</td>";
@@ -239,9 +247,9 @@
                         //$("#tableTimeSheet").dataTable().fnClearTable();
                        
                         for (var j = 0; j < response.details.length; j++) {
-                            
+                            alert(response.details);
 
-                            jQuery("#tableContractorDetails").dataTable().fnAddData([j + 1, (response.details[j].Asset_id).toString(), (response.details[j].Asset_code).toString(), (response.details[j].Asset_Name).toString(), (response.details[j].Asset_Type_Id).toString(), (response.details[j].Asset_Description).toString(), (response.details[j].Asset_Key).toString(), (response.details[j].Asset_Enhancement).toString(), (response.details[j].Asset_Status_id).toString(), (response.details[j].Asset_Lic_Sw).toString(), (response.details[j].Asset_Status_Desc).toString(), (response.details[j].Assettype_Desc).toString(), (response.details[j].Asset_Cess).toString(), (response.details[j].Asset_Remarks).toString()]);
+                            jQuery("#tableContractorDetails").dataTable().fnAddData([j + 1, (response.details[j].Asset_id).toString(), (response.details[j].Asset_code).toString(), (response.details[j].Asset_Name).toString(), (response.details[j].Asset_Type_Id).toString(), (response.details[j].Asset_Description).toString(), (response.details[j].Asset_Key).toString(), (response.details[j].Asset_Enhancement).toString(), (response.details[j].Asset_Status_id).toString(), (response.details[j].Asset_Lic_Sw).toString(), (response.details[j].Asset_Status_Desc).toString(), (response.details[j].Assettype_Desc).toString(), (response.details[j].Asset_Cess).toString(), (response.details[j].Asset_HSNCode).toString(), (response.details[j].Asset_Remarks).toString()]);
                            
                            
                         }

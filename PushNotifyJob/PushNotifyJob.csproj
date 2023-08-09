@@ -103,12 +103,6 @@
   <ItemGroup>
     <Content Include="Common\sound.wav" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TimeSheet\TimeSheet.csproj">
-      <Project>{5b6e2bc6-25b9-4fe4-aa16-4ab280727cb5}</Project>
-      <Name>TimeSheet</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

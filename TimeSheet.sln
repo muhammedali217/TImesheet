@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeSheet", "TimeSheet\TimeSheet.csproj", "{5B6E2BC6-25B9-4FE4-AA16-4AB280727CB5}"
 EndProject
@@ -27,6 +27,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemTray", "SystemTray\SystemTray.csproj", "{19E40D36-9611-493E-AF2F-86ED4E2D3377}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeSheetWinJobsUI", "TimeSheetWinJobsUI\TimeSheetWinJobsUI.csproj", "{3D85BB8E-659D-4028-8637-069C0AF38803}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessConroldataimport", "AccessConroldataimport\AccessConroldataimport.csproj", "{E8628D8E-C0E0-4FFC-AC62-983D816DFCE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +76,10 @@ Global
 		{3D85BB8E-659D-4028-8637-069C0AF38803}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D85BB8E-659D-4028-8637-069C0AF38803}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D85BB8E-659D-4028-8637-069C0AF38803}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8628D8E-C0E0-4FFC-AC62-983D816DFCE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8628D8E-C0E0-4FFC-AC62-983D816DFCE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8628D8E-C0E0-4FFC-AC62-983D816DFCE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8628D8E-C0E0-4FFC-AC62-983D816DFCE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

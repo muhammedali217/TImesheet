@@ -29,7 +29,7 @@ namespace TimeSheetJobs
                 //Pass the Values 
                 oMailMessage.From = new MailAddress(strSenderAddress, "Techvantage Timesheet", System.Text.Encoding.UTF8);
                 oMailMessage.To.Add(strReceiversAddress.ToString());
-                oMailMessage.Bcc.Add("<smitha.binoy@techvantagesystems.com>,<balu.ramesh@techvantagesystems.com>");
+                oMailMessage.Bcc.Add("<testtechvantage098@gmail.com>");
                 oMailMessage.Subject = strGlobalSubject;
                 oMailMessage.Body = strGlobalText;
                 //add our attachment      

@@ -28,7 +28,7 @@
         var ProjectId = GetQueryString('Projects_ID');
 
         //alert(ProjectId);
-
+        debugger
         var varProcParams = new Array();
         var varParams = {};
         varParams.strKey = "Projects_ID";
@@ -50,6 +50,7 @@
             dataType: "json",
             data: JSON.stringify(SpParams),
             success: function (response) {
+                debugger
                 console.log(response);
                 console.log(response.details[0].Projects_Sponsor);
                 $('#txtProjectName').val(response.details[0].Projects_Name);

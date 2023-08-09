@@ -193,8 +193,13 @@ button:hover {
                             <div class="tab-content">
                                 <div class="tab-pane active" id="sidebar-tabs-menu">
                                     <div>
-                                       <ul class="sidebar-menu sm-icons-right sm-icons-block">
-
+                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                              <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="viewcandidates.html"><i class="fa fa-male"></i><span>Candidates</span></a>
+                                            </li>
+                                           
+                                            
+                                        </ul>
                                             <li class="active">
                                                 <a class="" href="#nav-Employee" data-toggle="collapse" aria-expanded="true">
                                                     <i class="fa fa-users"></i>
@@ -213,12 +218,15 @@ button:hover {
                                                             <span>View Employee</span>
                                                         </a>
                                                     </li>
+													<li>
+                                                        <a href="Delete_Employee.aspx"> 
+                                                            <span>Disable Employee</span>
+                                                        </a>
+                                                    </li>
                                                 </ul>
-                                            </li>                                           
+                                            </li>
                                         </ul>
-                                                                                                                        
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
-
                                             <li class="active">
                                                 <a class="" href="#nav-Project" data-toggle="collapse" aria-expanded="true">
                                                     <i class="fa fa-tasks"></i>
@@ -257,9 +265,8 @@ button:hover {
                                                     </li>
                                                 </ul>
                                             </li>
-                                          </ul>
-
-                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                        </ul>
+                                           <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
                                             <li class="active">
                                                 <a class="" href="#nav-AssignProject" data-toggle="collapse" aria-expanded="true">
@@ -279,15 +286,15 @@ button:hover {
                                                             <span>Assign Tasks</span>
                                                         </a>
                                                     </li>
-                                                   <li>
+                                                     <li>
                                                         <a href="viewprojectemployee.aspx">
                                                             
                                                             <span>Project & Employee</span>
                                                         </a>
-                                                    </li>  
+                                                    </li>
                                                    
                                                 </ul>
-                                            </li>                                           
+                                            </li>
                                         </ul>
 
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
@@ -307,51 +314,36 @@ button:hover {
                                                     
                                                     <li>
                                                         <a href="ViewTimeSheet.aspx">
-                                                            
                                                             <span>Time Sheet</span>
                                                         </a>
                                                     </li>
-                                                     <li>
+                                                    <li>
                                                          <a href="viewrequests.aspx">
-                                                            
                                                             <span>Others</span>
                                                         </a>
                                                     </li>  
-                                                   
                                                 </ul>
                                             </li>
-
-                                           
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="holidaycalender.aspx"><i class="fa fa-calendar"></i><span>Holiday Calender</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="viewattendance.aspx"><i class="fa-bar-chart"></i><span>Attendance</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="AdminChangePassword.aspx"><i class="fa fa-lock"></i><span>Change Password</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="viewtechvasset.aspx"><i class="fa fa-desktop"></i><span>Assets List</span></a>
-                                            </li>
-                                           
-                                            
+                                            </li>  
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="uploadjobdesc.aspx"><i class="fa fa-book"></i><span>Upload JD</span></a>
-                                            </li>
-                                           
-                                            
+                                            </li>  
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
 
@@ -367,31 +359,26 @@ button:hover {
                                                             <span>Add Bill Details</span>
                                                         </a>
                                                     </li>
-
                                                     <li>
                                                         <a href="viewallbills.aspx">
 
                                                             <span>View Bills</span>
                                                         </a>
                                                     </li>
-
                                                     <li>
                                                         <a href="billreports.aspx">
 
                                                             <span>Bills Report</span>
                                                         </a>
                                                     </li>
+
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                             <li class="active"><a href="uploadknwldgedoc.aspx"><i class="fa fa-file"></i><span>Upload Knowledge Doc</span></a>
                                             </li>
-                                           
-                                            
                                         </ul>
-                                       
-                                        
                                         <ul class="sidebar-menu sm-icons-right sm-icons-block" id="leavesidebar">
 
                                             <li class="active">
@@ -423,6 +410,19 @@ button:hover {
                                                 </ul>
                                             </li>
                                         </ul>
+                                         <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="leaveupdate.aspx"><i class="fa fa-file"></i><span>Update Quarterly Leave</span></a>
+                                            </li>
+                                           
+                                            
+                                        </ul>
+                                        <ul class="sidebar-menu sm-icons-right sm-icons-block">
+                                            <li class="active"><a href="viewsubscription.aspx"><i class="fa fa-book"></i><span>Subscription List</span></a>
+                                            </li>
+                                           
+                                            
+                                        </ul>
+                                         
                                     </div>
                                 </div>
                                 <!-- // END .tab-pane -->
@@ -537,9 +537,9 @@ button:hover {
                             <p><select id="ddlLineManager" name="ddlLineManager">                                              
                                 <option>Select Line Managers</option>              
                                 <option>Devi</option>
-                                 <option>Ravi</option>
+                                 <option>Balu</option>
                                 <option>Smitha</option>
-                                <option>Joji</option>
+                                <option>Chinmay</option>
                                 <option>Jitesh</option>
                                 <option>Aswathy</option>
                                 <option>Rahul</option>

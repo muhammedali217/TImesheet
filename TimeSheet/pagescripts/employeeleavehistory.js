@@ -9,6 +9,9 @@
         window.location = "login.html";
     }
     else {
+
+
+
         var day;
 
         var Localvalue = localStorage.getItem('EmployeeId');
@@ -17,7 +20,17 @@
 
         $("#lblName").text(name);
 
+        if (Localvalue == 126 || Localvalue == 2 || Localvalue == 12) {
 
+            document.getElementById('Assetmenu').style.display = 'block';
+
+
+            //document.getElementById('ddtopmenubar').style.display = 'block';
+        }
+        else {
+            document.getElementById('Assetmenu').style.display = 'none';
+
+        }
 
         LeaveSummary();
         Loadvalues();
@@ -36,22 +49,22 @@
                     "sTitle": "Total",
                     'sWidth': '5%'
                 },
-             {
-                 "sTitle": "Applied",
-                 'sWidth': '5%'
-             }, {
-                 "sTitle": "Approved",
-                 'sWidth': '5%'
-             }, {
-                 "sTitle": "Remaining",
-                 'sWidth': '5%'
-             }
+                {
+                    "sTitle": "Applied",
+                    'sWidth': '5%'
+                }, {
+                    "sTitle": "Approved",
+                    'sWidth': '5%'
+                }, {
+                    "sTitle": "Remaining",
+                    'sWidth': '5%'
+                }
 
             ],
 
             "aLengthMenu": [
-                        [5, 10, 15, -1],
-                        [5, 10, 15, "All"] // change per page values here
+                [5, 10, 15, -1],
+                [5, 10, 15, "All"] // change per page values here
             ],
             // set the initial value
             "iDisplayLength": 100,
@@ -82,43 +95,47 @@
                     "sTitle": "Leave Id",
                     'bVisible': false
                 },
-             {
-                 "sTitle": "Sl No",
-                 'sWidth': '10%'
-             }, {
-                 "sTitle": "From",
-                 'sWidth': '10%'
-             }, {
-                 "sTitle": "To",
-                 'sWidth': '10%'
-             }, {
-                 "sTitle": "No of Days",
-                 'sWidth': '10%'
-             }, {
-                 "sTitle": "Type",
-                 'sWidth': '10%'
-             },
-             {
-                 "sTitle": "Applied Date",
-                 'sWidth': '10%'
-             }, {
-                 "sTitle": "Status",
-                 'sWidth': '20%'
-             },
-             {
-                 "sTitle": "",
-                 'sWidth': '100%'
-             },
-             {
-                 "sTitle": "",
-                 'sWidth': '100%'
-             }
+                {
+                    "sTitle": "Sl No",
+                    'sWidth': '10%'
+                }, {
+                    "sTitle": "From",
+                    'sWidth': '10%'
+                }, {
+                    "sTitle": "To",
+                    'sWidth': '10%'
+                }, {
+                    "sTitle": "No of Days",
+                    'sWidth': '10%'
+                }, {
+                    "sTitle": "Type",
+                    'sWidth': '10%'
+                },
+                {
+                    "sTitle": "Reason",
+                    'sWidth': '10%'
+                },
+                {
+                    "sTitle": "Applied Date",
+                    'sWidth': '10%'
+                }, {
+                    "sTitle": "Status",
+                    'sWidth': '20%'
+                },
+                {
+                    "sTitle": "",
+                    'sWidth': '100%'
+                },
+                {
+                    "sTitle": "",
+                    'sWidth': '100%'
+                }
 
             ],
 
             "aLengthMenu": [
-                        [5, 10, 15, -1],
-                        [5, 10, 15, "All"] // change per page values here
+                [5, 10, 15, -1],
+                [5, 10, 15, "All"] // change per page values here
             ],
             // set the initial value
             "iDisplayLength": 100,
@@ -161,10 +178,10 @@
                         //$("#tableTimeSheet").dataTable().fnClearTable();
                         for (var j = 0; j < response.details.length; j++) {
                             if ((response.details[j].Leave_Status).toString() == "Approved") {
-                                jQuery("#tableLeave").dataTable().fnAddData([(response.details[j].Leave_ID).toString(), j + 1, (response.details[j].Leave_From).toString(), (response.details[j].Leave_To).toString(), (response.details[j].Leave_NoOfDays).toString(), (response.details[j].Leave_Type).toString(), (response.details[j].Leave_AppliedDate).toString(), (response.details[j].Leave_Status).toString(), "", ""]);
+                                jQuery("#tableLeave").dataTable().fnAddData([(response.details[j].Leave_ID).toString(), j + 1, (response.details[j].Leave_From).toString(), (response.details[j].Leave_To).toString(), (response.details[j].Leave_NoOfDays).toString(), (response.details[j].Leave_Type).toString(), (response.details[j].Leave_Reason).toString(), (response.details[j].Leave_AppliedDate).toString(), (response.details[j].Leave_Status).toString(), "", ""]);
                             }
                             else {
-                                jQuery("#tableLeave").dataTable().fnAddData([(response.details[j].Leave_ID).toString(), j + 1, (response.details[j].Leave_From).toString(), (response.details[j].Leave_To).toString(), (response.details[j].Leave_NoOfDays).toString(), (response.details[j].Leave_Type).toString(), (response.details[j].Leave_AppliedDate).toString(), (response.details[j].Leave_Status).toString(), '<button type="button" class="btn btn-primary bt.n-lg" id="btnEdit">Edit</button>', '<button type="button" class="btn btn-warning b.tn-lg" id="btnCancel">Cancel</button>']);
+                                jQuery("#tableLeave").dataTable().fnAddData([(response.details[j].Leave_ID).toString(), j + 1, (response.details[j].Leave_From).toString(), (response.details[j].Leave_To).toString(), (response.details[j].Leave_NoOfDays).toString(), (response.details[j].Leave_Type).toString(), (response.details[j].Leave_Reason).toString(), (response.details[j].Leave_AppliedDate).toString(), (response.details[j].Leave_Status).toString(), '<button type="button" class="btn btn-primary bt.n-lg" id="btnEdit">Edit</button>', '<button type="button" class="btn btn-warning b.tn-lg" id="btnCancel">Cancel</button>']);
                             }
                         }
                     }
@@ -222,23 +239,24 @@
 
 
         $('#tableLeave').on('click', '#btnEdit', function () {
-
+            debugger
             var nRow = $(this).parents('tr')[0];
             var aData = oTable.fnGetData(nRow);
             var jqTds = $('>td', nRow);
 
             //LoadSubTaskDrpDown(aData[2]);
             var Leaveid = jQuery("#tableLeave").dataTable().fnGetData(nRow)[0];
-
+            debugger
             //jqTds[0].innerHTML = '<input type="text" style="width:10px;" disabled  value="' + aData[0] + '">';
             jqTds[1].innerHTML = '<input type="text" id="FromDate" class="m-wrap medium" style="width:100px;" value="' + aData[2] + '">';
             jqTds[2].innerHTML = '<input type="text" id="ToDate" class="m-wrap medium" style="width:100px;" value="' + aData[3] + '">';
-            jqTds[3].innerHTML = '<label id="lblNoOfDays">' + aData[4] + '</label>';
-            jqTds[4].innerHTML = '<input id="txtReason" type="text" class="m-wrap medium" style="width:200px;" value="' + aData[5] + '">';
-            jqTds[5].innerHTML = '<label id="lblNoOfDays">' + aData[6] + '</label>';
-            jqTds[6].innerHTML = '<label id="lblNoOfDays">' + aData[7] + '</label>';
-            jqTds[7].innerHTML = '<h4><a class="save" style="color:#008055;">UPDATE</a></h4>';
-            jqTds[8].innerHTML = '<h4><a class="cancel" style="color:red;"href=" ">CANCEL</a></h4>';
+            jqTds[3].innerHTML = '<label id="lblNoOfDays">' + aData[4] + '</label>';            
+            jqTds[4].innerHTML = '<select id="ddlType" class="m-wrap medium" style="width:100px;"><option>' + aData[5] + '</option><option value = "1" > Privilege Leave</option ><option value="2">Sick Leave</option><option value="3">Maternity leave</option><option value="4">Paternity leave</option><option>On Duty</option><option>LOP</option><option value="5">Covid</option></select>';
+            jqTds[5].innerHTML = '<textarea class="m-wrap medium" style="width:200px;" id="txtReason">'+ aData[6]+'</textarea>';
+            jqTds[6].innerHTML = '<label id="lblDateApplied">' + aData[7] + '</label>';
+            jqTds[7].innerHTML = '<label id="lblStatus">' + aData[8] + '</label>';
+            jqTds[8].innerHTML = '<h4><a class="save" style="color:#008055;">UPDATE</a></h4>';
+            jqTds[9].innerHTML = '<h4><a class="cancel" style="color:red;"href=" ">CANCEL</a></h4>';
 
             $('#FromDate').datepicker({ todayHighlight: true });
             $('#ToDate').datepicker({ todayHighlight: true });
@@ -265,33 +283,29 @@
 
 
         $('#tableLeave').on('click', 'a.save', function () {
-
+            debugger
             var nRow = $(this).parents('tr')[0];
             var aData = oTable.fnGetData(nRow);
             if ($('#FromDate').val() == '' || $('#ToDate').val() == '') {
                 $.alert.open({ type: 'warning', content: 'Please choose the start date and end Dates' });
             }
-
-
             else if ($("#txtReason").val() == '') {
                 $.alert.open({ type: 'warning', content: 'Please Enter valid reason for the leave.' });
             }
-            //alert($('#FromDate').val());//sl.no
-            //alert(aData[2]);//timesheetid
-            //alert(aData[3]);//projectname
-            //alert(aData[5]);//taskname
-            // alert(day);
-            EditLeave(aData[0], $('#FromDate').val(), $('#ToDate').val(), $("#lblNoOfDays").text(), $("#txtReason").val());
+           
+            
+            EditLeave(aData[0], $('#FromDate').val(), $('#ToDate').val(), $("#lblNoOfDays").text(), $("#txtReason").val(), $('#ddlType option:selected').text());
             $.alert.open({ type: 'info', content: 'Successfully Updated.' });
 
         });
 
 
 
-        function EditLeave(LeaveId, From, To, numOfDays, reason) {
+        function EditLeave(LeaveId, From, To, numOfDays, reason,leavetype) {
             //alert(timesheetId);
             //alert(subtaskid);
             //alert(wrkhours);
+            debugger
             var varProcParams = new Array();
             var varParams = {};
             varParams.strKey = "Leave_ID";
@@ -317,6 +331,12 @@
             varParams.strKey = "Leave_Reason";
             varParams.strArgmt = reason;
             varProcParams[4] = varParams;
+            var SpParams = {};
+
+            var varParams = {};
+            varParams.strKey = "Leave_Type";
+            varParams.strArgmt = leavetype;
+            varProcParams[5] = varParams;
             var SpParams = {};
 
             SpParams.strProc = "Leave_Edit";
@@ -390,7 +410,7 @@
                     }
                     else {
                         totalApproved = (response.details[0].TotalPLApproved).toString();
-                        
+
                     }
 
                     jQuery("#LeaveSummary").dataTable().fnAddData([(response.details[0].PL).toString(), (response.details[0].Total).toString(), (response.details[0].TotalPLApplied).toString(), totalApproved, (response.details[0].TotalPLRemining).toString()]);
@@ -401,7 +421,7 @@
             }
         });
     }
-                    
-  
-   
+
+
+
 });
