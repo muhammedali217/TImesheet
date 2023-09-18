@@ -524,6 +524,13 @@
     <Compile Include="Models\TimeSheet.cs" />
     <Compile Include="Models\TimeSheetRepository.cs" />
     <Compile Include="Models\UploadFileParams.cs" />
+    <Compile Include="MyProfile.aspx.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyProfile.aspx.designer.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="New.aspx.cs">
       <DependentUpon>New.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1049,6 +1056,8 @@
     <Content Include="leavepolicy.aspx" />
     <Content Include="leaveupdate.aspx" />
     <Content Include="MenuListUserControl1.ascx" />
+    <Content Include="MyProfile.aspx" />
+    <Content Include="pagescripts\MyProfile.js" />
     <Content Include="pagescripts\AssetAllocation.js" />
     <Content Include="pagescripts\AssetAllocationReport.js" />
     <Content Include="pagescripts\AssetEmployeeAllocation.js" />
@@ -1363,6 +1372,7 @@
     <Content Include="pagescripts\ViewTimeSheet.js" />
     <Content Include="pagescripts\visarequest.js" />
     <Content Include="pagescripts\workfromhome.js" />
+    <Content Include="ProfilePics\avatar.png" />
     <Content Include="ProjectAdd.aspx" />
     <Content Include="ProjectCostReport.aspx" />
     <Content Include="Projectedit.aspx" />
